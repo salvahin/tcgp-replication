@@ -1,0 +1,154 @@
+{
+  "gpt-5.3-codex": {
+    "provider": "foundry_responses",
+    "endpoint_host": "foundry_responses",
+    "params_strategy": null,
+    "caps": {
+      "step1": 4000,
+      "step2": 8000
+    },
+    "harness_commit": "13b5651",
+    "last_run": "2026-07-03T00:45:12.255109+00:00"
+  },
+  "gpt-4o": {
+    "provider": "azure",
+    "endpoint_host": "models4325218527.openai.azure.com",
+    "params_strategy": [
+      {
+        "tok": "max_completion_tokens",
+        "temp": 0.2,
+        "seed": true
+      }
+    ],
+    "caps": {
+      "step1": 4000,
+      "step2": 8000
+    },
+    "harness_commit": "13b5651",
+    "last_run": "2026-07-02T22:17:39.443732+00:00"
+  },
+  "gpt-4.1": {
+    "provider": "azure",
+    "endpoint_host": "models4325218527.openai.azure.com",
+    "params_strategy": [
+      {
+        "tok": "max_completion_tokens",
+        "temp": 0.2,
+        "seed": true
+      }
+    ],
+    "caps": {
+      "step1": 4000,
+      "step2": 8000
+    },
+    "harness_commit": "13b5651",
+    "last_run": "2026-07-02T22:43:15.255916+00:00"
+  },
+  "gpt-5.4-mini-2": {
+    "provider": "foundry",
+    "endpoint_host": "models4325218527.services.ai.azure.com",
+    "params_strategy": null,
+    "caps": {
+      "step1": 4000,
+      "step2": 8000
+    },
+    "harness_commit": "13b5651",
+    "last_run": "2026-07-02T23:56:33.992903+00:00"
+  },
+  "gpt-5.4-nano": {
+    "provider": "foundry",
+    "endpoint_host": "models4325218527.services.ai.azure.com",
+    "params_strategy": [
+      {
+        "tok": "max_completion_tokens",
+        "temp": 0.2,
+        "seed": true
+      }
+    ],
+    "caps": {
+      "step1": 4000,
+      "step2": 8000
+    },
+    "harness_commit": "13b5651",
+    "last_run": "2026-07-03T00:10:41.381754+00:00"
+  },
+  "gpt-5.4": {
+    "provider": "foundry",
+    "endpoint_host": "models4325218527.services.ai.azure.com",
+    "params_strategy": [
+      {
+        "tok": "max_completion_tokens",
+        "temp": 0.2,
+        "seed": true
+      }
+    ],
+    "caps": {
+      "step1": 4000,
+      "step2": 8000
+    },
+    "harness_commit": "13b5651",
+    "last_run": "2026-07-03T00:31:19.644534+00:00"
+  },
+  "grok-4-20-non-reasoning": {
+    "provider": "foundry",
+    "endpoint_host": "models4325218527.services.ai.azure.com",
+    "params_strategy": [
+      {
+        "tok": "max_completion_tokens",
+        "temp": 0.2,
+        "seed": true
+      }
+    ],
+    "caps": {
+      "step1": 4000,
+      "step2": 8000
+    },
+    "harness_commit": "13b5651",
+    "last_run": "2026-07-03T01:04:07.112834+00:00"
+  },
+  "gpt-5.5": {
+    "provider": "foundry",
+    "endpoint_host": "models4325218527.services.ai.azure.com",
+    "params_strategy": [
+      {
+        "tok": "max_completion_tokens",
+        "temp": null,
+        "seed": true
+      }
+    ],
+    "caps": {
+      "step1": 4000,
+      "step2": 8000
+    },
+    "harness_commit": "13b5651",
+    "last_run": "2026-07-03T03:26:31.568756+00:00"
+  },
+  "gemini-2.5-flash": {
+    "provider": "gemini",
+    "endpoint_host": "generativelanguage.googleapis.com",
+    "params_strategy": null,
+    "caps": {
+      "step1": 4000,
+      "step2": 8000
+    },
+    "harness_commit": "13b5651",
+    "last_run": "2026-07-03T04:29:24.466033+00:00"
+  },
+  "grok-4-20-reasoning": {
+    "provider": "foundry",
+    "endpoint_host": "models4325218527.services.ai.azure.com",
+    "params_strategy": [
+      {
+        "tok": "max_completion_tokens",
+        "temp": 0.2,
+        "seed": true
+      }
+    ],
+    "caps": {
+      "step1": 4000,
+      "step2": 8000
+    },
+    "harness_commit": "13b5651",
+    "last_run": "2026-07-03T04:54:58.290196+00:00"
+  }
+}

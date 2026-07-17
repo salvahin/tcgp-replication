@@ -1,0 +1,31 @@
+"""Prompt templates for TCGP vs CoT experiments."""
+
+from .ablation_prompts import (
+    PLAN_AND_SOLVE_STEP1,
+    PLAN_AND_SOLVE_STEP2,
+    STRUCTURED_COT_STEP1,
+    STRUCTURED_COT_STEP2,
+    EXTENDED_DIRECT,
+    MINIMAL_BDD_STEP1,
+    MINIMAL_BDD_STEP2,
+    TRUNCATED_COT_STEP1,
+    SELF_CONSISTENCY_COT,
+    TOKEN_BUDGETS,
+    ABLATION_CONFIGS,
+    get_prompt_for_ablation,
+)
+
+__all__ = [
+    "PLAN_AND_SOLVE_STEP1",
+    "PLAN_AND_SOLVE_STEP2",
+    "STRUCTURED_COT_STEP1",
+    "STRUCTURED_COT_STEP2",
+    "EXTENDED_DIRECT",
+    "MINIMAL_BDD_STEP1",
+    "MINIMAL_BDD_STEP2",
+    "TRUNCATED_COT_STEP1",
+    "SELF_CONSISTENCY_COT",
+    "TOKEN_BUDGETS",
+    "ABLATION_CONFIGS",
+    "get_prompt_for_ablation",
+]
