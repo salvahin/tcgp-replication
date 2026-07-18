@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this replication package, please cite it as below."
+title: "Replication package: Structure Over Reasoning - Test-Case-Guided Prompting for Hard LLM Code Generation"
+authors:
+  - family-names: Avalos
+    given-names: Diego
+  - family-names: Mecinas Estrada
+    given-names: Cesar
+  - family-names: "Terrón-Macias"
+    given-names: Victor
+  - family-names: Ochoa-Ruiz
+    given-names: Gilberto
+  - family-names: "García-Ceja"
+    given-names: Enrique
+  - family-names: Oliva
+    given-names: Diego
+  - family-names: Hinojosa
+    given-names: Salvador
+version: "1.0"
+date-released: "2026-07-18"
+doi: 10.5281/zenodo.21421552
+repository-code: "https://github.com/salvahin/tcgp-replication"
+license: MIT
