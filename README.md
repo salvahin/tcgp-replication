@@ -2,8 +2,7 @@
 
 This repository contains the full replication package for the paper
 *"Structure Over Reasoning: Test-Case-Guided Prompting for Hard LLM Code
-Generation"* (Avalos et al., manuscript repository:
-[salvahin/BDD-LLM-Comia](https://github.com/salvahin/BDD-LLM-Comia)).
+Generation"* (Avalos et al.).
 
 The study compares three prompting strategies — direct prompting,
 chain-of-thought (CoT), and test-case-guided prompting (TCGP) — on ten
