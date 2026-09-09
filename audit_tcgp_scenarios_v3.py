@@ -36,27 +36,57 @@ def oracle_call(code, fn, args, timeout=6):
     try: return q.get(timeout=1)
     except Exception: return ("err", "no result")
 
-PAIR = re.compile(r"input\s*[:\-]?\s*(.*?)\s*(?:expected\s+output|output|expected|returns?)\s*[:\-]?\s*(.*?)(?=(?:\n\s*\n)|(?:\n\s*(?:#+|\*\*|test|scenario|example|input)\b)|\Z)", re.I | re.S)
+def normalize(text):
+    """Strip markdown so labels and literals are matchable: fences, emphasis,
+    backticks, list bullets, unicode arrows."""
+    t = re.sub(r"```[A-Za-z]*", "", text or "").replace("```", "")
+    t = re.sub(r"[*_`]+", "", t)
+    t = re.sub(r"^\s*[-=]{2,}\s*$", "", t, flags=re.M)   # horizontal rules
+    t = re.sub(r"^\s*[-\u2022]\s*", "", t, flags=re.M)
+    t = re.sub(r"^\s*(?:test\s*case|scenario|case|example)\s*\d*\s*[:.)-]?\s*", "", t, flags=re.M | re.I)
+    t = re.sub(r"^\s*\d+\s*[.)]\s+", "", t, flags=re.M)
+    return t.replace("\u2192", "->").replace("\u21d2", "->")
+
+STOP = r"(?=\n\s*(?:explanation|why|reason|note|test\s*case|scenario|example|case|input|---|\d+[.)]|#)|\n\s*\n|\Z)"
+PAIR = re.compile(r"^[ \t]*input\s*:?\s*\n?\s*(.+?)\s*\n\s*(?:expected\s+output|expected\s+result|expected|output|returns?)\s*:?\s*\n?\s*(.+?)" + STOP, re.I | re.S | re.M)
+
+ARROW = re.compile(r"^\s*(?:input\s*:?\s*)?((?:[A-Za-z_]\w*\s*=\s*)?[\[\(\{\"'\-\d].*?)\s*->\s*(?:(?:expected\s+)?output\s*:?\s*)?(.+?)\s*$", re.I | re.M)
+
+def find_pairs(raw):
+    t = normalize(raw)
+    pairs = []
+    for a, e in PAIR.findall(t):
+        if "->" in a:  # 'Input: args -> expected' captured as one span
+            a2, e2 = a.split("->", 1)
+            pairs.append((a2, e2.strip().split("\n")[0]))
+        else:
+            pairs.append((a, e))
+    seen = {a.strip() for a, _ in pairs}
+    for a, e in ARROW.findall(t):
+        if a.strip() not in seen and "input" not in a.lower():
+            pairs.append((a, e)); seen.add(a.strip())
+    return pairs
 
 def parse_literal(s):
-    s = s.strip().strip("`*").strip()
-    s = re.sub(r"^\s*[\w\[\]]+\s*=\s*", "", s)  # drop leading "name = "
-    s = s.rstrip(".").strip()
-    return ast.literal_eval(s)
+    s = s.strip().split("\n")[0].strip().rstrip(".").strip()
+    s = re.sub(r"^\s*(?:return|output|result)\s*[:=]?\s*", "", s, flags=re.I)
+    s = re.sub(r"^\s*[A-Za-z_]\w*\s*=\s*", "", s)
+    return ast.literal_eval(s.strip())
 
 def parse_args(block):
-    """'nums = [1,2], k = 3' or multi-line 'nums = [..]\\nk = 3' or bare '[1,2], 3'."""
-    block = block.strip().strip("`").strip()
-    parts = [p for p in re.split(r"\n|,\s*(?=[A-Za-z_]\w*\s*=)", block) if p.strip()]
+    """'nums = [1,2], k = 3' / multi-line 'nums = [..]\\nk = 3' / bare '[1,2], 3'."""
+    block = block.strip()
+    parts = [x for x in re.split(r"\n|,\s*(?=[A-Za-z_]\w*\s*=)", block) if x.strip()]
     args = []
-    for p in parts:
-        p = p.strip().strip("`*").strip()
-        if "=" in p and re.match(r"^\s*[A-Za-z_]\w*\s*=", p):
-            args.append(ast.literal_eval(p.split("=", 1)[1].strip().rstrip(",")))
+    for x in parts:
+        x = x.strip().rstrip(",").strip()
+        if re.match(r"^[A-Za-z_]\w*\s*=", x):
+            args.append(ast.literal_eval(x.split("=", 1)[1].strip()))
         else:
-            v = ast.literal_eval(p.rstrip(","))
+            v = ast.literal_eval(x)
             if isinstance(v, tuple) and len(parts) == 1: args = list(v)
             else: args.append(v)
+    if not args: raise ValueError("no args")
     return args
 
 def main():
@@ -79,7 +109,7 @@ def main():
         q = r["question_id"]
         if q not in oracle: continue
         st = stats[r["model"]]; st["recs"] += 1
-        pairs = PAIR.findall(r.get("raw_step1") or ""); st["scen"] += len(pairs)
+        pairs = find_pairs(r.get("raw_step1") or ""); st["scen"] += len(pairs)
         verdicts = []
         for a, e in pairs[:6]:
             try: args = parse_args(a); exp = parse_literal(e)
