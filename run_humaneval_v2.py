@@ -174,7 +174,7 @@ def call_llm(prompt, model, provider, max_completion, seed=None, params_memo=Non
             "reasoning_tokens": getattr(um, "thoughts_token_count", 0) if um else 0,
             "total_tokens": getattr(um, "total_token_count", 0) if um else 0,
             "finish_reason": fin,
-            "truncated": bool(fin and "MAX_TOKENS" in str(fin).upper()),
+            "truncated": bool(fin and ("MAX_TOKENS" in str(fin).upper() or str(fin).strip() == "2")),  # SDK may report the enum number
         }
         return text, usage, {"api": "gemini", "temperature": 0.2, "max_output_tokens": max_completion}
 
