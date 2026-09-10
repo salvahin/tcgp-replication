@@ -1,0 +1,115 @@
+{
+ "per_model": {
+  "grok-4-20-reasoning": {
+   "scen": 428,
+   "parsed": 419,
+   "correct": 404,
+   "recs": 170,
+   "recs_with_all_correct": 93,
+   "recs_with_any_wrong": 7,
+   "pass_all_correct": 91,
+   "pass_any_wrong": 7
+  },
+  "gpt-5.4-mini-2": {
+   "scen": 635,
+   "parsed": 628,
+   "correct": 558,
+   "recs": 170,
+   "recs_with_all_correct": 101,
+   "recs_with_any_wrong": 54,
+   "pass_all_correct": 88,
+   "pass_any_wrong": 47
+  },
+  "grok-4-20-non-reasoning": {
+   "scen": 966,
+   "parsed": 771,
+   "correct": 613,
+   "recs": 170,
+   "recs_with_all_correct": 44,
+   "recs_with_any_wrong": 106,
+   "pass_all_correct": 33,
+   "pass_any_wrong": 73
+  },
+  "gpt-5.4-nano": {
+   "scen": 830,
+   "parsed": 692,
+   "correct": 573,
+   "recs": 170,
+   "recs_with_all_correct": 84,
+   "recs_with_any_wrong": 84,
+   "pass_all_correct": 62,
+   "pass_any_wrong": 58
+  },
+  "gpt-5.5": {
+   "scen": 188,
+   "parsed": 151,
+   "correct": 146,
+   "recs": 170,
+   "recs_with_all_correct": 33,
+   "recs_with_any_wrong": 5,
+   "pass_all_correct": 32,
+   "pass_any_wrong": 5
+  },
+  "gpt-4.1": {
+   "scen": 241,
+   "parsed": 220,
+   "correct": 191,
+   "recs": 170,
+   "recs_with_all_correct": 30,
+   "recs_with_any_wrong": 21,
+   "pass_all_correct": 26,
+   "pass_any_wrong": 15
+  },
+  "gemini-2.5-flash": {
+   "scen": 751,
+   "parsed": 582,
+   "correct": 543,
+   "recs": 170,
+   "recs_with_all_correct": 120,
+   "recs_with_any_wrong": 29,
+   "pass_all_correct": 106,
+   "pass_any_wrong": 27
+  },
+  "gpt-5.4": {
+   "scen": 466,
+   "parsed": 454,
+   "correct": 421,
+   "recs": 170,
+   "recs_with_all_correct": 92,
+   "recs_with_any_wrong": 19,
+   "pass_all_correct": 91,
+   "pass_any_wrong": 18
+  },
+  "gpt-5.3-codex": {
+   "scen": 576,
+   "parsed": 554,
+   "correct": 520,
+   "recs": 170,
+   "recs_with_all_correct": 114,
+   "recs_with_any_wrong": 24,
+   "pass_all_correct": 103,
+   "pass_any_wrong": 24
+  },
+  "gpt-4o": {
+   "scen": 798,
+   "parsed": 722,
+   "correct": 556,
+   "recs": 170,
+   "recs_with_all_correct": 54,
+   "recs_with_any_wrong": 111,
+   "pass_all_correct": 30,
+   "pass_any_wrong": 48
+  }
+ },
+ "total": {
+  "scen": 5879,
+  "parsed": 5193,
+  "correct": 4525,
+  "recs": 1700,
+  "recs_with_all_correct": 765,
+  "recs_with_any_wrong": 460,
+  "pass_all_correct": 662,
+  "pass_any_wrong": 322
+ },
+ "n_oracle_problems": 170
+}

@@ -1,0 +1,166 @@
+{
+ "runs": [
+  {
+   "model": "gpt-4o",
+   "provider": "azure",
+   "condition": "direct",
+   "seed": 42,
+   "params_used": null,
+   "step1_cap": 6000,
+   "step2_cap": 12000,
+   "evaluator": "official LiveCodeBench testing_util @ 28fef95 (vendored in lcb_eval/)",
+   "dataset": "bzantium/livecodebench (test split, 1055 problems)",
+   "n_problems": 180,
+   "contest_date_window": [
+    "2023-05-07",
+    "2024-08-31"
+   ],
+   "harness_commit": "e07a374",
+   "finished": "2026-09-09T18:38:49.389621+00:00"
+  },
+  {
+   "model": "gpt-5.4",
+   "provider": "foundry",
+   "condition": "direct",
+   "seed": 42,
+   "params_used": null,
+   "step1_cap": 6000,
+   "step2_cap": 12000,
+   "evaluator": "official LiveCodeBench testing_util @ 28fef95 (vendored in lcb_eval/)",
+   "dataset": "bzantium/livecodebench (test split, 1055 problems)",
+   "n_problems": 180,
+   "contest_date_window": [
+    "2023-05-07",
+    "2024-08-31"
+   ],
+   "harness_commit": "e07a374",
+   "finished": "2026-09-09T19:18:56.177827+00:00"
+  },
+  {
+   "model": "gpt-5.4",
+   "provider": "foundry",
+   "condition": "cot",
+   "seed": 42,
+   "params_used": null,
+   "step1_cap": 6000,
+   "step2_cap": 12000,
+   "evaluator": "official LiveCodeBench testing_util @ 28fef95 (vendored in lcb_eval/)",
+   "dataset": "bzantium/livecodebench (test split, 1055 problems)",
+   "n_problems": 180,
+   "contest_date_window": [
+    "2023-05-07",
+    "2024-08-31"
+   ],
+   "harness_commit": "114f157",
+   "finished": "2026-09-09T20:32:14.805109+00:00"
+  },
+  {
+   "model": "gpt-4.1",
+   "provider": "azure",
+   "condition": "direct",
+   "seed": 42,
+   "params_used": null,
+   "step1_cap": 6000,
+   "step2_cap": 12000,
+   "evaluator": "official LiveCodeBench testing_util @ 28fef95 (vendored in lcb_eval/)",
+   "dataset": "bzantium/livecodebench (test split, 1055 problems)",
+   "n_problems": 180,
+   "contest_date_window": [
+    "2023-05-07",
+    "2024-08-31"
+   ],
+   "harness_commit": "114f157",
+   "finished": "2026-09-09T20:36:47.762158+00:00"
+  },
+  {
+   "model": "gpt-4.1",
+   "provider": "azure",
+   "condition": "cot",
+   "seed": 42,
+   "params_used": null,
+   "step1_cap": 6000,
+   "step2_cap": 12000,
+   "evaluator": "official LiveCodeBench testing_util @ 28fef95 (vendored in lcb_eval/)",
+   "dataset": "bzantium/livecodebench (test split, 1055 problems)",
+   "n_problems": 180,
+   "contest_date_window": [
+    "2023-05-07",
+    "2024-08-31"
+   ],
+   "harness_commit": "114f157",
+   "finished": "2026-09-09T20:36:47.779186+00:00"
+  },
+  {
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "condition": "tcgp",
+   "seed": 42,
+   "params_used": null,
+   "step1_cap": 24000,
+   "step2_cap": 48000,
+   "evaluator": "official LiveCodeBench testing_util @ 28fef95 (vendored in lcb_eval/)",
+   "dataset": "bzantium/livecodebench (test split, 1055 problems)",
+   "n_problems": 180,
+   "contest_date_window": [
+    "2023-05-07",
+    "2024-08-31"
+   ],
+   "harness_commit": "114f157",
+   "finished": "2026-09-10T00:02:12.959540+00:00"
+  },
+  {
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "condition": "restate",
+   "seed": 42,
+   "params_used": null,
+   "step1_cap": 24000,
+   "step2_cap": 48000,
+   "evaluator": "official LiveCodeBench testing_util @ 28fef95 (vendored in lcb_eval/)",
+   "dataset": "bzantium/livecodebench (test split, 1055 problems)",
+   "n_problems": 180,
+   "contest_date_window": [
+    "2023-05-07",
+    "2024-08-31"
+   ],
+   "harness_commit": "114f157",
+   "finished": "2026-09-10T03:30:44.585678+00:00"
+  },
+  {
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "condition": "cot",
+   "seed": 42,
+   "params_used": null,
+   "step1_cap": 24000,
+   "step2_cap": 48000,
+   "evaluator": "official LiveCodeBench testing_util @ 28fef95 (vendored in lcb_eval/)",
+   "dataset": "bzantium/livecodebench (test split, 1055 problems)",
+   "n_problems": 180,
+   "contest_date_window": [
+    "2023-05-07",
+    "2024-08-31"
+   ],
+   "harness_commit": "114f157",
+   "finished": "2026-09-10T03:34:39.252016+00:00"
+  },
+  {
+   "model": "gemini-2.5-flash",
+   "provider": "gemini",
+   "condition": "restate",
+   "seed": 42,
+   "params_used": null,
+   "step1_cap": 24000,
+   "step2_cap": 48000,
+   "evaluator": "official LiveCodeBench testing_util @ 28fef95 (vendored in lcb_eval/)",
+   "dataset": "bzantium/livecodebench (test split, 1055 problems)",
+   "n_problems": 180,
+   "contest_date_window": [
+    "2023-05-07",
+    "2024-08-31"
+   ],
+   "harness_commit": "114f157",
+   "finished": "2026-09-10T03:34:57.264103+00:00"
+  }
+ ]
+}

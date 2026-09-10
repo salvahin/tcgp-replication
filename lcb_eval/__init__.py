@@ -88,10 +88,11 @@ def grade(problem, code, timeout=6):
         return {"passed": False, "public_pass": False, "n_tests": n_all, "n_public": n_pub,
                 "n_passed": 0, "error_code": None, "error_message": "no code"}
     res, meta = check_correctness(sample, code, timeout)
-    ok = [r is True or r == True for r in res]
-    n_passed = sum(ok)
-    passed = len(res) == n_all and all(ok)
-    public_pass = len(res) >= n_pub and all(ok[:n_pub])
-    return {"passed": passed, "public_pass": public_pass, "n_tests": n_all, "n_public": n_pub,
-            "n_passed": n_passed, "error_code": (meta or {}).get("error_code"),
+    ok = [bool(r is True or r == True) for r in res]   # grader may return numpy scalars
+    n_passed = int(sum(ok))
+    passed = bool(len(res) == n_all and all(ok))
+    public_pass = bool(len(res) >= n_pub and all(ok[:n_pub]))
+    ec = (meta or {}).get("error_code")
+    return {"passed": passed, "public_pass": public_pass, "n_tests": int(n_all), "n_public": int(n_pub),
+            "n_passed": n_passed, "error_code": (int(ec) if ec is not None else None),
             "error_message": str((meta or {}).get("error_message", ""))[:200]}
