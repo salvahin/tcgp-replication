@@ -48,13 +48,28 @@ def _init_heavy():
     call_llm = _load("hv2", "run_humaneval_v2.py").call_llm
     select_problems = _load("lcbv2", "run_livecodebench_v2.py").select_problems
 
+PROBLEM_CACHE = HERE / "data" / "livecodebench_strat180.json"
+
+def load_problems(limit=0, per_difficulty=60):
+    """The deterministic 180-problem sample. Cached to a small JSON file so that
+    each worker does not have to materialise the full 1,055-problem dataset
+    (that cost ~0.5 GB per process and, with many workers, exhausted memory)."""
+    if per_difficulty == 60 and not limit and PROBLEM_CACHE.exists():
+        return json.load(open(PROBLEM_CACHE))
+    from datasets import load_dataset
+    probs = select_problems(load_dataset("bzantium/livecodebench", split="test"), limit, per_difficulty)
+    probs = [dict(p) for p in probs]
+    if per_difficulty == 60 and not limit:
+        PROBLEM_CACHE.parent.mkdir(exist_ok=True); json.dump(probs, open(PROBLEM_CACHE, "w"), default=str)
+    return probs
+
 STEP1_CAP = 6000
 STEP2_CAP = 12000
 # Gemini 2.5 counts hidden thinking tokens against max_output_tokens (up to
 # ~10k on hard problems), so it needs a much larger cap to avoid truncating
 # the code; measured usage is what the paper reports, not the cap.
 PROVIDER_CAPS = {"gemini": (24000, 48000)}
-CONDITIONS = ("direct", "cot", "tcgp", "restate")
+CONDITIONS = ("direct", "cot", "tcgp", "restate", "para1", "para2", "para3", "persona", "fewshot", "stacked", "plansolve")
 
 # ---- prompts: official LiveCodeBench wording for the code step ----
 FMT_STARTER = ("You will use the following starter code to write the solution to the "
@@ -103,8 +118,62 @@ def p_step2(q, starter, prior, kind):
             + f"### Answer: Using your {kind} above, write the complete solution. "
               f"(use the provided format with backticks)\n\n")
 
+# ---- wave A: recipe conditions (all end with the official Format block) ----
+PERSONA = ("You are a world-class competitive programmer and expert Python developer. "
+           "You write correct, efficient, and carefully tested code.\n\n")
+
+def p_para1(q, starter):   # paraphrase 1: same task, different wording
+    return (f"Below is a programming problem. Write a correct and efficient Python solution.\n\n"
+            f"### Problem statement:\n{q}\n\n" + fmt_block(starter)
+            + "### Solution: (put your code in the format above, inside backticks)\n\n")
+
+def p_para2(q, starter):   # paraphrase 2
+    return (f"Please provide a Python implementation for the task described next.\n\n"
+            f"### Task:\n{q}\n\n" + fmt_block(starter)
+            + "### Your implementation (follow the format above and use backticks):\n\n")
+
+def p_para3(q, starter):   # paraphrase 3: terse
+    return (f"Problem:\n{q}\n\n" + fmt_block(starter)
+            + "Code (in the required format, with backticks):\n\n")
+
+def p_persona(q, starter):
+    return PERSONA + p_direct(q, starter)
+
+_FEW = {}
+def p_fewshot(q, starter):
+    """Two solved examples, mirroring the official LiveCodeBench few-shot template
+    (lcb_runner/prompts/code_generation.py, base-model template), followed by the
+    target problem and the official Format block."""
+    import json as _j
+    key = "func" if starter else "stdin"
+    if key not in _FEW:
+        _FEW[key] = _j.load(open(HERE / "lcb_eval" / "few_shot" / f"{key}.json"))
+    out = ""
+    for ex in _FEW[key][:2]:
+        out += f"### Question\n{ex['question']}\n\n"
+        if starter: out += f"### Starter Code\n{ex['sample_code']}\n\n"
+        out += f"### Answer\n\n{ex['answer']}\n\n"
+    out += f"### Question\n{q}\n\n" + fmt_block(starter) + "### Answer: (use the provided format with backticks)\n\n"
+    return out
+
+def p_stacked(q, starter):   # kitchen-sink single call
+    return (PERSONA + f"### Question:\n{q}\n\n"
+            "### Procedure: (1) Reason step by step about the problem, the algorithm, and the edge cases. "
+            "(2) Write 3-4 concrete test cases as exact input -> expected output pairs. "
+            "(3) Write the complete solution that passes them. Put the final complete solution in the "
+            "LAST python code block of your answer.\n\n" + fmt_block(starter)
+            + "### Answer: (end with the complete solution in the provided format, with backticks)\n\n")
+
+def p_plan1(q, starter):   # Plan-and-Solve (Wang et al., ACL 2023), step 1
+    return (f"### Question:\n{q}\n\n" + _starter_ref(starter)
+            + "### Task: Let's first understand the problem and devise a plan to solve it: identify the inputs "
+              "and outputs, extract the relevant variables and constraints, and write a numbered step-by-step "
+              "plan. Do NOT write code yet.\n\n")
+
 STEP1 = {"cot": (p_cot1, "reasoning"), "tcgp": (p_tcgp1, "test scenarios"),
-         "restate": (p_restate1, "input/output contract")}
+         "restate": (p_restate1, "input/output contract"), "plansolve": (p_plan1, "plan")}
+ONE_CALL = {"direct": p_direct, "para1": p_para1, "para2": p_para2, "para3": p_para3,
+            "persona": p_persona, "fewshot": p_fewshot, "stacked": p_stacked}
 
 def run_one(problem, condition, model, provider, seed, memo):
     q = problem["question_content"]; starter = problem.get("starter_code") or ""
@@ -114,9 +183,9 @@ def run_one(problem, condition, model, provider, seed, memo):
            "timestamp": datetime.now(timezone.utc).isoformat()}
     cap1, cap2 = PROVIDER_CAPS.get(provider, (STEP1_CAP, STEP2_CAP))
     try:
-        if condition == "direct":
+        if condition in ONE_CALL:
             raw1, use1 = "", None
-            raw2, use2, params = call_llm(p_direct(q, starter), model, provider, cap2, seed, memo)
+            raw2, use2, params = call_llm(ONE_CALL[condition](q, starter), model, provider, cap2, seed, memo)
         else:
             f1, kind = STEP1[condition]
             raw1, use1, _ = call_llm(f1(q, starter), model, provider, cap1, seed, memo)
@@ -147,17 +216,15 @@ def git_commit():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--models", nargs="+", required=True, help="model:provider ...")
-    ap.add_argument("--conditions", nargs="+", default=list(CONDITIONS))
+    ap.add_argument("--conditions", nargs="+", default=["direct", "cot", "tcgp", "restate"])
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--per-difficulty", type=int, default=60)
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--tag", default="strat")
     a = ap.parse_args()
     _init_heavy()
-    from datasets import load_dataset
     out = HERE / "results" / f"livecodebench_v3_{a.tag}"; out.mkdir(parents=True, exist_ok=True)
-    ds = load_dataset("bzantium/livecodebench", split="test")
-    problems = select_problems(ds, a.limit, a.per_difficulty)
+    problems = load_problems(a.limit, a.per_difficulty)
     dates = sorted(str(p.get("contest_date"))[:10] for p in problems)
     manifest_p = out / "manifest.json"
     manifest = json.load(open(manifest_p)) if manifest_p.exists() else {"runs": []}

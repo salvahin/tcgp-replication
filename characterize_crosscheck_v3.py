@@ -23,7 +23,11 @@ def main():
             off = all(x == True for x in results[i][0])
             if off == bool(r["passed"]): continue
             dis += 1
-            code = (metas[i][0] or {}).get("error_code") if isinstance(metas[i], list) else (metas[i] or {}).get("error_code")
+            mi = metas[i][0] if isinstance(metas[i], list) else metas[i]
+            if isinstance(mi, str):
+                try: mi = json.loads(mi)
+                except Exception: mi = {}
+            code = (mi or {}).get("error_code") if isinstance(mi, dict) else None
             codes[str(code)] = codes.get(str(code), 0) + 1
             res, _ = check_correctness(samples[i], r.get("extracted_code") or "", 6)   # serial, official run_test
             serial = bool(len(res) == len(json.loads(samples[i]["input_output"])["inputs"]) and all(x == True for x in res))

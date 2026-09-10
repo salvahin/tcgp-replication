@@ -3,3 +3,4 @@ __pycache__/
 *.pyc
 .venv/
 figures_paper/
+data/livecodebench_strat180.json
