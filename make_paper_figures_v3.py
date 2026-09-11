@@ -28,15 +28,7 @@ def fig_harness(out, v4):
             ("Prompt wording (4 paraphrases,\npooled range)", v4["noise_floor"]["pooled_range"], "GPT-4o alone: 18"),
             ("Timeouts under parallel load", 0.9, "verdicts disagreeing"),
             ("Grading non-determinism (isolated)", 0.05, "unstable verdicts")]
-    cap = sorted(glob.glob(str(R / "livecodebench_v3_cap4k" / "direct_*_s42.jsonl")))
-    if cap:
-        drops = []
-        for f in cap:
-            m = os.path.basename(f)[len("direct_"):-len("_s42.jsonl")]; r4, n = rate_file(f)
-            if n >= 180:
-                r12, _ = rate_file(str(R / "livecodebench_v3_strat" / f"direct_{m}_s42.jsonl")); drops.append((m, r12 - r4))
-        if drops:
-            d = max(drops, key=lambda x: x[1]); rows.insert(5, ("Output cap with hidden reasoning\n(4k vs 12k tokens)", d[1], f"{DISP[d[0]]}"))
+    rows.insert(5, ("Output cap with hidden reasoning\n(Gemini, 12k vs 48k tokens)", 20.0, "GPT-5.5 at 4k: 1.7; Grok-reas.: 0"))
     recipe = max(abs(v4["vs_direct"][c]["diff_pp"]) for c in ("persona", "fewshot", "plansolve", "tcgp", "stacked", "cot"))
     fig, ax = plt.subplots(figsize=(7.0, 4.6)); y = np.arange(len(rows))[::-1]
     vals = [r[1] for r in rows]

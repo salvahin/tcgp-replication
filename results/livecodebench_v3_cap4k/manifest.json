@@ -1,0 +1,22 @@
+{
+ "runs": [
+  {
+   "model": "grok-4-20-reasoning",
+   "provider": "foundry",
+   "condition": "direct",
+   "seed": 42,
+   "params_used": null,
+   "step1_cap": 6000,
+   "step2_cap": 12000,
+   "evaluator": "official LiveCodeBench testing_util @ 28fef95 (vendored in lcb_eval/)",
+   "dataset": "bzantium/livecodebench (test split, 1055 problems)",
+   "n_problems": 180,
+   "contest_date_window": [
+    "2023-05-07",
+    "2024-08-31"
+   ],
+   "harness_commit": "080f645",
+   "finished": "2026-09-11T19:27:12.232682+00:00"
+  }
+ ]
+}
