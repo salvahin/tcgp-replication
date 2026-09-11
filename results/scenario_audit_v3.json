@@ -3,12 +3,12 @@
   "grok-4-20-reasoning": {
    "scen": 428,
    "parsed": 419,
-   "correct": 404,
+   "correct": 403,
    "recs": 170,
-   "recs_with_all_correct": 93,
-   "recs_with_any_wrong": 7,
-   "pass_all_correct": 91,
-   "pass_any_wrong": 7
+   "recs_with_all_correct": 92,
+   "recs_with_any_wrong": 9,
+   "pass_all_correct": 90,
+   "pass_any_wrong": 9
   },
   "gpt-5.4-mini-2": {
    "scen": 635,
@@ -16,34 +16,34 @@
    "correct": 558,
    "recs": 170,
    "recs_with_all_correct": 101,
-   "recs_with_any_wrong": 54,
+   "recs_with_any_wrong": 55,
    "pass_all_correct": 88,
    "pass_any_wrong": 47
   },
   "grok-4-20-non-reasoning": {
    "scen": 966,
    "parsed": 771,
-   "correct": 613,
+   "correct": 611,
    "recs": 170,
-   "recs_with_all_correct": 44,
-   "recs_with_any_wrong": 106,
-   "pass_all_correct": 33,
-   "pass_any_wrong": 73
+   "recs_with_all_correct": 45,
+   "recs_with_any_wrong": 105,
+   "pass_all_correct": 34,
+   "pass_any_wrong": 72
   },
   "gpt-5.4-nano": {
    "scen": 830,
    "parsed": 692,
-   "correct": 573,
+   "correct": 572,
    "recs": 170,
-   "recs_with_all_correct": 84,
-   "recs_with_any_wrong": 84,
-   "pass_all_correct": 62,
-   "pass_any_wrong": 58
+   "recs_with_all_correct": 83,
+   "recs_with_any_wrong": 86,
+   "pass_all_correct": 61,
+   "pass_any_wrong": 59
   },
   "gpt-5.5": {
    "scen": 188,
    "parsed": 151,
-   "correct": 146,
+   "correct": 145,
    "recs": 170,
    "recs_with_all_correct": 33,
    "recs_with_any_wrong": 5,
@@ -73,43 +73,43 @@
   "gpt-5.4": {
    "scen": 466,
    "parsed": 454,
-   "correct": 421,
+   "correct": 420,
    "recs": 170,
-   "recs_with_all_correct": 92,
-   "recs_with_any_wrong": 19,
-   "pass_all_correct": 91,
-   "pass_any_wrong": 18
+   "recs_with_all_correct": 91,
+   "recs_with_any_wrong": 20,
+   "pass_all_correct": 90,
+   "pass_any_wrong": 19
   },
   "gpt-5.3-codex": {
    "scen": 576,
    "parsed": 554,
-   "correct": 520,
+   "correct": 519,
    "recs": 170,
-   "recs_with_all_correct": 114,
-   "recs_with_any_wrong": 24,
-   "pass_all_correct": 103,
-   "pass_any_wrong": 24
+   "recs_with_all_correct": 113,
+   "recs_with_any_wrong": 26,
+   "pass_all_correct": 102,
+   "pass_any_wrong": 25
   },
   "gpt-4o": {
    "scen": 798,
    "parsed": 722,
    "correct": 556,
    "recs": 170,
-   "recs_with_all_correct": 54,
-   "recs_with_any_wrong": 111,
-   "pass_all_correct": 30,
-   "pass_any_wrong": 48
+   "recs_with_all_correct": 53,
+   "recs_with_any_wrong": 113,
+   "pass_all_correct": 29,
+   "pass_any_wrong": 49
   }
  },
  "total": {
   "scen": 5879,
   "parsed": 5193,
-  "correct": 4525,
+  "correct": 4518,
   "recs": 1700,
-  "recs_with_all_correct": 765,
-  "recs_with_any_wrong": 460,
-  "pass_all_correct": 662,
-  "pass_any_wrong": 322
+  "recs_with_all_correct": 761,
+  "recs_with_any_wrong": 469,
+  "pass_all_correct": 658,
+  "pass_any_wrong": 327
  },
  "n_oracle_problems": 170
 }
