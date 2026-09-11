@@ -1,64 +1,66 @@
-# Replication package: Structure Over Reasoning — Test-Case-Guided Prompting for Hard LLM Code Generation
+# Replication package: How Much of a Prompting Result Is the Harness?
 
-This repository contains the full replication package for the paper
-*"Structure Over Reasoning: Test-Case-Guided Prompting for Hard LLM Code
-Generation"* (Avalos et al.).
+Replication package for the article *"How Much of a Prompting Result Is the
+Harness? A Quantified Budget, a Validated Protocol, and a Reporting Card for
+Execution-Based Code-Generation Evaluation"* (Avalos et al., submitted to IEEE
+Access; revision of manuscript Access-2026-35607).
 
-The study compares three prompting strategies — direct prompting,
-chain-of-thought (CoT), and test-case-guided prompting (TCGP) — on ten
-current LLMs, using HumanEval (easy, saturated) and a difficulty-stratified
-180-problem LiveCodeBench sample (hard).
+The study compares twelve prompting conditions (direct prompting, three
+paraphrases of it, persona, few-shot, chain-of-thought, Plan-and-Solve,
+test-case-guided prompting, a contract-restatement control, a stacked recipe,
+and one round of execution-feedback repair) on ten current LLMs, using
+HumanEval and a difficulty-stratified 180-problem LiveCodeBench sample graded
+with the official LiveCodeBench evaluator. It also quantifies how much each
+evaluation-harness decision (input/output contract, extraction rule, hidden
+tests, timeouts, output caps, wording) moves the measured pass rate.
+
+## Reproduce every number, table, and figure (no API keys, minutes)
+
+```bash
+python3.11 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+python make_paper_analyses_v3.py      # four core conditions, 10 models
+python make_paper_analyses_v4.py      # recipe study, noise floor, equivalence tests
+python harness_sensitivity_v3.py --public   # public-vs-hidden tests (add --extract / --flaky to re-grade)
+python audit_tcgp_scenarios_v3.py     # correctness of generated test scenarios
+python make_paper_figures_v3.py --outdir figures_paper
+```
 
 ## Contents
 
 | Path | What it is |
 |---|---|
-| `run_humaneval_v2.py` | HumanEval harness (complete-function protocol, per-problem resume, full raw + token logging) |
-| `run_livecodebench_v2.py` | LiveCodeBench harness (same protocol, difficulty-stratified sampling) |
-| `run_tcgp_vs_cot.py`, `run_livecodebench.py`, `prompts/` | Legacy modules the V2 harnesses import (test executors); kept for that reason |
-| `make_paper_figures.py` | Regenerates every figure in the paper from the logged results |
-| `make_paper_analyses.py` | Regenerates every statistical analysis (McNemar + Holm, partial correctness, reasoning tokens, sample robustness, seed variance) |
-| `results/humaneval_v2/` | Raw per-problem records: 10 models x 3 conditions x 3 seeds x 164 problems, with full model responses and per-step token usage, plus `manifest.json` (deployments, endpoints, parameters, query dates) |
-| `results/livecodebench_v2/` | Raw records for the 50-problem pilot sample (seed 42) |
-| `results/livecodebench_v2_strat/` | Raw records for the stratified 180-problem sample (60 easy / 60 medium / 60 hard) |
-| `results/paper_analyses.json` | Output of `make_paper_analyses.py` |
-| `data/humaneval/humaneval.jsonl` | HumanEval problems (input to the harness) |
-| `archive/incorrect-harness-v1_*.zip` | Results from a retired earlier harness, kept for provenance only (see `ABLATION_DESIGNS_V1.md`) |
-| `EXPERIMENT_DESIGN_V2.md` | The experiment design document |
-| `RESULTS_V2_SUMMARY.md` | Headline numbers used in the manuscript |
-| `ABLATION_DESIGNS_V1.md` | Ablation designs from an earlier iteration, candidates for future re-runs |
+| `lcb_eval/` | The official LiveCodeBench evaluator (`testing_util.py`, commit 28fef95, MIT), vendored unchanged, plus a thin isolated-subprocess wrapper, the official few-shot examples, and the official extraction rule |
+| `run_livecodebench_v3.py` | Corrected LiveCodeBench harness: official prompt format block, all public+private tests, per-provider output caps, per-problem resume, full raw and token logging; all twelve conditions |
+| `run_repair_v3.py`, `run_sampling_v3.py` | One-round execution-feedback repair; k-sample selection (prepared, not run) |
+| `run_livecodebench_v2.py`, `run_livecodebench.py`, `run_tcgp_vs_cot.py`, `prompts/` | The original (stdin-serialization) harness, kept for the artifact analysis and as import dependencies |
+| `run_humaneval_v2.py` | HumanEval harness (unchanged; HumanEval grades by direct function call) |
+| `validate_lcb_v3.py`, `crosscheck_lcb_v3.py`, `characterize_crosscheck_v3.py` | Harness validation: known solutions, official entry-point cross-check on all generations, serial re-grading of disagreements |
+| `regrade_timeouts_v3.py`, `purge_v3_records.py`, `rescore_v2_official.py` | Isolated timeout re-grade; API-error purge/resume; re-scoring of the original outputs with the official evaluator |
+| `make_paper_analyses_v3.py`, `make_paper_analyses_v4.py`, `harness_sensitivity_v3.py`, `audit_tcgp_scenarios_v3.py`, `make_paper_figures_v3.py` | Every statistic, table, and figure in the paper |
+| `results/livecodebench_v3_strat/` | 20,160 raw records: 10 models x 4 core conditions + 9 models x 8 further conditions x 180 problems, with raw responses, extracted code, per-step token usage, verdicts, public-only verdicts |
+| `results/livecodebench_v3_cap4k/` | Small-output-cap runs for the truncation row of the harness budget |
+| `results/livecodebench_v2_strat/`, `results/livecodebench_v2_strat_rescored/` | The original submission's outputs and their re-grading with the official evaluator (the artifact analysis) |
+| `results/humaneval_v2/` | HumanEval: 10 models x 3 conditions x 3 seeds, with `manifest.json` (deployments, endpoints, parameters, dates) |
+| `results/paper_analyses_v3.json`, `paper_analyses_v4.json`, `harness_sensitivity_v3.json`, `scenario_audit_v3.json` | Analysis outputs |
+| `data/humaneval/humaneval.jsonl` | HumanEval problems; the LiveCodeBench sample is cached on first run from `bzantium/livecodebench` |
+| `archive/incorrect-harness-v1_*.zip`, `ABLATION_DESIGNS_V1.md` | Provenance of an even earlier harness (body extraction), not used in the paper |
+| `EXPERIMENT_DESIGN_V2.md`, `RESULTS_V2_SUMMARY.md` | Design notes and the (superseded) first-submission numbers, kept for the record |
 
-## Reproduce the paper's figures and analyses (no API keys needed, minutes)
-
-```bash
-python3.11 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-
-python make_paper_analyses.py     # statistics -> results/paper_analyses.json + console report
-python make_paper_figures.py      # figures    -> figures_paper/*.pdf
-```
-
-Every number and figure in the paper derives from the raw records in
-`results/` through these two scripts.
-
-## Re-run the experiments (API keys + budget, hours)
+## Re-run the experiments (API keys and budget)
 
 ```bash
-cp .env.example .env   # add your keys; see the provider notes inside
-
-# HumanEval, one model, one seed
-python run_humaneval_v2.py --models gpt-4o:azure --conditions direct cot tcgp --seed 42
-
-# LiveCodeBench, stratified sample
-python run_livecodebench_v2.py --models gpt-4o:azure --conditions direct cot tcgp \
-    --seed 42 --per-difficulty 60 --tag strat
+cp .env.example .env    # add your keys
+python run_livecodebench_v3.py --models gpt-4o:azure --conditions direct cot tcgp restate --tag strat
+python run_livecodebench_v3.py --models gpt-4o:azure --conditions para1 para2 para3 persona fewshot stacked plansolve --tag strat
+python run_repair_v3.py --models gpt-4o:azure --tag strat
 ```
 
-Both harnesses resume per problem: re-running the same command skips
-completed records. Model deployments and providers used in the paper are
-listed in `results/humaneval_v2/manifest.json`. Note that provider-side
-model updates and deployment retirements mean exact pass rates are not
-guaranteed to reproduce over time.
+Runs resume per problem. Provider-side model updates mean exact pass rates
+are not guaranteed to reproduce over time; deployments and query dates are in
+the manifest. Version 1 of this package (the original submission) is archived
+at https://doi.org/10.5281/zenodo.21421552; the version matching the revised
+article is tagged `v2.0`.
 
 ## License
 

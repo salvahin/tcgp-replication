@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this replication package, please cite it as below."
-title: "Replication package: Structure Over Reasoning - Test-Case-Guided Prompting for Hard LLM Code Generation"
+title: "Replication package: How Much of a Prompting Result Is the Harness? A Quantified Budget, a Validated Protocol, and a Reporting Card for Execution-Based Code-Generation Evaluation"
 authors:
   - family-names: Avalos
     given-names: Diego
@@ -16,8 +16,8 @@ authors:
     given-names: Diego
   - family-names: Hinojosa
     given-names: Salvador
-version: "1.0"
-date-released: "2026-07-18"
+version: "2.0"
+date-released: "2026-09-11"
 doi: 10.5281/zenodo.21421552
 repository-code: "https://github.com/salvahin/tcgp-replication"
 license: MIT

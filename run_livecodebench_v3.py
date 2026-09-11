@@ -69,6 +69,7 @@ STEP2_CAP = 12000
 # ~10k on hard problems), so it needs a much larger cap to avoid truncating
 # the code; measured usage is what the paper reports, not the cap.
 PROVIDER_CAPS = {"gemini": (24000, 48000)}
+CAP2_OVERRIDE = 0
 CONDITIONS = ("direct", "cot", "tcgp", "restate", "para1", "para2", "para3", "persona", "fewshot", "stacked", "plansolve")
 
 # ---- prompts: official LiveCodeBench wording for the code step ----
@@ -182,6 +183,7 @@ def run_one(problem, condition, model, provider, seed, memo):
            "condition": condition, "model": model, "provider": provider, "seed": seed,
            "timestamp": datetime.now(timezone.utc).isoformat()}
     cap1, cap2 = PROVIDER_CAPS.get(provider, (STEP1_CAP, STEP2_CAP))
+    if CAP2_OVERRIDE: cap2 = CAP2_OVERRIDE
     try:
         if condition in ONE_CALL:
             raw1, use1 = "", None
@@ -221,8 +223,10 @@ def main():
     ap.add_argument("--per-difficulty", type=int, default=60)
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--tag", default="strat")
+    ap.add_argument("--cap2", type=int, default=0, help="override the code-step output cap (truncation experiment)")
     a = ap.parse_args()
     _init_heavy()
+    global CAP2_OVERRIDE; CAP2_OVERRIDE = a.cap2
     out = HERE / "results" / f"livecodebench_v3_{a.tag}"; out.mkdir(parents=True, exist_ok=True)
     problems = load_problems(a.limit, a.per_difficulty)
     dates = sorted(str(p.get("contest_date"))[:10] for p in problems)
