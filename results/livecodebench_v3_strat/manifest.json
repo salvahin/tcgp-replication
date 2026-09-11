@@ -161,6 +161,204 @@
    ],
    "harness_commit": "114f157",
    "finished": "2026-09-10T03:34:57.264103+00:00"
+  },
+  {
+   "model": "gpt-5.5",
+   "provider": "foundry",
+   "condition": "para1",
+   "seed": 42,
+   "params_used": null,
+   "step1_cap": 6000,
+   "step2_cap": 12000,
+   "evaluator": "official LiveCodeBench testing_util @ 28fef95 (vendored in lcb_eval/)",
+   "dataset": "bzantium/livecodebench (test split, 1055 problems)",
+   "n_problems": 180,
+   "contest_date_window": [
+    "2023-05-07",
+    "2024-08-31"
+   ],
+   "harness_commit": "a3f3787",
+   "finished": "2026-09-10T18:31:06.301204+00:00"
+  },
+  {
+   "model": "gpt-5.5",
+   "provider": "foundry",
+   "condition": "para2",
+   "seed": 42,
+   "params_used": null,
+   "step1_cap": 6000,
+   "step2_cap": 12000,
+   "evaluator": "official LiveCodeBench testing_util @ 28fef95 (vendored in lcb_eval/)",
+   "dataset": "bzantium/livecodebench (test split, 1055 problems)",
+   "n_problems": 180,
+   "contest_date_window": [
+    "2023-05-07",
+    "2024-08-31"
+   ],
+   "harness_commit": "a3f3787",
+   "finished": "2026-09-10T19:13:13.307699+00:00"
+  },
+  {
+   "model": "gpt-5.5",
+   "provider": "foundry",
+   "condition": "para3",
+   "seed": 42,
+   "params_used": null,
+   "step1_cap": 6000,
+   "step2_cap": 12000,
+   "evaluator": "official LiveCodeBench testing_util @ 28fef95 (vendored in lcb_eval/)",
+   "dataset": "bzantium/livecodebench (test split, 1055 problems)",
+   "n_problems": 180,
+   "contest_date_window": [
+    "2023-05-07",
+    "2024-08-31"
+   ],
+   "harness_commit": "a3f3787",
+   "finished": "2026-09-10T19:52:14.281765+00:00"
+  },
+  {
+   "model": "grok-4-20-reasoning",
+   "provider": "foundry",
+   "condition": "fewshot",
+   "seed": 42,
+   "params_used": null,
+   "step1_cap": 6000,
+   "step2_cap": 12000,
+   "evaluator": "official LiveCodeBench testing_util @ 28fef95 (vendored in lcb_eval/)",
+   "dataset": "bzantium/livecodebench (test split, 1055 problems)",
+   "n_problems": 180,
+   "contest_date_window": [
+    "2023-05-07",
+    "2024-08-31"
+   ],
+   "harness_commit": "a3f3787",
+   "finished": "2026-09-10T21:28:08.802685+00:00"
+  },
+  {
+   "model": "grok-4-20-reasoning",
+   "provider": "foundry",
+   "condition": "plansolve",
+   "seed": 42,
+   "params_used": null,
+   "step1_cap": 6000,
+   "step2_cap": 12000,
+   "evaluator": "official LiveCodeBench testing_util @ 28fef95 (vendored in lcb_eval/)",
+   "dataset": "bzantium/livecodebench (test split, 1055 problems)",
+   "n_problems": 180,
+   "contest_date_window": [
+    "2023-05-07",
+    "2024-08-31"
+   ],
+   "harness_commit": "a3f3787",
+   "finished": "2026-09-10T23:42:39.153433+00:00"
+  },
+  {
+   "model": "gpt-5.3-codex",
+   "provider": "foundry_responses",
+   "condition": "plansolve",
+   "seed": 42,
+   "params_used": null,
+   "step1_cap": 6000,
+   "step2_cap": 12000,
+   "evaluator": "official LiveCodeBench testing_util @ 28fef95 (vendored in lcb_eval/)",
+   "dataset": "bzantium/livecodebench (test split, 1055 problems)",
+   "n_problems": 180,
+   "contest_date_window": [
+    "2023-05-07",
+    "2024-08-31"
+   ],
+   "harness_commit": "a3f3787",
+   "finished": "2026-09-10T23:48:27.439283+00:00"
+  },
+  {
+   "model": "gpt-5.3-codex",
+   "provider": "foundry_responses",
+   "condition": "stacked",
+   "seed": 42,
+   "params_used": null,
+   "step1_cap": 6000,
+   "step2_cap": 12000,
+   "evaluator": "official LiveCodeBench testing_util @ 28fef95 (vendored in lcb_eval/)",
+   "dataset": "bzantium/livecodebench (test split, 1055 problems)",
+   "n_problems": 180,
+   "contest_date_window": [
+    "2023-05-07",
+    "2024-08-31"
+   ],
+   "harness_commit": "a3f3787",
+   "finished": "2026-09-10T23:48:44.957500+00:00"
+  },
+  {
+   "model": "grok-4-20-non-reasoning",
+   "provider": "foundry",
+   "condition": "para1",
+   "seed": 42,
+   "params_used": null,
+   "step1_cap": 6000,
+   "step2_cap": 12000,
+   "evaluator": "official LiveCodeBench testing_util @ 28fef95 (vendored in lcb_eval/)",
+   "dataset": "bzantium/livecodebench (test split, 1055 problems)",
+   "n_problems": 180,
+   "contest_date_window": [
+    "2023-05-07",
+    "2024-08-31"
+   ],
+   "harness_commit": "a3f3787",
+   "finished": "2026-09-10T23:48:47.658253+00:00"
+  },
+  {
+   "model": "grok-4-20-non-reasoning",
+   "provider": "foundry",
+   "condition": "para2",
+   "seed": 42,
+   "params_used": null,
+   "step1_cap": 6000,
+   "step2_cap": 12000,
+   "evaluator": "official LiveCodeBench testing_util @ 28fef95 (vendored in lcb_eval/)",
+   "dataset": "bzantium/livecodebench (test split, 1055 problems)",
+   "n_problems": 180,
+   "contest_date_window": [
+    "2023-05-07",
+    "2024-08-31"
+   ],
+   "harness_commit": "a3f3787",
+   "finished": "2026-09-10T23:48:49.282211+00:00"
+  },
+  {
+   "model": "grok-4-20-reasoning",
+   "provider": "foundry",
+   "condition": "para1",
+   "seed": 42,
+   "params_used": null,
+   "step1_cap": 6000,
+   "step2_cap": 12000,
+   "evaluator": "official LiveCodeBench testing_util @ 28fef95 (vendored in lcb_eval/)",
+   "dataset": "bzantium/livecodebench (test split, 1055 problems)",
+   "n_problems": 180,
+   "contest_date_window": [
+    "2023-05-07",
+    "2024-08-31"
+   ],
+   "harness_commit": "a3f3787",
+   "finished": "2026-09-10T23:49:07.240723+00:00"
+  },
+  {
+   "model": "grok-4-20-reasoning",
+   "provider": "foundry",
+   "condition": "para2",
+   "seed": 42,
+   "params_used": null,
+   "step1_cap": 6000,
+   "step2_cap": 12000,
+   "evaluator": "official LiveCodeBench testing_util @ 28fef95 (vendored in lcb_eval/)",
+   "dataset": "bzantium/livecodebench (test split, 1055 problems)",
+   "n_problems": 180,
+   "contest_date_window": [
+    "2023-05-07",
+    "2024-08-31"
+   ],
+   "harness_commit": "a3f3787",
+   "finished": "2026-09-10T23:49:26.870559+00:00"
   }
  ]
 }
