@@ -68,7 +68,7 @@ def fig_artifact(out):
     conds = ["direct", "cot", "tcgp"]; old = [31, 34, 46]; resc = [75, 74, 75]
     v3 = json.load(open(R / "paper_analyses_v3.json"))["pooled"]; new = [v3[c]["rate"] for c in conds]
     fig, ax = plt.subplots(figsize=(6.0, 3.2)); x = np.arange(3); w = 0.26
-    for i, (vals, lab, col) in enumerate([(old, "stdin-serialization harness (submitted)", "#d1495b"), (resc, "same outputs, official evaluator", "#3b6ea5"), (new, "corrected harness, fresh run", "#5a9e6f")]):
+    for i, (vals, lab, col) in enumerate([(old, "standard-input contract", "#d1495b"), (resc, "same outputs, official evaluator", "#3b6ea5"), (new, "official contract, fresh run", "#5a9e6f")]):
         ax.bar(x + (i - 1) * w, vals, w, color=col, label=lab)
         for xi, v in zip(x + (i - 1) * w, vals): ax.text(xi, v + 1, f"{v:.0f}", ha="center", fontsize=8)
     ax.set_xticks(x); ax.set_xticklabels(["Direct", "CoT", "TCGP"]); ax.set_ylabel("Pass@1 (%)"); ax.set_ylim(0, 100)

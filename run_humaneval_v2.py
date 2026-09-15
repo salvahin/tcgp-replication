@@ -243,6 +243,26 @@ def p_direct(problem):
             f"with no explanation before or after.\n\n{problem['prompt']}")
 
 
+def p_para1(problem):   # paraphrase of p_direct, same content
+    return (f"Below is a Python function stub with its docstring. Implement the function "
+            f"completely, keeping the signature exactly as given. Reply with the code only, "
+            f"in a single ```python block, and nothing else.\n\n{problem['prompt']}")
+
+
+def p_para2(problem):
+    return (f"Please provide a complete implementation of the following Python function. "
+            f"Use the exact signature shown. Your answer should contain only one ```python "
+            f"code block with the code and no explanation.\n\n{problem['prompt']}")
+
+
+def p_para3(problem):
+    return (f"Task: complete the Python function below (exact signature). Output: one "
+            f"```python code block, code only.\n\n{problem['prompt']}")
+
+
+ONE_CALL = {"direct": p_direct, "para1": p_para1, "para2": p_para2, "para3": p_para3}
+
+
 def p_cot_step1(problem):
     return (f"Think step by step about how to solve this programming problem: analyze the "
             f"inputs and outputs, identify the algorithm, and consider edge cases. Do NOT "
@@ -297,9 +317,9 @@ def run_one(problem, condition, model, provider, seed, memo):
            "timestamp": datetime.now(timezone.utc).isoformat()}
     t0 = time.time()
     try:
-        if condition == "direct":
+        if condition in ONE_CALL:
             raw1, use1 = "", None
-            raw2, use2, params = call_llm(p_direct(problem), model, provider, STEP2_CAP, seed, memo)
+            raw2, use2, params = call_llm(ONE_CALL[condition](problem), model, provider, STEP2_CAP, seed, memo)
         elif condition == "cot":
             raw1, use1, _ = call_llm(p_cot_step1(problem), model, provider, STEP1_CAP, seed, memo)
             raw2, use2, params = call_llm(p_cot_step2(problem, raw1), model, provider, STEP2_CAP, seed, memo)

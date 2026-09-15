@@ -22,6 +22,7 @@ pip install -r requirements.txt
 python make_paper_analyses_v3.py      # four core conditions, 10 models
 python make_paper_analyses_v4.py      # recipe study, noise floor, equivalence tests
 python harness_sensitivity_v3.py --public   # public-vs-hidden tests (add --extract / --flaky to re-grade)
+python harness_sensitivity_humaneval.py     # extraction rule, seeds, wording on HumanEval
 python audit_tcgp_scenarios_v3.py     # correctness of generated test scenarios
 python make_paper_figures_v3.py --outdir figures_paper
 ```
@@ -41,7 +42,7 @@ python make_paper_figures_v3.py --outdir figures_paper
 | `results/livecodebench_v3_strat/` | 20,160 raw records: 10 models x 4 core conditions + 9 models x 8 further conditions x 180 problems, with raw responses, extracted code, per-step token usage, verdicts, public-only verdicts |
 | `results/livecodebench_v3_cap4k/` | Small-output-cap runs for the truncation row of the harness budget |
 | `results/livecodebench_v2_strat/`, `results/livecodebench_v2_strat_rescored/` | The original submission's outputs and their re-grading with the official evaluator (the artifact analysis) |
-| `results/humaneval_v2/` | HumanEval: 10 models x 3 conditions x 3 seeds, with `manifest.json` (deployments, endpoints, parameters, dates) |
+| `results/humaneval_v2/` | HumanEval: 10 models x 3 conditions x 3 seeds, plus three paraphrases of the direct prompt on 9 models (seed 42), with `manifest.json` (deployments, endpoints, parameters, dates) |
 | `results/paper_analyses_v3.json`, `paper_analyses_v4.json`, `harness_sensitivity_v3.json`, `scenario_audit_v3.json` | Analysis outputs |
 | `data/humaneval/humaneval.jsonl` | HumanEval problems; the LiveCodeBench sample is cached on first run from `bzantium/livecodebench` |
 | `archive/incorrect-harness-v1_*.zip`, `ABLATION_DESIGNS_V1.md` | Provenance of an even earlier harness (body extraction), not used in the paper |
