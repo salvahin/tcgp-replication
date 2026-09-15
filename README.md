@@ -1,8 +1,7 @@
-# Replication package: How Much of a Prompting Result Is the Harness?
+# Replication package: From Prompting Recipes to Harnesses
 
-Replication package for the article *"How Much of a Prompting Result Is the
-Harness? A Quantified Budget, a Validated Protocol, and a Reporting Card for
-Execution-Based Code-Generation Evaluation"* (Avalos et al., submitted to IEEE
+Replication package for the article *"From Prompting Recipes to Harnesses: What
+Still Matters in LLM Code Generation, and Where It Breaks"* (Avalos et al., submitted to IEEE
 Access; revision of manuscript Access-2026-35607).
 
 The study compares twelve prompting conditions (direct prompting, three
@@ -24,6 +23,7 @@ python make_paper_analyses_v4.py      # recipe study, noise floor, equivalence t
 python harness_sensitivity_v3.py --public   # public-vs-hidden tests (add --extract / --flaky to re-grade)
 python harness_sensitivity_humaneval.py     # extraction rule, seeds, wording on HumanEval
 python audit_tcgp_scenarios_v3.py     # correctness of generated test scenarios
+python analyze_repair_rounds.py       # feedback-loop curve (public vs hidden pass by round)
 python make_paper_figures_v3.py --outdir figures_paper
 ```
 
@@ -33,7 +33,7 @@ python make_paper_figures_v3.py --outdir figures_paper
 |---|---|
 | `lcb_eval/` | The official LiveCodeBench evaluator (`testing_util.py`, commit 28fef95, MIT), vendored unchanged, plus a thin isolated-subprocess wrapper, the official few-shot examples, and the official extraction rule |
 | `run_livecodebench_v3.py` | Corrected LiveCodeBench harness: official prompt format block, all public+private tests, per-provider output caps, per-problem resume, full raw and token logging; all twelve conditions |
-| `run_repair_v3.py`, `run_sampling_v3.py` | One-round execution-feedback repair; k-sample selection (prepared, not run) |
+| `run_repair_v3.py`, `run_repair_rounds_v3.py`, `run_sampling_v3.py` | One-round execution-feedback repair; the multi-round loop (public-test feedback, hidden-test judgment); k-sample selection (prepared, not run) |
 | `run_livecodebench_v2.py`, `run_livecodebench.py`, `run_tcgp_vs_cot.py`, `prompts/` | The original (stdin-serialization) harness, kept for the artifact analysis and as import dependencies |
 | `run_humaneval_v2.py` | HumanEval harness (unchanged; HumanEval grades by direct function call) |
 | `validate_lcb_v3.py`, `crosscheck_lcb_v3.py`, `characterize_crosscheck_v3.py` | Harness validation: known solutions, official entry-point cross-check on all generations, serial re-grading of disagreements |
