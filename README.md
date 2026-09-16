@@ -61,7 +61,7 @@ Runs resume per problem. Provider-side model updates mean exact pass rates
 are not guaranteed to reproduce over time; deployments and query dates are in
 the manifest. Version 1 of this package (the original submission) is archived
 at https://doi.org/10.5281/zenodo.21421552; the version matching the revised
-article is v2.1, archived at https://doi.org/10.5281/zenodo.22779444.
+article is v2.2, archived at https://doi.org/10.5281/zenodo.22781770.
 
 ## License
 
