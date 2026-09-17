@@ -20,21 +20,33 @@ def rate_file(f):
     rows = [json.loads(l) for l in open(f) if l.strip()]; return 100 * sum(bool(r.get("passed")) for r in rows) / len(rows), len(rows)
 
 def fig_harness(out, v4):
-    rows = [("I/O contract: functional problems\nserialized through stdin", 50.0, "direct prompting"),
-            ("Function-body extraction with\nre-indentation (early harness)", 80.0, "GPT-4o"),
-            ("Manufactured recipe effect\n(same outputs, two evaluators)", 15.0, "TCGP vs direct"),
-            ("Extraction rule, first vs last block\n(stacked recipe)", 12.7, "stacked recipe"),
-            ("Public tests only vs hidden tests", 5.8, "mean; 5.3 to 7.5"),
-            ("Prompt wording (4 paraphrases,\npooled range)", v4["noise_floor"]["pooled_range"], "GPT-4o alone: 18"),
-            ("Timeouts under parallel load", 0.9, "verdicts disagreeing"),
-            ("Grading non-determinism (isolated)", 0.05, "unstable verdicts")]
-    rows.insert(5, ("Output cap with hidden reasoning\n(Gemini, 12k vs 48k tokens)", 20.0, "GPT-5.5 at 4k: 1.7; Grok-reas.: 0"))
-    recipe = max(abs(v4["vs_direct"][c]["diff_pp"]) for c in ("persona", "fewshot", "plansolve", "tcgp", "stacked", "cot"))
-    fig, ax = plt.subplots(figsize=(7.0, 4.6)); y = np.arange(len(rows))[::-1]
-    vals = [r[1] for r in rows]
+    """All values come from results/harness_budget.json (make_harness_budget.py)."""
+    B = json.load(open(R / "harness_budget.json")); rows = []
+    c = B["contract"]; rows.append(("I/O contract: functional problems\nserialized through stdin", abs(c["deflation_direct_pp"]), "direct prompting"))
+    be = B.get("body_extraction_humaneval") or {}
+    if be:
+        m = min(be, key=lambda k: be[k]["diff_pp"]); rows.append(("Function-body extraction with\nre-indentation (HumanEval)", abs(be[m]["diff_pp"]), DISP.get(m, m)))
+    rows.append(("Manufactured strategy effect\n(same outputs, two evaluators)", abs(c["stdin_contract"]["tcgp_vs_direct"]["diff_pp"]), "TCGP vs direct"))
+    ex = B.get("extraction_rule") or {}
+    if ex:
+        k = max(ex, key=lambda q: abs(ex[q]["delta_first_block_pp"])); rows.append(("Extraction rule, first vs last block", abs(ex[k]["delta_first_block_pp"]), LAB.get(k, k)))
+    po = B.get("public_only_inflation_pp") or {}
+    if po: rows.append(("Public tests only vs hidden tests", sum(po.values()) / len(po), f"mean; {min(po.values()):.1f} to {max(po.values()):.1f}"))
+    w = B.get("wording_lcb")
+    if w: rows.append(("Prompt wording (4 paraphrases,\npooled range)", w["pooled_range_pp"], f"max per model: {max(w['per_model_range_pp'].values()):.0f}"))
+    cp = B.get("output_cap") or {}
+    if cp: rows.append(("Output cap, 4k vs 12k tokens\n(reasoning models)", max(abs(v["diff_pp"]) for v in cp.values()), "both models"))
+    cc = B.get("crosscheck")
+    if cc: rows.append(("Timeouts under parallel load", 100 * (1 - cc["agreement_first_pass"]), "verdicts disagreeing"))
+    fl = B.get("flakiness")
+    if fl: rows.append(("Grading non-determinism (isolated)", 100 * fl["share_of_all_records"], "unstable verdicts"))
+    rows.sort(key=lambda r: -r[1])
+    recipe = abs(B["largest_recipe_effect"]["diff_pp"]) if B.get("largest_recipe_effect") else None
+    fig, ax = plt.subplots(figsize=(7.0, 4.6)); y = np.arange(len(rows))[::-1]; vals = [r[1] for r in rows]
     ax.barh(y, vals, color=["#d1495b" if v >= 10 else "#3b6ea5" if v >= 1 else "#9aa0a6" for v in vals], height=0.62)
     for yi, (lab, v, note) in zip(y, rows): ax.text(max(v, 0.06) * 1.15, yi, f"{v:.3g} pp  ({note})", va="center", fontsize=8)
-    ax.axvline(recipe, color="black", ls="--", lw=1); ax.text(recipe * 1.05, y[0] + 0.55, f"largest recipe effect\n(CoT, {recipe:.1f} pp)", fontsize=8, va="bottom")
+    if recipe:
+        ax.axvline(recipe, color="black", ls="--", lw=1); ax.text(recipe * 1.05, y[0] + 0.55, f"largest recipe effect\n({recipe:.1f} pp)", fontsize=8, va="bottom")
     ax.set_xscale("log"); ax.set_xlim(0.03, 3000); ax.set_yticks(y); ax.set_yticklabels([r[0] for r in rows], fontsize=8)
     ax.set_xlabel("Effect on measured Pass@1 (percentage points, log scale)"); ax.grid(axis="y")
     fig.tight_layout(); fig.savefig(out / "fig_harness_budget.pdf"); plt.close(fig)
@@ -65,10 +77,12 @@ def fig_wording(out, v4):
     fig.tight_layout(); fig.savefig(out / "fig_wording_vs_recipes.pdf"); plt.close(fig)
 
 def fig_artifact(out):
-    conds = ["direct", "cot", "tcgp"]; old = [31, 34, 46]; resc = [75, 74, 75]
-    v3 = json.load(open(R / "paper_analyses_v3.json"))["pooled"]; new = [v3[c]["rate"] for c in conds]
+    c = json.load(open(R / "harness_budget.json"))["contract"]; conds = ["direct", "cot", "tcgp"]
+    series = [([c["stdin_contract"][k] for k in conds], "standard-input contract", "#d1495b"),
+              ([c["same_outputs_official"][k] for k in conds], "same outputs, official evaluator", "#3b6ea5"),
+              ([c["official_fresh"][k] for k in conds], "official contract, fresh run", "#5a9e6f")]
     fig, ax = plt.subplots(figsize=(6.0, 3.2)); x = np.arange(3); w = 0.26
-    for i, (vals, lab, col) in enumerate([(old, "standard-input contract", "#d1495b"), (resc, "same outputs, official evaluator", "#3b6ea5"), (new, "official contract, fresh run", "#5a9e6f")]):
+    for i, (vals, lab, col) in enumerate(series):
         ax.bar(x + (i - 1) * w, vals, w, color=col, label=lab)
         for xi, v in zip(x + (i - 1) * w, vals): ax.text(xi, v + 1, f"{v:.0f}", ha="center", fontsize=8)
     ax.set_xticks(x); ax.set_xticklabels(["Direct", "CoT", "TCGP"]); ax.set_ylabel("Pass@1 (%)"); ax.set_ylim(0, 100)

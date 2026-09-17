@@ -194,7 +194,7 @@ def run_one(problem, condition, model, provider, seed, memo):
             raw2, use2, params = call_llm(p_step2(q, starter, raw1, kind), model, provider, cap2, seed, memo)
         code = extract_code(raw2 or "")
         g = grade(problem, code)
-        rec.update(raw_step1=raw1, raw_step2=raw2, extracted_code=code[:6000], no_output=not code.strip(),
+        rec.update(raw_step1=raw1, raw_step2=raw2, extracted_code=code, code_sha256=__import__('hashlib').sha256(code.encode()).hexdigest(), no_output=not code.strip(),
                    usage_step1=use1, usage_step2=use2, params_used=params,
                    truncated=bool((use2 or {}).get("truncated")), **g, api_error=None)
     except Exception as e:

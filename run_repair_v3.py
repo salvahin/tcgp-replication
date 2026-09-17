@@ -56,7 +56,7 @@ def main():
                         raw, use, params = v3.call_llm(prompt, model, provider, cap2, a.seed, memo)
                         code = extract_code(raw or "")
                         g = grade(p, code)
-                        rec.update(raw_repair=raw, extracted_code=code[:6000], usage_repair=use, params_used=params, repaired=True,
+                        rec.update(raw_repair=raw, extracted_code=code, code_sha256=__import__('hashlib').sha256(code.encode()).hexdigest(), usage_repair=use, params_used=params, repaired=True,
                                    feedback={"input": inp, "expected": exp, "got": got}, no_output=not code.strip(), api_error=None, **g)
                     except Exception as e:
                         rec.update(api_error=f"{type(e).__name__}: {str(e)[:200]}")

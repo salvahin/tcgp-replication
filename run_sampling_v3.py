@@ -46,7 +46,7 @@ def main():
                     for _ in range(a.k):
                         raw, use, params = v3.call_llm(v3.p_direct(p["question_content"], starter), model, provider, cap2, None, memo)
                         code = extract_code(raw or ""); g = grade(p, code)
-                        samples.append({"raw": raw, "code": code[:6000], "usage": use, "public_score": public_score(p, code), **g})
+                        samples.append({"raw": raw, "code": code, "code_sha256": __import__("hashlib").sha256(code.encode()).hexdigest(), "usage": use, "public_score": public_score(p, code), **g})
                     best = max(range(len(samples)), key=lambda j: (samples[j]["public_score"], -j))
                     rec.update(samples=samples, selected=best, passed=samples[best]["passed"], passed_first=samples[0]["passed"],
                                passed_any=any(s_["passed"] for s_ in samples), params_used=params, api_error=None)

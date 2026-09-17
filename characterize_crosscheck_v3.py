@@ -35,4 +35,7 @@ def main():
         print(f"{Path(f).name}: cumulative disagreements={dis} resolved-by-serial={resolved}", flush=True)
     print(f"TOTAL records={tot} parallel-path disagreements={dis} ({100*dis/tot:.2f}%) resolved by serial official re-grade={resolved} unresolved={dis-resolved}")
     print("official error codes among parallel-path disagreements:", codes)
+    json.dump({"records": tot, "parallel_path_disagreements": dis, "resolved_by_serial_regrade": resolved, "unresolved": dis - resolved,
+               "agreement_first_pass": 1 - dis / tot, "agreement_after_serial": 1 - (dis - resolved) / tot, "official_error_codes": codes},
+              open(HERE / "results" / "harness_crosscheck_v3.json", "w"), indent=1)
 if __name__ == "__main__": main()

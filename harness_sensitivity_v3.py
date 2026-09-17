@@ -16,6 +16,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent; sys.path.insert(0, str(HERE))
 from lcb_eval import grade
 OUT = HERE / "results" / "harness_sensitivity_v3.json"
+def out_for(key): return HERE / "results" / f"harness_{key}_v3.json"
 
 def blocks(t):
     lines = (t or "").split("\n"); idx = [i for i, l in enumerate(lines) if "```" in l]
@@ -63,6 +64,8 @@ def main():
             if checked % 100 == 0: print(f"  flaky: {checked}/{len(cands)}", flush=True)
         res["flakiness"] = {"candidates": len(cands), "unstable_records": unstable, "share_of_all_records": unstable/len(rows), "error_codes": dict(codes)}
         print(f"flakiness: {unstable}/{len(cands)} timeout-adjacent records give different verdicts across 4 isolated runs ({100*unstable/len(rows):.2f}% of all records); codes {dict(codes)}")
+    for k, v in res.items():
+        json.dump(v, open(out_for(k), "w"), indent=1)   # one file per analysis: concurrent runs cannot overwrite each other
     json.dump(res, open(OUT, "w"), indent=1)
 
 if __name__ == "__main__":

@@ -54,7 +54,7 @@ def main():
                                   + "### Fix the solution and return the complete corrected solution in the provided format, with backticks.\n\n")
                         raw, use, params = v3.call_llm(prompt, model, provider, cap2, a.seed, memo)
                         code = extract_code(raw or ""); g = grade(p, code)
-                        rec["rounds"].append({"round": rnd, "feedback": {"input": inp, "expected": exp, "got": got}, "raw": raw, "code": code[:6000],
+                        rec["rounds"].append({"round": rnd, "feedback": {"input": inp, "expected": exp, "got": got}, "raw": raw, "code": code, "code_sha256": __import__("hashlib").sha256(code.encode()).hexdigest(),
                                               "usage": use, "passed": g["passed"], "public_pass": g["public_pass"], "n_passed": g["n_passed"], "n_tests": g["n_tests"]})
                 except Exception as e:
                     rec["api_error"] = f"{type(e).__name__}: {str(e)[:200]}"
