@@ -3,17 +3,17 @@
   "grok-4-20-reasoning": {
    "scen": 428,
    "parsed": 419,
-   "correct": 403,
+   "correct": 407,
    "recs": 170,
-   "recs_with_all_correct": 92,
-   "recs_with_any_wrong": 9,
-   "pass_all_correct": 90,
-   "pass_any_wrong": 9
+   "recs_with_all_correct": 93,
+   "recs_with_any_wrong": 8,
+   "pass_all_correct": 91,
+   "pass_any_wrong": 8
   },
   "gpt-5.4-mini-2": {
    "scen": 635,
    "parsed": 628,
-   "correct": 558,
+   "correct": 561,
    "recs": 170,
    "recs_with_all_correct": 101,
    "recs_with_any_wrong": 55,
@@ -33,7 +33,7 @@
   "gpt-5.4-nano": {
    "scen": 830,
    "parsed": 692,
-   "correct": 572,
+   "correct": 574,
    "recs": 170,
    "recs_with_all_correct": 83,
    "recs_with_any_wrong": 86,
@@ -83,7 +83,7 @@
   "gpt-5.3-codex": {
    "scen": 576,
    "parsed": 554,
-   "correct": 519,
+   "correct": 521,
    "recs": 170,
    "recs_with_all_correct": 113,
    "recs_with_any_wrong": 26,
@@ -93,7 +93,7 @@
   "gpt-4o": {
    "scen": 798,
    "parsed": 722,
-   "correct": 556,
+   "correct": 558,
    "recs": 170,
    "recs_with_all_correct": 53,
    "recs_with_any_wrong": 113,
@@ -104,12 +104,12 @@
  "total": {
   "scen": 5879,
   "parsed": 5193,
-  "correct": 4518,
+  "correct": 4531,
   "recs": 1700,
-  "recs_with_all_correct": 761,
-  "recs_with_any_wrong": 469,
-  "pass_all_correct": 658,
-  "pass_any_wrong": 327
+  "recs_with_all_correct": 762,
+  "recs_with_any_wrong": 468,
+  "pass_all_correct": 659,
+  "pass_any_wrong": 326
  },
  "n_oracle_problems": 170
 }
