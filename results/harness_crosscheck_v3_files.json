@@ -1,0 +1,38 @@
+{
+ "cot_gemini-2.5-flash_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "cot_gpt-4.1_s42.jsonl": {
+  "records": 180,
+  "disagreements": 2,
+  "resolved": 2,
+  "codes": {
+   "-3": 2
+  }
+ },
+ "cot_gpt-4o_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "cot_gpt-5.3-codex_s42.jsonl": {
+  "records": 180,
+  "disagreements": 2,
+  "resolved": 2,
+  "codes": {
+   "-3": 2
+  }
+ },
+ "cot_gpt-5.4-mini-2_s42.jsonl": {
+  "records": 180,
+  "disagreements": 2,
+  "resolved": 2,
+  "codes": {
+   "-3": 2
+  }
+ }
+}

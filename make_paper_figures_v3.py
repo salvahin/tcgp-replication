@@ -44,7 +44,7 @@ def fig_harness(out, v4):
     recipe = abs(B["largest_recipe_effect"]["diff_pp"]) if B.get("largest_recipe_effect") else None
     fig, ax = plt.subplots(figsize=(7.0, 4.6)); y = np.arange(len(rows))[::-1]; vals = [r[1] for r in rows]
     ax.barh(y, vals, color=["#d1495b" if v >= 10 else "#3b6ea5" if v >= 1 else "#9aa0a6" for v in vals], height=0.62)
-    for yi, (lab, v, note) in zip(y, rows): ax.text(max(v, 0.06) * 1.15, yi, f"{v:.3g} pp  ({note})", va="center", fontsize=8)
+    for yi, (lab, v, note) in zip(y, rows): ax.text(max(v, 0.06) * 1.15, yi, f"{v:.1f} pp  ({note})" if v >= 1 else f"{v:.2f} pp  ({note})", va="center", fontsize=8)
     if recipe:
         ax.axvline(recipe, color="black", ls="--", lw=1); ax.text(recipe * 1.05, y[0] + 0.55, f"largest recipe effect\n({recipe:.1f} pp)", fontsize=8, va="bottom")
     ax.set_xscale("log"); ax.set_xlim(0.03, 3000); ax.set_yticks(y); ax.set_yticklabels([r[0] for r in rows], fontsize=8)

@@ -27,6 +27,7 @@ def load_all():
     rows = []
     for f in glob.glob(str(HERE / "results/livecodebench_v3_strat/*_s42.jsonl")):
         cond = os.path.basename(f).split("_")[0]
+        if cond == "repairR": continue   # multi-round loop records have a different shape; analyzed by analyze_repair_rounds.py
         for l in open(f):
             if l.strip(): r = json.loads(l); r["_cond"] = cond; rows.append(r)
     return rows

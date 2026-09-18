@@ -1,0 +1,62 @@
+{
+ "para1": {
+  "n_affected": 49,
+  "pass_last_block": 17,
+  "pass_first_block": 15
+ },
+ "stacked": {
+  "n_affected": 390,
+  "pass_last_block": 272,
+  "pass_first_block": 67
+ },
+ "para2": {
+  "n_affected": 28,
+  "pass_last_block": 10,
+  "pass_first_block": 1
+ },
+ "direct": {
+  "n_affected": 13,
+  "pass_last_block": 11,
+  "pass_first_block": 2
+ },
+ "para3": {
+  "n_affected": 29,
+  "pass_last_block": 14,
+  "pass_first_block": 7
+ },
+ "restate": {
+  "n_affected": 18,
+  "pass_last_block": 12,
+  "pass_first_block": 4
+ },
+ "plansolve": {
+  "n_affected": 19,
+  "pass_last_block": 8,
+  "pass_first_block": 4
+ },
+ "tcgp": {
+  "n_affected": 67,
+  "pass_last_block": 11,
+  "pass_first_block": 40
+ },
+ "persona": {
+  "n_affected": 38,
+  "pass_last_block": 25,
+  "pass_first_block": 14
+ },
+ "repair": {
+  "n_affected": 10,
+  "pass_last_block": 9,
+  "pass_first_block": 2
+ },
+ "fewshot": {
+  "n_affected": 8,
+  "pass_last_block": 4,
+  "pass_first_block": 2
+ },
+ "cot": {
+  "n_affected": 19,
+  "pass_last_block": 7,
+  "pass_first_block": 5
+ }
+}

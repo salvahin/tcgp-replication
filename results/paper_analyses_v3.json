@@ -922,13 +922,13 @@
   },
   "cot": {
    "n": 1800,
-   "public_pass_but_private_fail": 95,
-   "share_of_public_passes_that_fail_private": 0.05871446229913473
+   "public_pass_but_private_fail": 96,
+   "share_of_public_passes_that_fail_private": 0.0592958616429895
   },
   "tcgp": {
    "n": 1800,
-   "public_pass_but_private_fail": 95,
-   "share_of_public_passes_that_fail_private": 0.06140917905623788
+   "public_pass_but_private_fail": 96,
+   "share_of_public_passes_that_fail_private": 0.06201550387596899
   },
   "restate": {
    "n": 1800,

@@ -17,17 +17,17 @@
   },
   "repair": {
    "n": 1620,
-   "public_only_pass1": 90.80246913580247,
-   "hidden_pass1": 83.33333333333333
+   "public_only_pass1": 90.8641975308642,
+   "hidden_pass1": 83.45679012345678
   },
   "para2": {
    "n": 1620,
-   "public_only_pass1": 87.03703703703704,
+   "public_only_pass1": 87.09876543209876,
    "hidden_pass1": 81.72839506172839
   },
   "tcgp": {
    "n": 1800,
-   "public_only_pass1": 85.94444444444444,
+   "public_only_pass1": 86.0,
    "hidden_pass1": 80.66666666666667
   },
   "direct": {
@@ -52,7 +52,7 @@
   },
   "cot": {
    "n": 1800,
-   "public_only_pass1": 89.88888888888889,
+   "public_only_pass1": 89.94444444444444,
    "hidden_pass1": 84.61111111111111
   },
   "fewshot": {
@@ -62,12 +62,74 @@
   }
  },
  "flakiness": {
-  "candidates": 859,
-  "unstable_records": 11,
-  "share_of_all_records": 0.0005456349206349206,
+  "candidates": 858,
+  "unstable_records": 8,
+  "share_of_all_records": 0.0003968253968253968,
   "error_codes": {
-   "None": 1,
-   "-3": 32
+   "-3": 22,
+   "None": 2
+  }
+ },
+ "extraction_rule": {
+  "para1": {
+   "n_affected": 49,
+   "pass_last_block": 17,
+   "pass_first_block": 15
+  },
+  "stacked": {
+   "n_affected": 390,
+   "pass_last_block": 272,
+   "pass_first_block": 67
+  },
+  "para2": {
+   "n_affected": 28,
+   "pass_last_block": 10,
+   "pass_first_block": 1
+  },
+  "direct": {
+   "n_affected": 13,
+   "pass_last_block": 11,
+   "pass_first_block": 2
+  },
+  "para3": {
+   "n_affected": 29,
+   "pass_last_block": 14,
+   "pass_first_block": 7
+  },
+  "restate": {
+   "n_affected": 18,
+   "pass_last_block": 12,
+   "pass_first_block": 4
+  },
+  "plansolve": {
+   "n_affected": 19,
+   "pass_last_block": 8,
+   "pass_first_block": 4
+  },
+  "tcgp": {
+   "n_affected": 67,
+   "pass_last_block": 11,
+   "pass_first_block": 40
+  },
+  "persona": {
+   "n_affected": 38,
+   "pass_last_block": 25,
+   "pass_first_block": 14
+  },
+  "repair": {
+   "n_affected": 10,
+   "pass_last_block": 9,
+   "pass_first_block": 2
+  },
+  "fewshot": {
+   "n_affected": 8,
+   "pass_last_block": 4,
+   "pass_first_block": 2
+  },
+  "cot": {
+   "n_affected": 19,
+   "pass_last_block": 7,
+   "pass_first_block": 5
   }
  }
 }
