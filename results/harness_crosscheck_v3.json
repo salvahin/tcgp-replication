@@ -1,0 +1,12 @@
+{
+ "files": 112,
+ "records": 20160,
+ "parallel_path_disagreements": 90,
+ "resolved_by_serial_regrade": 83,
+ "unresolved": 7,
+ "agreement_first_pass": 0.9955357142857143,
+ "agreement_after_serial": 0.9996527777777777,
+ "official_error_codes": {
+  "-3": 90
+ }
+}

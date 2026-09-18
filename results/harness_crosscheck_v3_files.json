@@ -34,5 +34,779 @@
   "codes": {
    "-3": 2
   }
+ },
+ "cot_gpt-5.4-nano_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "cot_gpt-5.4_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "cot_gpt-5.5_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "cot_grok-4-20-non-reasoning_s42.jsonl": {
+  "records": 180,
+  "disagreements": 2,
+  "resolved": 2,
+  "codes": {
+   "-3": 2
+  }
+ },
+ "cot_grok-4-20-reasoning_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "direct_gemini-2.5-flash_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "direct_gpt-4.1_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "direct_gpt-4o_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "direct_gpt-5.3-codex_s42.jsonl": {
+  "records": 180,
+  "disagreements": 2,
+  "resolved": 1,
+  "codes": {
+   "-3": 2
+  }
+ },
+ "direct_gpt-5.4-mini-2_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "direct_gpt-5.4-nano_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "direct_gpt-5.4_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "direct_gpt-5.5_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "direct_grok-4-20-non-reasoning_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "direct_grok-4-20-reasoning_s42.jsonl": {
+  "records": 180,
+  "disagreements": 2,
+  "resolved": 2,
+  "codes": {
+   "-3": 2
+  }
+ },
+ "fewshot_gpt-4.1_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "fewshot_gpt-4o_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "fewshot_gpt-5.3-codex_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "fewshot_gpt-5.4-mini-2_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "fewshot_gpt-5.4-nano_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "fewshot_gpt-5.4_s42.jsonl": {
+  "records": 180,
+  "disagreements": 2,
+  "resolved": 1,
+  "codes": {
+   "-3": 2
+  }
+ },
+ "fewshot_gpt-5.5_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "fewshot_grok-4-20-non-reasoning_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "fewshot_grok-4-20-reasoning_s42.jsonl": {
+  "records": 180,
+  "disagreements": 2,
+  "resolved": 2,
+  "codes": {
+   "-3": 2
+  }
+ },
+ "para1_gpt-4.1_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "para1_gpt-4o_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "para1_gpt-5.3-codex_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "para1_gpt-5.4-mini-2_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "para1_gpt-5.4-nano_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "para1_gpt-5.4_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 0,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "para1_gpt-5.5_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "para1_grok-4-20-non-reasoning_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "para1_grok-4-20-reasoning_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "para2_gpt-4.1_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "para2_gpt-4o_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "para2_gpt-5.3-codex_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "para2_gpt-5.4-mini-2_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "para2_gpt-5.4-nano_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "para2_gpt-5.4_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "para2_gpt-5.5_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "para2_grok-4-20-non-reasoning_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "para2_grok-4-20-reasoning_s42.jsonl": {
+  "records": 180,
+  "disagreements": 2,
+  "resolved": 2,
+  "codes": {
+   "-3": 2
+  }
+ },
+ "para3_gpt-4.1_s42.jsonl": {
+  "records": 180,
+  "disagreements": 2,
+  "resolved": 1,
+  "codes": {
+   "-3": 2
+  }
+ },
+ "para3_gpt-4o_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "para3_gpt-5.3-codex_s42.jsonl": {
+  "records": 180,
+  "disagreements": 2,
+  "resolved": 2,
+  "codes": {
+   "-3": 2
+  }
+ },
+ "para3_gpt-5.4-mini-2_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "para3_gpt-5.4-nano_s42.jsonl": {
+  "records": 180,
+  "disagreements": 2,
+  "resolved": 2,
+  "codes": {
+   "-3": 2
+  }
+ },
+ "para3_gpt-5.4_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "para3_gpt-5.5_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "para3_grok-4-20-non-reasoning_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "para3_grok-4-20-reasoning_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "persona_gpt-4.1_s42.jsonl": {
+  "records": 180,
+  "disagreements": 2,
+  "resolved": 2,
+  "codes": {
+   "-3": 2
+  }
+ },
+ "persona_gpt-4o_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "persona_gpt-5.3-codex_s42.jsonl": {
+  "records": 180,
+  "disagreements": 2,
+  "resolved": 2,
+  "codes": {
+   "-3": 2
+  }
+ },
+ "persona_gpt-5.4-mini-2_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "persona_gpt-5.4-nano_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "persona_gpt-5.4_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "persona_gpt-5.5_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "persona_grok-4-20-non-reasoning_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "persona_grok-4-20-reasoning_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "plansolve_gpt-4.1_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "plansolve_gpt-4o_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "plansolve_gpt-5.3-codex_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "plansolve_gpt-5.4-mini-2_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "plansolve_gpt-5.4-nano_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "plansolve_gpt-5.4_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "plansolve_gpt-5.5_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "plansolve_grok-4-20-non-reasoning_s42.jsonl": {
+  "records": 180,
+  "disagreements": 2,
+  "resolved": 2,
+  "codes": {
+   "-3": 2
+  }
+ },
+ "plansolve_grok-4-20-reasoning_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "repair_gpt-4.1_s42.jsonl": {
+  "records": 180,
+  "disagreements": 2,
+  "resolved": 1,
+  "codes": {
+   "-3": 2
+  }
+ },
+ "repair_gpt-4o_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "repair_gpt-5.3-codex_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "repair_gpt-5.4-mini-2_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "repair_gpt-5.4-nano_s42.jsonl": {
+  "records": 180,
+  "disagreements": 2,
+  "resolved": 2,
+  "codes": {
+   "-3": 2
+  }
+ },
+ "repair_gpt-5.4_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "repair_gpt-5.5_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "repair_grok-4-20-non-reasoning_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "repair_grok-4-20-reasoning_s42.jsonl": {
+  "records": 180,
+  "disagreements": 2,
+  "resolved": 2,
+  "codes": {
+   "-3": 2
+  }
+ },
+ "restate_gemini-2.5-flash_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "restate_gpt-4.1_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "restate_gpt-4o_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "restate_gpt-5.3-codex_s42.jsonl": {
+  "records": 180,
+  "disagreements": 2,
+  "resolved": 2,
+  "codes": {
+   "-3": 2
+  }
+ },
+ "restate_gpt-5.4-mini-2_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "restate_gpt-5.4-nano_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 0,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "restate_gpt-5.4_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 0,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "restate_gpt-5.5_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "restate_grok-4-20-non-reasoning_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "restate_grok-4-20-reasoning_s42.jsonl": {
+  "records": 180,
+  "disagreements": 2,
+  "resolved": 2,
+  "codes": {
+   "-3": 2
+  }
+ },
+ "stacked_gpt-4.1_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "stacked_gpt-4o_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "stacked_gpt-5.3-codex_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "stacked_gpt-5.4-mini-2_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "stacked_gpt-5.4-nano_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "stacked_gpt-5.4_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "stacked_gpt-5.5_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "stacked_grok-4-20-non-reasoning_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "stacked_grok-4-20-reasoning_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "tcgp_gemini-2.5-flash_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "tcgp_gpt-4.1_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "tcgp_gpt-4o_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "tcgp_gpt-5.3-codex_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "tcgp_gpt-5.4-mini-2_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "tcgp_gpt-5.4-nano_s42.jsonl": {
+  "records": 180,
+  "disagreements": 1,
+  "resolved": 1,
+  "codes": {
+   "-3": 1
+  }
+ },
+ "tcgp_gpt-5.4_s42.jsonl": {
+  "records": 180,
+  "disagreements": 2,
+  "resolved": 2,
+  "codes": {
+   "-3": 2
+  }
+ },
+ "tcgp_gpt-5.5_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "tcgp_grok-4-20-non-reasoning_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
+ },
+ "tcgp_grok-4-20-reasoning_s42.jsonl": {
+  "records": 180,
+  "disagreements": 0,
+  "resolved": 0,
+  "codes": {}
  }
 }
