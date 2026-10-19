@@ -93,6 +93,278 @@
   "gpt-5.4-mini-2|cot|2024": 96.95121951219512,
   "grok-4-20-non-reasoning|direct|2024": 92.07317073170732
  },
+ "family_C_task_clustered": [
+  {
+   "model": "gemini-2.5-flash",
+   "contrast": "cot_vs_direct",
+   "net_successes": -6,
+   "contributing_tasks": 13,
+   "exact": true,
+   "p": 0.41552734375,
+   "holm_p": 1.0
+  },
+  {
+   "model": "gemini-2.5-flash",
+   "contrast": "tcgp_vs_direct",
+   "net_successes": -6,
+   "contributing_tasks": 16,
+   "exact": true,
+   "p": 0.3507080078125,
+   "holm_p": 1.0
+  },
+  {
+   "model": "gemini-2.5-flash",
+   "contrast": "tcgp_vs_cot",
+   "net_successes": 0,
+   "contributing_tasks": 18,
+   "exact": true,
+   "p": 1.0,
+   "holm_p": 1.0
+  },
+  {
+   "model": "gpt-4.1",
+   "contrast": "cot_vs_direct",
+   "net_successes": 3,
+   "contributing_tasks": 9,
+   "exact": true,
+   "p": 0.70703125,
+   "holm_p": 1.0
+  },
+  {
+   "model": "gpt-4.1",
+   "contrast": "tcgp_vs_direct",
+   "net_successes": -8,
+   "contributing_tasks": 13,
+   "exact": true,
+   "p": 0.30029296875,
+   "holm_p": 1.0
+  },
+  {
+   "model": "gpt-4.1",
+   "contrast": "tcgp_vs_cot",
+   "net_successes": -11,
+   "contributing_tasks": 11,
+   "exact": true,
+   "p": 0.099609375,
+   "holm_p": 1.0
+  },
+  {
+   "model": "gpt-4o",
+   "contrast": "cot_vs_direct",
+   "net_successes": 6,
+   "contributing_tasks": 18,
+   "exact": true,
+   "p": 0.5518264770507812,
+   "holm_p": 1.0
+  },
+  {
+   "model": "gpt-4o",
+   "contrast": "tcgp_vs_direct",
+   "net_successes": 5,
+   "contributing_tasks": 18,
+   "exact": true,
+   "p": 0.6041641235351562,
+   "holm_p": 1.0
+  },
+  {
+   "model": "gpt-4o",
+   "contrast": "tcgp_vs_cot",
+   "net_successes": -1,
+   "contributing_tasks": 24,
+   "exact": false,
+   "p": 1.0,
+   "holm_p": 1.0
+  },
+  {
+   "model": "gpt-5.3-codex",
+   "contrast": "cot_vs_direct",
+   "net_successes": 4,
+   "contributing_tasks": 9,
+   "exact": true,
+   "p": 0.62109375,
+   "holm_p": 1.0
+  },
+  {
+   "model": "gpt-5.3-codex",
+   "contrast": "tcgp_vs_direct",
+   "net_successes": -8,
+   "contributing_tasks": 13,
+   "exact": true,
+   "p": 0.156494140625,
+   "holm_p": 1.0
+  },
+  {
+   "model": "gpt-5.3-codex",
+   "contrast": "tcgp_vs_cot",
+   "net_successes": -12,
+   "contributing_tasks": 16,
+   "exact": true,
+   "p": 0.096832275390625,
+   "holm_p": 1.0
+  },
+  {
+   "model": "gpt-5.4",
+   "contrast": "cot_vs_direct",
+   "net_successes": 9,
+   "contributing_tasks": 9,
+   "exact": true,
+   "p": 0.17578125,
+   "holm_p": 1.0
+  },
+  {
+   "model": "gpt-5.4",
+   "contrast": "tcgp_vs_direct",
+   "net_successes": -5,
+   "contributing_tasks": 8,
+   "exact": true,
+   "p": 0.4453125,
+   "holm_p": 1.0
+  },
+  {
+   "model": "gpt-5.4",
+   "contrast": "tcgp_vs_cot",
+   "net_successes": -14,
+   "contributing_tasks": 11,
+   "exact": true,
+   "p": 0.0244140625,
+   "holm_p": 0.6591796875
+  },
+  {
+   "model": "gpt-5.4-mini-2",
+   "contrast": "cot_vs_direct",
+   "net_successes": 23,
+   "contributing_tasks": 18,
+   "exact": true,
+   "p": 0.02312469482421875,
+   "holm_p": 0.647491455078125
+  },
+  {
+   "model": "gpt-5.4-mini-2",
+   "contrast": "tcgp_vs_direct",
+   "net_successes": 12,
+   "contributing_tasks": 16,
+   "exact": true,
+   "p": 0.12872314453125,
+   "holm_p": 1.0
+  },
+  {
+   "model": "gpt-5.4-mini-2",
+   "contrast": "tcgp_vs_cot",
+   "net_successes": -11,
+   "contributing_tasks": 11,
+   "exact": true,
+   "p": 0.1201171875,
+   "holm_p": 1.0
+  },
+  {
+   "model": "gpt-5.4-nano",
+   "contrast": "cot_vs_direct",
+   "net_successes": 21,
+   "contributing_tasks": 23,
+   "exact": false,
+   "p": 0.012065,
+   "holm_p": 0.349885
+  },
+  {
+   "model": "gpt-5.4-nano",
+   "contrast": "tcgp_vs_direct",
+   "net_successes": -7,
+   "contributing_tasks": 22,
+   "exact": false,
+   "p": 0.32807,
+   "holm_p": 1.0
+  },
+  {
+   "model": "gpt-5.4-nano",
+   "contrast": "tcgp_vs_cot",
+   "net_successes": -28,
+   "contributing_tasks": 28,
+   "exact": false,
+   "p": 0.000645,
+   "holm_p": 0.01935
+  },
+  {
+   "model": "gpt-5.5",
+   "contrast": "cot_vs_direct",
+   "net_successes": 0,
+   "contributing_tasks": 4,
+   "exact": true,
+   "p": 1.0,
+   "holm_p": 1.0
+  },
+  {
+   "model": "gpt-5.5",
+   "contrast": "tcgp_vs_direct",
+   "net_successes": -2,
+   "contributing_tasks": 6,
+   "exact": true,
+   "p": 0.6875,
+   "holm_p": 1.0
+  },
+  {
+   "model": "gpt-5.5",
+   "contrast": "tcgp_vs_cot",
+   "net_successes": -2,
+   "contributing_tasks": 6,
+   "exact": true,
+   "p": 0.6875,
+   "holm_p": 1.0
+  },
+  {
+   "model": "grok-4-20-non-reasoning",
+   "contrast": "cot_vs_direct",
+   "net_successes": 17,
+   "contributing_tasks": 22,
+   "exact": false,
+   "p": 0.081835,
+   "holm_p": 1.0
+  },
+  {
+   "model": "grok-4-20-non-reasoning",
+   "contrast": "tcgp_vs_direct",
+   "net_successes": 0,
+   "contributing_tasks": 21,
+   "exact": false,
+   "p": 1.0,
+   "holm_p": 1.0
+  },
+  {
+   "model": "grok-4-20-non-reasoning",
+   "contrast": "tcgp_vs_cot",
+   "net_successes": -17,
+   "contributing_tasks": 22,
+   "exact": false,
+   "p": 0.05184,
+   "holm_p": 1.0
+  },
+  {
+   "model": "grok-4-20-reasoning",
+   "contrast": "cot_vs_direct",
+   "net_successes": -3,
+   "contributing_tasks": 5,
+   "exact": true,
+   "p": 0.5625,
+   "holm_p": 1.0
+  },
+  {
+   "model": "grok-4-20-reasoning",
+   "contrast": "tcgp_vs_direct",
+   "net_successes": 3,
+   "contributing_tasks": 5,
+   "exact": true,
+   "p": 0.6875,
+   "holm_p": 1.0
+  },
+  {
+   "model": "grok-4-20-reasoning",
+   "contrast": "tcgp_vs_cot",
+   "net_successes": 6,
+   "contributing_tasks": 8,
+   "exact": true,
+   "p": 0.3046875,
+   "holm_p": 1.0
+  }
+ ],
  "family_A_seeds_pooled": [
   {
    "model": "gemini-2.5-flash",
@@ -1145,6 +1417,17 @@
    "n10": 1,
    "p": 0.375,
    "holm_p": 1.0
+  }
+ ],
+ "significant_C": [
+  {
+   "model": "gpt-5.4-nano",
+   "contrast": "tcgp_vs_cot",
+   "net_successes": -28,
+   "contributing_tasks": 28,
+   "exact": false,
+   "p": 0.000645,
+   "holm_p": 0.01935
   }
  ],
  "significant_A": [

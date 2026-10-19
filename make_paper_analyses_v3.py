@@ -19,6 +19,11 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 D = HERE / "results" / "livecodebench_v3_strat"
 COND = ["direct", "cot", "tcgp", "restate"]
+# Gemini-2.5-Flash is excluded from every LiveCodeBench comparison: its retained
+# direct/cot records were produced under two different output caps (12k and 48k)
+# after a mid-run cap change, so they are not one protocol. Its records are kept
+# for the leaderboard validation only (validate_lcb_v3.py).
+EXCLUDE_MODELS = {"gemini-2.5-flash"}
 
 def load():
     recs = defaultdict(dict)  # (model, cond) -> qid -> rec
@@ -64,7 +69,7 @@ def perm_test(recs, models, a, b, qids, iters=20000, seed=0):
 
 def main():
     recs = load()
-    models = sorted({m for m, _ in recs})
+    models = sorted({m for m, _ in recs} - EXCLUDE_MODELS)
     out = {"n_models": len(models), "per_model": {}, "pooled": {}, "quality": {}, "by_type": {}, "by_difficulty": {}, "public_private": {}}
     # ---- per-model rates + McNemar ----
     comps = [("tcgp", "direct"), ("tcgp", "cot"), ("cot", "direct"), ("restate", "direct"), ("tcgp", "restate")]
@@ -96,6 +101,7 @@ def main():
     for key, field in (("by_type", "testtype"), ("by_difficulty", "difficulty")):
         agg = defaultdict(lambda: defaultdict(lambda: [0, 0]))
         for (m, c), R in recs.items():
+            if m in EXCLUDE_MODELS: continue
             for r in R.values(): agg[r.get(field)][c][0] += 1; agg[r.get(field)][c][1] += bool(r.get("passed"))
         out[key] = {k: {c: {"n": v[c][0], "rate": 100*v[c][1]/v[c][0] if v[c][0] else None} for c in COND} for k, v in agg.items()}
     # ---- public vs private disagreement ----

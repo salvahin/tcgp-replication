@@ -22,10 +22,11 @@ def rate_file(f):
 def fig_harness(out, v4):
     """All values come from results/harness_budget.json (make_harness_budget.py)."""
     B = json.load(open(R / "harness_budget.json")); rows = []
-    c = B["contract"]; rows.append(("I/O contract: functional problems\nserialized through stdin", abs(c["deflation_direct_pp"]), "direct prompting"))
+    c = B["contract"]; rows.append(("I/O contract: functional problems\nserialized through stdin", abs(c["deflation_direct_pp"]), "direct, between runs"))
+    if c.get("same_outputs_direct_change_pp") is not None: rows.append(("I/O contract: same saved outputs,\nofficial vs stdin evaluator", abs(c["same_outputs_direct_change_pp"]), "direct, paired"))
     be = B.get("body_extraction_humaneval") or {}
     if be:
-        m = min(be, key=lambda k: be[k]["diff_pp"]); rows.append(("Function-body extraction with\nre-indentation (HumanEval)", abs(be[m]["diff_pp"]), DISP.get(m, m)))
+        m = min(be, key=lambda k: be[k]["diff_pp"]); rows.append(("Function-body extraction with\nre-indentation (HumanEval)", abs(be[m]["diff_pp"]), f"{DISP.get(m, m).split('-')[0]}, between runs"))
     rows.append(("Manufactured strategy effect\n(same outputs, two evaluators)", abs(c["stdin_contract"]["tcgp_vs_direct"]["diff_pp"]), "TCGP vs direct"))
     ex = B.get("extraction_rule") or {}
     if ex:
@@ -37,17 +38,17 @@ def fig_harness(out, v4):
     cp = B.get("output_cap") or {}
     if cp: rows.append(("Output cap, 4k vs 12k tokens\n(reasoning models)", max(abs(v["diff_pp"]) for v in cp.values()), "both models"))
     cc = B.get("crosscheck")
-    if cc: rows.append(("Timeouts under parallel load", 100 * (1 - cc["agreement_first_pass"]), "verdicts disagreeing"))
+    if cc: rows.append(("Timeouts under parallel load\n(% of verdicts, not pp)", 100 * (1 - cc["agreement_first_pass"]), "% of verdicts disagreeing"))
     fl = B.get("flakiness")
-    if fl: rows.append(("Grading non-determinism (isolated)", 100 * fl["share_of_all_records"], "unstable verdicts"))
+    if fl: rows.append(("Grading non-determinism, isolated\n(% of verdicts, not pp)", 100 * fl["share_of_all_records"], "% of verdicts unstable"))
     rows.sort(key=lambda r: -r[1])
     recipe = abs(B["largest_recipe_effect"]["diff_pp"]) if B.get("largest_recipe_effect") else None
     fig, ax = plt.subplots(figsize=(7.0, 4.6)); y = np.arange(len(rows))[::-1]; vals = [r[1] for r in rows]
     ax.barh(y, vals, color=["#d1495b" if v >= 10 else "#3b6ea5" if v >= 1 else "#9aa0a6" for v in vals], height=0.62)
-    for yi, (lab, v, note) in zip(y, rows): ax.text(max(v, 0.06) * 1.15, yi, f"{v:.1f} pp  ({note})" if v >= 1 else f"{v:.2f} pp  ({note})", va="center", fontsize=8)
+    for yi, (lab, v, note) in zip(y, rows): ax.text(max(v, 0.06) * 1.15, yi, (f"{v:.1f} pp  ({note})" if v >= 1 else f"{v:.2f} pp  ({note})") if "%" not in note else (f"{v:.1f}%  ({note.split('  ')[0]})" if v >= 1 else f"{v:.2f}%  ({note})"), va="center", fontsize=8)
     if recipe:
-        ax.axvline(recipe, color="black", ls="--", lw=1); ax.text(recipe * 1.05, y[0] + 0.55, f"largest recipe effect\n({recipe:.1f} pp)", fontsize=8, va="bottom")
-    ax.set_xscale("log"); ax.set_xlim(0.03, 3000); ax.set_yticks(y); ax.set_yticklabels([r[0] for r in rows], fontsize=8)
+        ax.axvline(recipe, color="black", ls="--", lw=1); ax.text(recipe * 1.05, y[0] + 0.55, f"largest pooled recipe effect\n({recipe:.1f} pp, chain-of-thought)", fontsize=8, va="bottom")
+    ax.set_xscale("log"); ax.set_xlim(0.03, 20000); ax.set_yticks(y); ax.set_yticklabels([r[0] for r in rows], fontsize=8)
     ax.set_xlabel("Effect on measured Pass@1 (percentage points, log scale)"); ax.grid(axis="y")
     fig.tight_layout(); fig.savefig(out / "fig_harness_budget.pdf"); plt.close(fig)
 
@@ -55,7 +56,7 @@ def fig_forest(out, v4):
     conds = ["para1", "para2", "para3", "persona", "fewshot", "plansolve", "tcgp", "restate", "stacked", "cot", "repair"]
     fig, ax = plt.subplots(figsize=(6.4, 4.2)); y = np.arange(len(conds))[::-1]; d = v4["delta_pp"]; nf = v4["noise_floor"]["pooled_max_abs_dev_from_direct"]
     ax.axvspan(-d, d, color="#e8f0e8", zorder=0, label=f"equivalence margin (±{d:.0f} pp)")
-    ax.axvspan(-nf, nf, color="#cfd8e3", zorder=0, alpha=0.7, label=f"paraphrase noise (±{nf:.1f} pp)")
+    ax.axvspan(-nf, nf, color="#cfd8e3", zorder=0, alpha=0.7, label=f"largest paraphrase deviation from direct (±{nf:.1f} pp)")
     for yi, c in zip(y, conds):
         v = v4["vs_direct"][c]; lo, hi = v["boot90_ci"]; col = "#d1495b" if not v["equivalent_within_delta"] else "#3b6ea5"
         ax.plot([lo, hi], [yi, yi], color=col, lw=2); ax.plot(v["diff_pp"], yi, "o", color=col, ms=6)

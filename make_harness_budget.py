@@ -11,10 +11,12 @@ def J(name):
     p = R / name; return json.load(open(p)) if p.exists() else None
 def rate_file(f, key="passed"):
     rows = [json.loads(l) for l in open(f) if l.strip()]; return 100 * sum(bool(r.get(key)) for r in rows) / len(rows), len(rows)
+EXCLUDE_MODELS = {"gemini-2.5-flash"}   # mixed-cap retained records; see make_paper_analyses_v3.py
 def load(d):
     out = {}
     for f in glob.glob(str(R / d / "*_s42.jsonl")):
         b = os.path.basename(f)[:-len("_s42.jsonl")]; c, m = b.split("_", 1)
+        if m in EXCLUDE_MODELS: continue
         if c in ("direct", "cot", "tcgp"): out[(m, c)] = {json.loads(l)["question_id"]: bool(json.loads(l).get("passed")) for l in open(f) if l.strip()}
     return out
 def pooled(Rr, c):
@@ -29,7 +31,11 @@ out = {}
 # 1. input/output contract
 v2, resc, v3 = load("livecodebench_v2_strat"), load("livecodebench_v2_strat_rescored"), load("livecodebench_v3_strat")
 out["contract"] = {k: {c: pooled(Rr, c) for c in ("direct", "cot", "tcgp")} | {"tcgp_vs_direct": paired(Rr)} for k, Rr in (("stdin_contract", v2), ("same_outputs_official", resc), ("official_fresh", v3))}
-out["contract"]["deflation_direct_pp"] = out["contract"]["stdin_contract"]["direct"] - out["contract"]["official_fresh"]["direct"]
+out["contract"]["deflation_direct_pp"] = out["contract"]["stdin_contract"]["direct"] - out["contract"]["official_fresh"]["direct"]   # between two runs
+# paired: the same saved direct outputs under the two evaluators (identical material)
+ms = sorted({m for m, _ in v2}); qs = sorted(set.intersection(*[set(v2[(m, "direct")]) & set(resc[(m, "direct")]) for m in ms]))
+out["contract"]["same_outputs_direct_change_pp"] = 100 * sum(resc[(m, "direct")][q] - v2[(m, "direct")][q] for m in ms for q in qs) / (len(ms) * len(qs))
+out["contract"]["design"] = {"stdin_contract": "original run, stdin harness", "same_outputs_official": "the same saved outputs re-graded by the official evaluator (paired)", "official_fresh": "new run under the official contract (independent run)"}
 # 2. body extraction (archived runs vs complete-function runs, HumanEval, seed 42)
 be = {}
 z = HERE / "archive" / "incorrect-harness-v1_2026-07-02.zip"
@@ -67,6 +73,6 @@ if v4:
     out["largest_recipe_effect"] = {"condition": max(rec, key=lambda c: abs(rec[c])), "diff_pp": max(rec.values(), key=abs)}
 out["humaneval_rows"] = J("harness_sensitivity_humaneval.json")
 json.dump(out, open(R / "harness_budget.json", "w"), indent=1)
-c = out["contract"]; print(f"contract: stdin {c['stdin_contract']['direct']:.1f}/{c['stdin_contract']['tcgp']:.1f} -> official fresh {c['official_fresh']['direct']:.1f}/{c['official_fresh']['tcgp']:.1f}; deflation {c['deflation_direct_pp']:.1f}; strategy effect {c['stdin_contract']['tcgp_vs_direct']['diff_pp']:+.1f} -> {c['same_outputs_official']['tcgp_vs_direct']['diff_pp']:+.1f}")
+c = out["contract"]; print(f"contract ({c['stdin_contract']['tcgp_vs_direct']['models']} models): stdin {c['stdin_contract']['direct']:.1f}/{c['stdin_contract']['cot']:.1f}/{c['stdin_contract']['tcgp']:.1f} -> same outputs official {c['same_outputs_official']['direct']:.1f}/{c['same_outputs_official']['cot']:.1f}/{c['same_outputs_official']['tcgp']:.1f} -> official fresh {c['official_fresh']['direct']:.1f}/{c['official_fresh']['cot']:.1f}/{c['official_fresh']['tcgp']:.1f}; deflation between runs {c['deflation_direct_pp']:.1f}; paired change on identical direct outputs {c['same_outputs_direct_change_pp']:+.1f}; strategy effect {c['stdin_contract']['tcgp_vs_direct']['diff_pp']:+.1f} -> {c['same_outputs_official']['tcgp_vs_direct']['diff_pp']:+.1f}")
 print("body extraction:", {m: round(v["diff_pp"], 1) for m, v in be.items()})
 print("caps:", {m: round(v["diff_pp"], 2) for m, v in caps.items()}); print("extraction rule present:", bool(ex), "| crosscheck present:", bool(out["crosscheck"]))

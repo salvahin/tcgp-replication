@@ -1,51 +1,57 @@
 {
  "contract": {
   "stdin_contract": {
-   "direct": 30.944444444444443,
-   "cot": 34.27777777777778,
-   "tcgp": 46.5,
+   "direct": 33.888888888888886,
+   "cot": 36.72839506172839,
+   "tcgp": 48.45679012345679,
    "tcgp_vs_direct": {
-    "diff_pp": 15.555555555555555,
+    "diff_pp": 14.567901234567902,
     "perm_p": 4.999750012499375e-05,
     "boot90": [
-     13.61111111111111,
-     17.5
+     12.592592592592593,
+     16.54320987654321
     ],
-    "models": 10,
+    "models": 9,
     "problems": 180
    }
   },
   "same_outputs_official": {
-   "direct": 75.27777777777777,
-   "cot": 73.72222222222223,
-   "tcgp": 75.22222222222223,
+   "direct": 77.09876543209876,
+   "cot": 74.75308641975309,
+   "tcgp": 76.66666666666667,
    "tcgp_vs_direct": {
-    "diff_pp": -0.05555555555555555,
-    "perm_p": 1.0,
+    "diff_pp": -0.43209876543209874,
+    "perm_p": 0.6618669066546673,
     "boot90": [
-     -1.3888888888888888,
-     1.2222222222222223
+     -1.8518518518518519,
+     0.9259259259259259
     ],
-    "models": 10,
+    "models": 9,
     "problems": 180
    }
   },
   "official_fresh": {
-   "direct": 81.83333333333333,
-   "cot": 84.61111111111111,
-   "tcgp": 80.66666666666667,
+   "direct": 81.29629629629629,
+   "cot": 84.44444444444444,
+   "tcgp": 79.93827160493827,
    "tcgp_vs_direct": {
-    "diff_pp": -1.1666666666666667,
-    "perm_p": 0.16404179791010448,
+    "diff_pp": -1.3580246913580247,
+    "perm_p": 0.13059347032648366,
     "boot90": [
-     -2.5,
-     0.1111111111111111
+     -2.7777777777777777,
+     0.0
     ],
-    "models": 10,
+    "models": 9,
     "problems": 180
    }
   },
-  "deflation_direct_pp": -50.888888888888886
+  "deflation_direct_pp": -47.407407407407405,
+  "same_outputs_direct_change_pp": 43.20987654320987,
+  "design": {
+   "stdin_contract": "original run, stdin harness",
+   "same_outputs_official": "the same saved outputs re-graded by the official evaluator (paired)",
+   "official_fresh": "new run under the official contract (independent run)"
+  }
  },
  "body_extraction_humaneval": {
   "gemini-2.5-flash": {
@@ -132,7 +138,7 @@
    "delta_first_block_pp": -0.6790123456790124
   },
   "repair": {
-   "n_affected": 10,
+   "n_affected": 15,
    "pass_last_block": 9,
    "pass_first_block": 2,
    "n_condition": 1620,

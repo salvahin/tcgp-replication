@@ -45,7 +45,7 @@ def main():
     if "--extract" in sys.argv:
         agg = defaultdict(lambda: [0, 0, 0]); n = 0
         for r in rows:
-            b = blocks(r.get("raw_step2") or r.get("raw_repair") or "")
+            b = blocks(r.get("raw_repair") or r.get("raw_step2") or "")   # repaired answer when a repair happened, else the original
             if len(b) > 1 and b[0].strip() != b[-1].strip():
                 g = grade(probs[r["question_id"]], b[0]); n += 1
                 a = agg[r["_cond"]]; a[0] += 1; a[1] += bool(r.get("passed")); a[2] += bool(g["passed"])

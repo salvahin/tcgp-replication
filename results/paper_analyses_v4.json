@@ -194,7 +194,8 @@
      "p": 0.6875,
      "holm_p": 1.0
     }
-   }
+   },
+   "holm_p_over_11_pooled": 0.11024448777561122
   },
   "para2": {
    "diff_pp": 0.43209876543209874,
@@ -279,7 +280,8 @@
      "p": 0.2890625,
      "holm_p": 1.0
     }
-   }
+   },
+   "holm_p_over_11_pooled": 1.0
   },
   "para3": {
    "diff_pp": 0.12345679012345678,
@@ -364,7 +366,8 @@
      "p": 0.375,
      "holm_p": 1.0
     }
-   }
+   },
+   "holm_p_over_11_pooled": 1.0
   },
   "persona": {
    "diff_pp": 0.7407407407407407,
@@ -449,7 +452,8 @@
      "p": 0.625,
      "holm_p": 1.0
     }
-   }
+   },
+   "holm_p_over_11_pooled": 1.0
   },
   "fewshot": {
    "diff_pp": 0.06172839506172839,
@@ -534,7 +538,8 @@
      "p": 1.0,
      "holm_p": 1.0
     }
-   }
+   },
+   "holm_p_over_11_pooled": 1.0
   },
   "cot": {
    "diff_pp": 3.1481481481481484,
@@ -619,7 +624,8 @@
      "p": 0.625,
      "holm_p": 1.0
     }
-   }
+   },
+   "holm_p_over_11_pooled": 0.0014999250037498126
   },
   "plansolve": {
    "diff_pp": 1.1728395061728396,
@@ -704,7 +710,8 @@
      "p": 0.125,
      "holm_p": 1.0
     }
-   }
+   },
+   "holm_p_over_11_pooled": 0.9141542922853856
   },
   "tcgp": {
    "diff_pp": -1.3580246913580247,
@@ -789,7 +796,8 @@
      "p": 1.0,
      "holm_p": 1.0
     }
-   }
+   },
+   "holm_p_over_11_pooled": 0.9141542922853856
   },
   "restate": {
    "diff_pp": 1.7901234567901234,
@@ -874,7 +882,8 @@
      "p": 1.0,
      "holm_p": 1.0
     }
-   }
+   },
+   "holm_p_over_11_pooled": 0.1151942402879856
   },
   "stacked": {
    "diff_pp": -1.3580246913580247,
@@ -959,7 +968,8 @@
      "p": 0.00634765625,
      "holm_p": 0.04443359375
     }
-   }
+   },
+   "holm_p_over_11_pooled": 0.9141542922853856
   },
   "repair": {
    "diff_pp": 2.1604938271604937,
@@ -1044,7 +1054,8 @@
      "p": 1.0,
      "holm_p": 1.0
     }
-   }
+   },
+   "holm_p_over_11_pooled": 0.0005499725013749313
   }
  },
  "noise_floor": {
@@ -1162,5 +1173,55 @@
   "restate": 2520.320987654321,
   "stacked": 2334.7043209876542,
   "repair": 1683.9734567901235
+ },
+ "quality": {
+  "direct": {
+   "api_error": 0,
+   "no_output": 5
+  },
+  "para1": {
+   "api_error": 2,
+   "no_output": 6
+  },
+  "para2": {
+   "api_error": 2,
+   "no_output": 7
+  },
+  "para3": {
+   "api_error": 0,
+   "no_output": 7
+  },
+  "persona": {
+   "api_error": 0,
+   "no_output": 6
+  },
+  "fewshot": {
+   "api_error": 0,
+   "no_output": 0
+  },
+  "cot": {
+   "api_error": 0,
+   "no_output": 3
+  },
+  "plansolve": {
+   "api_error": 0,
+   "no_output": 5
+  },
+  "tcgp": {
+   "api_error": 0,
+   "no_output": 3
+  },
+  "restate": {
+   "api_error": 0,
+   "no_output": 7
+  },
+  "stacked": {
+   "api_error": 0,
+   "no_output": 7
+  },
+  "repair": {
+   "api_error": 0,
+   "no_output": 1
+  }
  }
 }

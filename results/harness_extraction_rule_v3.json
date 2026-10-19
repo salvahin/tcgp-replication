@@ -45,7 +45,7 @@
   "pass_first_block": 14
  },
  "repair": {
-  "n_affected": 10,
+  "n_affected": 15,
   "pass_last_block": 9,
   "pass_first_block": 2
  },

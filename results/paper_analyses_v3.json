@@ -1,79 +1,6 @@
 {
- "n_models": 10,
+ "n_models": 9,
  "per_model": {
-  "gemini-2.5-flash": {
-   "direct": {
-    "n": 180,
-    "pass": 156,
-    "rate": 86.66666666666667,
-    "ci": [
-     80.92715870345016,
-     90.87378297677891
-    ]
-   },
-   "cot": {
-    "n": 180,
-    "pass": 155,
-    "rate": 86.11111111111111,
-    "ci": [
-     80.3007298111238,
-     90.41231881334424
-    ]
-   },
-   "tcgp": {
-    "n": 180,
-    "pass": 157,
-    "rate": 87.22222222222223,
-    "ci": [
-     81.55627050038377,
-     91.33256423560636
-    ]
-   },
-   "restate": {
-    "n": 180,
-    "pass": 155,
-    "rate": 86.11111111111111,
-    "ci": [
-     80.3007298111238,
-     90.41231881334424
-    ]
-   },
-   "tcgp_vs_direct": {
-    "n01": 9,
-    "n10": 8,
-    "p": 1.0,
-    "n_common": 180,
-    "holm_p": 1.0
-   },
-   "tcgp_vs_cot": {
-    "n01": 7,
-    "n10": 5,
-    "p": 0.7744140625,
-    "n_common": 180,
-    "holm_p": 1.0
-   },
-   "cot_vs_direct": {
-    "n01": 7,
-    "n10": 8,
-    "p": 1.0,
-    "n_common": 180,
-    "holm_p": 1.0
-   },
-   "restate_vs_direct": {
-    "n01": 7,
-    "n10": 8,
-    "p": 1.0,
-    "n_common": 180,
-    "holm_p": 1.0
-   },
-   "tcgp_vs_restate": {
-    "n01": 9,
-    "n10": 7,
-    "p": 0.803619384765625,
-    "n_common": 180,
-    "holm_p": 1.0
-   }
-  },
   "gpt-4.1": {
    "direct": {
     "n": 180,
@@ -123,7 +50,7 @@
     "n10": 20,
     "p": 0.06142834573984146,
     "n_common": 180,
-    "holm_p": 0.4914267659187317
+    "holm_p": 0.42999842017889023
    },
    "cot_vs_direct": {
     "n01": 13,
@@ -144,7 +71,7 @@
     "n10": 14,
     "p": 0.063568115234375,
     "n_common": 180,
-    "holm_p": 0.572113037109375
+    "holm_p": 0.508544921875
    }
   },
   "gpt-4o": {
@@ -189,14 +116,14 @@
     "n10": 31,
     "p": 0.0002940768754342571,
     "n_common": 180,
-    "holm_p": 0.002940768754342571
+    "holm_p": 0.002646691878908314
    },
    "tcgp_vs_cot": {
     "n01": 11,
     "n10": 29,
     "p": 0.006426576095691416,
     "n_common": 180,
-    "holm_p": 0.05783918486122275
+    "holm_p": 0.05141260876553133
    },
    "cot_vs_direct": {
     "n01": 10,
@@ -217,7 +144,7 @@
     "n10": 30,
     "p": 6.960169412195683e-05,
     "n_common": 180,
-    "holm_p": 0.0006960169412195683
+    "holm_p": 0.0006264152470976114
    }
   },
   "gpt-5.3-codex": {
@@ -269,7 +196,7 @@
     "n10": 9,
     "p": 0.14599609375,
     "n_common": 180,
-    "holm_p": 1.0
+    "holm_p": 0.8759765625
    },
    "cot_vs_direct": {
     "n01": 8,
@@ -349,7 +276,7 @@
     "n10": 4,
     "p": 0.11846923828125,
     "n_common": 180,
-    "holm_p": 0.94775390625
+    "holm_p": 0.82928466796875
    },
    "restate_vs_direct": {
     "n01": 10,
@@ -495,14 +422,14 @@
     "n10": 8,
     "p": 0.052238985896110535,
     "n_common": 180,
-    "holm_p": 0.4701508730649948
+    "holm_p": 0.4179118871688843
    },
    "restate_vs_direct": {
     "n01": 22,
     "n10": 9,
     "p": 0.029449373483657837,
     "n_common": 180,
-    "holm_p": 0.29449373483657837
+    "holm_p": 0.26504436135292053
    },
    "tcgp_vs_restate": {
     "n01": 13,
@@ -634,14 +561,14 @@
     "n10": 35,
     "p": 3.353161446284503e-07,
     "n_common": 180,
-    "holm_p": 3.3531614462845027e-06
+    "holm_p": 3.0178453016560525e-06
    },
    "cot_vs_direct": {
     "n01": 30,
     "n10": 5,
     "p": 2.2361520677804947e-05,
     "n_common": 180,
-    "holm_p": 0.00022361520677804947
+    "holm_p": 0.00020125368610024452
    },
    "restate_vs_direct": {
     "n01": 16,
@@ -734,206 +661,206 @@
  },
  "pooled": {
   "direct": {
-   "n": 1800,
-   "rate": 81.83333333333333,
+   "n": 1620,
+   "rate": 81.29629629629629,
    "ci": [
-    79.9849047952149,
-    83.54617243462611
+    79.32417901514829,
+    83.12033527737877
    ]
   },
   "cot": {
-   "n": 1800,
-   "rate": 84.61111111111111,
+   "n": 1620,
+   "rate": 84.44444444444444,
    "ci": [
-    82.87054013278876,
-    86.2042611136178
+    82.59823664553551,
+    86.12767849298541
    ]
   },
   "tcgp": {
-   "n": 1800,
-   "rate": 80.66666666666667,
+   "n": 1620,
+   "rate": 79.93827160493827,
    "ci": [
-    78.77772968147302,
-    82.42498346141048
+    77.91835151799916,
+    81.8165388801776
    ]
   },
   "restate": {
-   "n": 1800,
-   "rate": 83.38888888888889,
+   "n": 1620,
+   "rate": 83.08641975308642,
    "ci": [
-    81.59875639345138,
-    85.03680628566633
+    81.18312889380445,
+    84.83316235036615
    ]
   },
   "tcgp_vs_direct_perm": {
-   "diff_pp": -1.1666666666666667,
-   "p_two_sided": 0.16404179791010448
+   "diff_pp": -1.3580246913580247,
+   "p_two_sided": 0.13059347032648366
   },
   "tcgp_vs_cot_perm": {
-   "diff_pp": -3.9444444444444446,
+   "diff_pp": -4.506172839506172,
    "p_two_sided": 4.999750012499375e-05
   },
   "cot_vs_direct_perm": {
-   "diff_pp": 2.7777777777777777,
-   "p_two_sided": 0.0007999600019999
+   "diff_pp": 3.1481481481481484,
+   "p_two_sided": 0.00014999250037498125
   },
   "restate_vs_direct_perm": {
-   "diff_pp": 1.5555555555555556,
-   "p_two_sided": 0.037398130093495324
+   "diff_pp": 1.7901234567901234,
+   "p_two_sided": 0.0143992800359982
   },
   "tcgp_vs_restate_perm": {
-   "diff_pp": -2.7222222222222223,
-   "p_two_sided": 0.00119994000299985
+   "diff_pp": -3.1481481481481484,
+   "p_two_sided": 0.000599970001499925
   }
  },
  "quality": {
   "direct": {
-   "n": 1800,
+   "n": 1620,
    "api_error": 0,
-   "no_output": 15,
-   "truncated": 14,
-   "timeout_verdicts": 71,
-   "regraded_timeouts": 63
+   "no_output": 5,
+   "truncated": 5,
+   "timeout_verdicts": 67,
+   "regraded_timeouts": 58
   },
   "cot": {
-   "n": 1800,
+   "n": 1620,
    "api_error": 0,
-   "no_output": 7,
-   "truncated": 6,
-   "timeout_verdicts": 55,
-   "regraded_timeouts": 42
+   "no_output": 3,
+   "truncated": 2,
+   "timeout_verdicts": 49,
+   "regraded_timeouts": 36
   },
   "tcgp": {
-   "n": 1800,
+   "n": 1620,
    "api_error": 0,
-   "no_output": 8,
-   "truncated": 6,
-   "timeout_verdicts": 75,
-   "regraded_timeouts": 32
+   "no_output": 3,
+   "truncated": 3,
+   "timeout_verdicts": 70,
+   "regraded_timeouts": 27
   },
   "restate": {
-   "n": 1800,
+   "n": 1620,
    "api_error": 0,
-   "no_output": 15,
-   "truncated": 13,
-   "timeout_verdicts": 61,
-   "regraded_timeouts": 44
+   "no_output": 7,
+   "truncated": 7,
+   "timeout_verdicts": 55,
+   "regraded_timeouts": 37
   }
  },
  "by_type": {
   "stdin": {
    "direct": {
-    "n": 90,
-    "rate": 73.33333333333333
+    "n": 81,
+    "rate": 71.60493827160494
    },
    "cot": {
-    "n": 90,
-    "rate": 78.88888888888889
+    "n": 81,
+    "rate": 79.01234567901234
    },
    "tcgp": {
-    "n": 90,
-    "rate": 78.88888888888889
+    "n": 81,
+    "rate": 77.77777777777777
    },
    "restate": {
-    "n": 90,
-    "rate": 75.55555555555556
+    "n": 81,
+    "rate": 74.07407407407408
    }
   },
   "functional": {
    "direct": {
-    "n": 1710,
-    "rate": 82.28070175438596
+    "n": 1539,
+    "rate": 81.80636777128005
    },
    "cot": {
-    "n": 1710,
-    "rate": 84.91228070175438
+    "n": 1539,
+    "rate": 84.73034437946718
    },
    "tcgp": {
-    "n": 1710,
-    "rate": 80.76023391812865
+    "n": 1539,
+    "rate": 80.05198180636778
    },
    "restate": {
-    "n": 1710,
-    "rate": 83.80116959064327
+    "n": 1539,
+    "rate": 83.56075373619234
    }
   }
  },
  "by_difficulty": {
   "easy": {
    "direct": {
-    "n": 600,
-    "rate": 96.0
+    "n": 540,
+    "rate": 95.55555555555556
    },
    "cot": {
-    "n": 600,
-    "rate": 97.0
+    "n": 540,
+    "rate": 96.85185185185185
    },
    "tcgp": {
-    "n": 600,
-    "rate": 95.16666666666667
+    "n": 540,
+    "rate": 94.62962962962963
    },
    "restate": {
-    "n": 600,
-    "rate": 97.33333333333333
+    "n": 540,
+    "rate": 97.03703703703704
    }
   },
   "medium": {
    "direct": {
-    "n": 600,
-    "rate": 89.16666666666667
+    "n": 540,
+    "rate": 88.70370370370371
    },
    "cot": {
-    "n": 600,
-    "rate": 90.33333333333333
+    "n": 540,
+    "rate": 90.18518518518519
    },
    "tcgp": {
-    "n": 600,
-    "rate": 87.66666666666667
+    "n": 540,
+    "rate": 87.22222222222223
    },
    "restate": {
-    "n": 600,
-    "rate": 88.33333333333333
+    "n": 540,
+    "rate": 88.14814814814815
    }
   },
   "hard": {
    "direct": {
-    "n": 600,
-    "rate": 60.333333333333336
+    "n": 540,
+    "rate": 59.629629629629626
    },
    "cot": {
-    "n": 600,
-    "rate": 66.5
+    "n": 540,
+    "rate": 66.29629629629629
    },
    "tcgp": {
-    "n": 600,
-    "rate": 59.166666666666664
+    "n": 540,
+    "rate": 57.96296296296296
    },
    "restate": {
-    "n": 600,
-    "rate": 64.5
+    "n": 540,
+    "rate": 64.07407407407408
    }
   }
  },
  "public_private": {
   "direct": {
-   "n": 1800,
-   "public_pass_but_private_fail": 108,
-   "share_of_public_passes_that_fail_private": 0.0683111954459203
+   "n": 1620,
+   "public_pass_but_private_fail": 101,
+   "share_of_public_passes_that_fail_private": 0.07122708039492243
   },
   "cot": {
-   "n": 1800,
-   "public_pass_but_private_fail": 96,
-   "share_of_public_passes_that_fail_private": 0.0592958616429895
+   "n": 1620,
+   "public_pass_but_private_fail": 84,
+   "share_of_public_passes_that_fail_private": 0.05785123966942149
   },
   "tcgp": {
-   "n": 1800,
-   "public_pass_but_private_fail": 96,
-   "share_of_public_passes_that_fail_private": 0.06201550387596899
+   "n": 1620,
+   "public_pass_but_private_fail": 88,
+   "share_of_public_passes_that_fail_private": 0.0636297903109183
   },
   "restate": {
-   "n": 1800,
-   "public_pass_but_private_fail": 97,
-   "share_of_public_passes_that_fail_private": 0.0607008760951189
+   "n": 1620,
+   "public_pass_but_private_fail": 87,
+   "share_of_public_passes_that_fail_private": 0.06071179344033496
   }
  }
 }
