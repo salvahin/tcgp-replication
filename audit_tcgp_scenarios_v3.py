@@ -97,6 +97,7 @@ def main():
     tcgp = []
     for f in glob.glob(str(D / "*_s42.jsonl")):
         cond = os.path.basename(f).split("_")[0]
+        if "gemini-2.5-flash" in f: continue   # validation-only model; same nine-model cohort as every LiveCodeBench analysis
         for l in open(f):
             if not l.strip(): continue
             r = json.loads(l); q = r["question_id"]

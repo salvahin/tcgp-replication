@@ -1,9 +1,9 @@
 {
- "candidates": 858,
- "unstable_records": 8,
- "share_of_all_records": 0.0003968253968253968,
+ "candidates": 835,
+ "unstable_records": 7,
+ "share_of_all_records": 0.000360082304526749,
  "error_codes": {
-  "-3": 22,
-  "None": 2
+  "-3": 17,
+  "None": 4
  }
 }

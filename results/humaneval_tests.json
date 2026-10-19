@@ -262,8 +262,8 @@
    "net_successes": 21,
    "contributing_tasks": 23,
    "exact": false,
-   "p": 0.012065,
-   "holm_p": 0.349885
+   "p": 0.012069939650301748,
+   "holm_p": 0.3500282498587507
   },
   {
    "model": "gpt-5.4-nano",
@@ -271,7 +271,7 @@
    "net_successes": -7,
    "contributing_tasks": 22,
    "exact": false,
-   "p": 0.32807,
+   "p": 0.32807335963320183,
    "holm_p": 1.0
   },
   {
@@ -280,8 +280,8 @@
    "net_successes": -28,
    "contributing_tasks": 28,
    "exact": false,
-   "p": 0.000645,
-   "holm_p": 0.01935
+   "p": 0.00064999675001625,
+   "holm_p": 0.019499902500487498
   },
   {
    "model": "gpt-5.5",
@@ -316,7 +316,7 @@
    "net_successes": 17,
    "contributing_tasks": 22,
    "exact": false,
-   "p": 0.081835,
+   "p": 0.08183959080204599,
    "holm_p": 1.0
   },
   {
@@ -334,7 +334,7 @@
    "net_successes": -17,
    "contributing_tasks": 22,
    "exact": false,
-   "p": 0.05184,
+   "p": 0.05184474077629612,
    "holm_p": 1.0
   },
   {
@@ -1426,8 +1426,8 @@
    "net_successes": -28,
    "contributing_tasks": 28,
    "exact": false,
-   "p": 0.000645,
-   "holm_p": 0.01935
+   "p": 0.00064999675001625,
+   "holm_p": 0.019499902500487498
   }
  ],
  "significant_A": [

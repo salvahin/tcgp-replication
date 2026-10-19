@@ -95,13 +95,6 @@
    "n_condition": 1620,
    "delta_first_block_pp": -0.5555555555555556
   },
-  "direct": {
-   "n_affected": 13,
-   "pass_last_block": 11,
-   "pass_first_block": 2,
-   "n_condition": 1800,
-   "delta_first_block_pp": -0.5
-  },
   "para3": {
    "n_affected": 29,
    "pass_last_block": 14,
@@ -110,11 +103,11 @@
    "delta_first_block_pp": -0.43209876543209874
   },
   "restate": {
-   "n_affected": 18,
+   "n_affected": 17,
    "pass_last_block": 12,
    "pass_first_block": 4,
-   "n_condition": 1800,
-   "delta_first_block_pp": -0.4444444444444444
+   "n_condition": 1620,
+   "delta_first_block_pp": -0.49382716049382713
   },
   "plansolve": {
    "n_affected": 19,
@@ -124,11 +117,11 @@
    "delta_first_block_pp": -0.24691358024691357
   },
   "tcgp": {
-   "n_affected": 67,
-   "pass_last_block": 11,
+   "n_affected": 65,
+   "pass_last_block": 10,
    "pass_first_block": 40,
-   "n_condition": 1800,
-   "delta_first_block_pp": 1.6111111111111112
+   "n_condition": 1620,
+   "delta_first_block_pp": 1.8518518518518519
   },
   "persona": {
    "n_affected": 38,
@@ -136,6 +129,13 @@
    "pass_first_block": 14,
    "n_condition": 1620,
    "delta_first_block_pp": -0.6790123456790124
+  },
+  "direct": {
+   "n_affected": 10,
+   "pass_last_block": 9,
+   "pass_first_block": 2,
+   "n_condition": 1620,
+   "delta_first_block_pp": -0.43209876543209874
   },
   "repair": {
    "n_affected": 15,
@@ -152,11 +152,11 @@
    "delta_first_block_pp": -0.12345679012345678
   },
   "cot": {
-   "n_affected": 19,
-   "pass_last_block": 7,
+   "n_affected": 18,
+   "pass_last_block": 6,
    "pass_first_block": 5,
-   "n_condition": 1800,
-   "delta_first_block_pp": -0.1111111111111111
+   "n_condition": 1620,
+   "delta_first_block_pp": -0.06172839506172839
   }
  },
  "public_only_inflation_pp": {
@@ -165,21 +165,21 @@
   "para3": 5.617283950617292,
   "repair": 7.407407407407419,
   "para2": 5.370370370370367,
-  "tcgp": 5.333333333333329,
-  "direct": 6.0,
+  "tcgp": 5.432098765432102,
+  "direct": 6.23456790123457,
   "plansolve": 6.111111111111114,
   "persona": 5.308641975308646,
-  "restate": 5.388888888888886,
-  "cot": 5.333333333333329,
+  "restate": 5.370370370370367,
+  "cot": 5.1851851851851904,
   "fewshot": 5.864197530864203
  },
  "flakiness": {
-  "candidates": 858,
-  "unstable_records": 8,
-  "share_of_all_records": 0.0003968253968253968,
+  "candidates": 835,
+  "unstable_records": 7,
+  "share_of_all_records": 0.000360082304526749,
   "error_codes": {
-   "-3": 22,
-   "None": 2
+   "-3": 17,
+   "None": 4
   }
  },
  "crosscheck": {

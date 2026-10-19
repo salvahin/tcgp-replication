@@ -53,6 +53,7 @@ out["body_extraction_humaneval"] = be
 # 3-5. extraction rule, public-only, flakiness, cross-check
 ex = J("harness_extraction_rule_v3.json"); tot = {}
 for f in glob.glob(str(R / "livecodebench_v3_strat" / "*_s42.jsonl")):
+    if any(m in f for m in EXCLUDE_MODELS): continue
     c = os.path.basename(f).split("_")[0]; tot[c] = tot.get(c, 0) + sum(1 for l in open(f) if l.strip())
 if ex: out["extraction_rule"] = {c: v | {"n_condition": tot.get(c), "delta_first_block_pp": 100 * (v["pass_first_block"] - v["pass_last_block"]) / tot[c]} for c, v in ex.items()}
 po = J("harness_public_only_v3.json")

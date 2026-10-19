@@ -1,0 +1,1267 @@
+{
+ "source": "bzantium/livecodebench, split test; first 60 problems by question_id per difficulty",
+ "n": 180,
+ "dataset_revision_at_run": "not recorded",
+ "problems": [
+  {
+   "question_id": "1873_A",
+   "difficulty": "easy",
+   "testtype": "stdin",
+   "contest_date": "2023-08-21 00:00:00",
+   "tests_sha256": "fba7f6e871abd7d17dce400c58395d56e74a7511eae8ffea402ec937e9a0ef6b"
+  },
+  {
+   "question_id": "1873_B",
+   "difficulty": "easy",
+   "testtype": "stdin",
+   "contest_date": "2023-08-21 00:00:00",
+   "tests_sha256": "28fe7f7944eba0d5d564b88b1d6d12343e8187073551aef4acc624c9e122f713"
+  },
+  {
+   "question_id": "1873_D",
+   "difficulty": "easy",
+   "testtype": "stdin",
+   "contest_date": "2023-08-21 00:00:00",
+   "tests_sha256": "c4cc4f5e13c5778a12b022f8b66fca5d7930fe3d031932316754172d2d71e1c5"
+  },
+  {
+   "question_id": "1899_A",
+   "difficulty": "easy",
+   "testtype": "stdin",
+   "contest_date": "2023-10-17 00:00:00",
+   "tests_sha256": "0f090ed6ea307360eb507d468579133862f71be9416945f8cda6b056a3febeb3"
+  },
+  {
+   "question_id": "2727",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-05-13 00:00:00",
+   "tests_sha256": "7ee268fca282603d6bd2b528fe26309f53cc547699b693518de0868de0ecebef"
+  },
+  {
+   "question_id": "2756",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-05-27 00:00:00",
+   "tests_sha256": "c9b97a2fe73406ae4b2267d6295f85de123c7b693cd76a471fec8848c3073da7"
+  },
+  {
+   "question_id": "2777",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-05-07 00:00:00",
+   "tests_sha256": "efa8a76908b715f98f28a9797db1d00705475045f73bd80f55aca395ee32a664"
+  },
+  {
+   "question_id": "2785",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-06-04 00:00:00",
+   "tests_sha256": "581ebb3156ea0df4cfc12c9ca57cb63edfaea2c133fde4acec621b76be742393"
+  },
+  {
+   "question_id": "2791",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-05-14 00:00:00",
+   "tests_sha256": "e615981218faa898f400a2c7ef7004d8918dd93fc4ba09c01688358f3ad0f032"
+  },
+  {
+   "question_id": "2800",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-05-21 00:00:00",
+   "tests_sha256": "736f9460e66c3bcc57642831cc421cc7128afbbaa832a77f37adbea558d5aea0"
+  },
+  {
+   "question_id": "2812",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-07-09 00:00:00",
+   "tests_sha256": "12f52b61b771201ff5414da530bf37c5928d4ee420d258f13b4932df974556c6"
+  },
+  {
+   "question_id": "2816",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-05-21 00:00:00",
+   "tests_sha256": "a741bd5d6fecf9d56b03f63fa55a6e6771e021fcdda1fae30af8c417701f69c1"
+  },
+  {
+   "question_id": "2819",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-05-28 00:00:00",
+   "tests_sha256": "4227d45fb761bdd72e69c65a998c94b6d948e1210f23242564ba5201e4f319ae"
+  },
+  {
+   "question_id": "2824",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-06-10 00:00:00",
+   "tests_sha256": "c0ee94c50b31a728d5f59180d9d958126c027b63291029780a6affb95316b21e"
+  },
+  {
+   "question_id": "2825",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-06-04 00:00:00",
+   "tests_sha256": "4e99ff3f8e6e2543df09caabbc13c7f6ab68004cbd56a44a289e9576af86875b"
+  },
+  {
+   "question_id": "2831",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-06-25 00:00:00",
+   "tests_sha256": "2acf79da4a5df1217ebc90e1ca64c929cc96cfd72351ab19ff44638c0afe228e"
+  },
+  {
+   "question_id": "2844",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-07-16 00:00:00",
+   "tests_sha256": "8f3a944f0d67dbdc50b75e18ec5c6eed84684499771dc0bc5ce27ed46ba24271"
+  },
+  {
+   "question_id": "2847",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-06-24 00:00:00",
+   "tests_sha256": "a3bf481a56f637279ea34b154a0f4925674ad602f47b836acbb748a400e9e76c"
+  },
+  {
+   "question_id": "2857",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-06-18 00:00:00",
+   "tests_sha256": "f882bf68f757224a0cbf151ef93fdcc8dd6d60a1e1bf1401da9be09eafb2f67d"
+  },
+  {
+   "question_id": "2866",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-07-02 00:00:00",
+   "tests_sha256": "7a3a56ce4d4645bc59061c6f9e75efcd30bd05846ea88369766cf33094b36959"
+  },
+  {
+   "question_id": "2870",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-07-08 00:00:00",
+   "tests_sha256": "a82538c310f9299491637e76eabffbff5d4c59b72fbfb92c27dbf55bf8963dee"
+  },
+  {
+   "question_id": "2876",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-07-30 00:00:00",
+   "tests_sha256": "77574912dad8e20e6a631b254b54798eed3b2e080448e16e078a356794b8526b"
+  },
+  {
+   "question_id": "2881",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-07-23 00:00:00",
+   "tests_sha256": "3f8cb9993f1d19b4b02cd0836a68da75353e28410d399715357f3523edba27e1"
+  },
+  {
+   "question_id": "2886",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-08-06 00:00:00",
+   "tests_sha256": "a7199688f15323c02b0a07dce8113b23491307574965597000e47a83fcf0dddc"
+  },
+  {
+   "question_id": "2892",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-07-22 00:00:00",
+   "tests_sha256": "a329a493e8a1809178b306f4d9e0c216f5fac3539f14bafe02971c47728eae97"
+  },
+  {
+   "question_id": "2902",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-08-13 00:00:00",
+   "tests_sha256": "c83da8eceb4968dcd4c1e74783c7c32598f128171d94a6b431c04ee4f13b3f3d"
+  },
+  {
+   "question_id": "2917",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-08-19 00:00:00",
+   "tests_sha256": "5a35b4d4b6b3c720e748a10fe9c0d2c8c96990f4b7b650063112657e4ca58af9"
+  },
+  {
+   "question_id": "2955",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-08-05 00:00:00",
+   "tests_sha256": "aefee8a92cd688b206b367169c8fdeb15d1d9818977adcbde6e5c8a3a36bf619"
+  },
+  {
+   "question_id": "2977",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-08-20 00:00:00",
+   "tests_sha256": "5d052bfc7ab45f17b2708129c82acb98595cbb37545aa3f6b8af0bc1ee996e2b"
+  },
+  {
+   "question_id": "2998",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-09-03 00:00:00",
+   "tests_sha256": "85d5ec3792d0aa4c3bb16b0e00fef4284b24eee3c3610f14aa2afd81608d9dcd"
+  },
+  {
+   "question_id": "2999",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-09-02 00:00:00",
+   "tests_sha256": "5efbc194f2599a7f1d879bfb6b8b916fb732d744e71f248468527b75e8993b97"
+  },
+  {
+   "question_id": "3019",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-08-27 00:00:00",
+   "tests_sha256": "42098fc290afb66f10d8b25c566d2bdf1711dd7f25396c28e0d3bba1078b7799"
+  },
+  {
+   "question_id": "3034",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-09-10 00:00:00",
+   "tests_sha256": "8c3630d62e632838081df6945eb751f35a922718d6df18bce6c77ced180118ed"
+  },
+  {
+   "question_id": "3044",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-09-30 00:00:00",
+   "tests_sha256": "67bee0e7c22ee5d8ebaf636825ff549ec5f9a1328a732eba94d27564e79253cf"
+  },
+  {
+   "question_id": "3045",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-09-16 00:00:00",
+   "tests_sha256": "544c0ce4c08caefddd639c9608a78debcf565dfc690a128b750ea6419a3591c3"
+  },
+  {
+   "question_id": "3055",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-09-24 00:00:00",
+   "tests_sha256": "db552f5034f7e50e41864e4cec007128d7ca6c1970e32781d7c5df3166c37d66"
+  },
+  {
+   "question_id": "3093",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-09-17 00:00:00",
+   "tests_sha256": "efbaaddc41b5f80ac55db7b737c61e9f4f9ae116c793b462cde2873c7ce73249"
+  },
+  {
+   "question_id": "3154",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-10-01 00:00:00",
+   "tests_sha256": "90520ee29125b1d01ffc8f0ae8b3d11ab379d50649e3886e5f1a046a701883a2"
+  },
+  {
+   "question_id": "3163",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-10-28 00:00:00",
+   "tests_sha256": "c49332c10249c6e84e1629bfb9c982a541fe7762251e7d7f72bfafa5f922f067"
+  },
+  {
+   "question_id": "3164",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-10-14 00:00:00",
+   "tests_sha256": "b5c21ce66919e2ce1d57897e220001bc89188d88e3e7bc2cef1ec4ac4783b7b2"
+  },
+  {
+   "question_id": "3172",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-10-08 00:00:00",
+   "tests_sha256": "b8d3d8d63131f8c55e7dcc911dfb2f71e83c1dd8618100f07b7755003927506e"
+  },
+  {
+   "question_id": "3176",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-10-22 00:00:00",
+   "tests_sha256": "ebaef40fbe8d8c6b4119ec7efb3e6347ad80c233a0b6d6ffd0642622ac92d45b"
+  },
+  {
+   "question_id": "3183",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-10-29 00:00:00",
+   "tests_sha256": "f72af12650be558d4390d1231d95315ad1f9e95e117068bc72785f08900eeae6"
+  },
+  {
+   "question_id": "3188",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-11-05 00:00:00",
+   "tests_sha256": "f49666bec97864ec883d8b7b46a5448cc433aabe3baa4f5c8f36db6397b21021"
+  },
+  {
+   "question_id": "3193",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-11-12 00:00:00",
+   "tests_sha256": "0ed666a23587e69f59126634798ee02e48be013d3bd8d0fbce5fb116503e8e2b"
+  },
+  {
+   "question_id": "3194",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-11-25 00:00:00",
+   "tests_sha256": "dd00211786d35511ba3072cef8e5abad0d3e2643fdfd40d059d6ada2b7d3ba59"
+  },
+  {
+   "question_id": "3199",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-11-11 00:00:00",
+   "tests_sha256": "34c430bf52496aa73a730ead76982645c52e312f22ad97db2a893ebe14677061"
+  },
+  {
+   "question_id": "3206",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-12-09 00:00:00",
+   "tests_sha256": "c46cdc07979311292fd761fbab1430b74eaacf14193e237134bd66a1b6d17456"
+  },
+  {
+   "question_id": "3207",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-11-18 00:00:00",
+   "tests_sha256": "571867545b248dd3ee7d7fb5d8d5e7b6e8f2e179699d772d7d74294c622b8335"
+  },
+  {
+   "question_id": "3220",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-12-09 00:00:00",
+   "tests_sha256": "af663162d505693672133846f44e7ac411390e7bbef0ada3699cc34e5c77e5da"
+  },
+  {
+   "question_id": "3221",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-12-02 00:00:00",
+   "tests_sha256": "5e31ff87a3667860cadc19465090110a9f5634f6a5d14550bc7c814484103a39"
+  },
+  {
+   "question_id": "3226",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-12-23 00:00:00",
+   "tests_sha256": "6c62ffddf20e46b9d059a6dce1b1f7ad21e468988faacbb4112a5b549db44be3"
+  },
+  {
+   "question_id": "3227",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-12-16 00:00:00",
+   "tests_sha256": "50ef5b5a963a158cc45f4b34c4fcee3bfb817bd84bac4e0f8ebd7c567e8f01e7"
+  },
+  {
+   "question_id": "3236",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2024-01-06 00:00:00",
+   "tests_sha256": "b9cf4814b312610c1325892e0fe1683aa0f5ad35f3dd91a4a51f1b762d55fc6f"
+  },
+  {
+   "question_id": "3242",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2024-01-13 00:00:00",
+   "tests_sha256": "572161a2fecc58f022196926919971f35a74b1124a6c3ed7317c3cd03a32631a"
+  },
+  {
+   "question_id": "3246",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-12-30 00:00:00",
+   "tests_sha256": "ffc7cddb4eb489704269d0b0be95848d1bf059ac3013490a3a56e1d38dabe21a"
+  },
+  {
+   "question_id": "3251",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2024-01-06 00:00:00",
+   "tests_sha256": "d096b936136c56647874a5dff143c77e4a8e77e4a287e13ca283fa8eb128b385"
+  },
+  {
+   "question_id": "3252",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2023-12-23 00:00:00",
+   "tests_sha256": "d02dc463d8878eb8f470947dc9661c9464e1eafb0574425a8d3b6ca11eeff7ca"
+  },
+  {
+   "question_id": "3263",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2024-01-20 00:00:00",
+   "tests_sha256": "e53d75264e791686456d9e35295e2afcb195b6ca142e802572fe31d301489874"
+  },
+  {
+   "question_id": "3309",
+   "difficulty": "easy",
+   "testtype": "functional",
+   "contest_date": "2024-02-17 00:00:00",
+   "tests_sha256": "1a6ce729d14cd6bb20503f34c0cfb25fcd354842467ae646d9d72c6577acbe3e"
+  },
+  {
+   "question_id": "1883_B",
+   "difficulty": "medium",
+   "testtype": "stdin",
+   "contest_date": "2023-09-22 00:00:00",
+   "tests_sha256": "6af8c10f3d121e4e91425e8cf4bb247c1e85a1281ebd7fedfa77f30c05bbcc25"
+  },
+  {
+   "question_id": "1883_C",
+   "difficulty": "medium",
+   "testtype": "stdin",
+   "contest_date": "2023-09-22 00:00:00",
+   "tests_sha256": "29408424f9ffa50a6a4c7634f34b4d384a545fde7dae57e7a46196496d4b20d8"
+  },
+  {
+   "question_id": "2728",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-05-13 00:00:00",
+   "tests_sha256": "e5a9e18659feb5d696bad3ce14af1cdadac4a54bebe2c4628d268e66d38731c6"
+  },
+  {
+   "question_id": "2730",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-05-13 00:00:00",
+   "tests_sha256": "2ee48b448955546f4363d3f3f6271d15279af42b95c21dc9d039cf4364db4bfb"
+  },
+  {
+   "question_id": "2754",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-05-27 00:00:00",
+   "tests_sha256": "d6b0b486111e28a57c8a60c5dc08dd6d9fc225bc96e54b6f5be8a2a93bf289bb"
+  },
+  {
+   "question_id": "2755",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-05-27 00:00:00",
+   "tests_sha256": "bd5a6337f5a5ebcb1736e90b46463dd7cf0499e30e4b9f36ef4971def4bfb463"
+  },
+  {
+   "question_id": "2779",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-05-07 00:00:00",
+   "tests_sha256": "c07fd286a95b146827d8ba1932d95043cbf92297847ce2efd4f1a7de04187d26"
+  },
+  {
+   "question_id": "2786",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-06-10 00:00:00",
+   "tests_sha256": "c17fb4913218593c093707267e063807e65f46b414326991f0bdd1f2d21fb61e"
+  },
+  {
+   "question_id": "2792",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-05-14 00:00:00",
+   "tests_sha256": "626300ea8989163c43d287088ecd58f087bcbc5211dc1764cb1d41dc19af5e9c"
+  },
+  {
+   "question_id": "2802",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-05-21 00:00:00",
+   "tests_sha256": "d0e081d0ec4518dc1c3269ecdf1bb5391841a6d3c7feabf309cbfb3904058c6e"
+  },
+  {
+   "question_id": "2810",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-06-11 00:00:00",
+   "tests_sha256": "9b8bcd8d59979b8d478150ff1ed9eafd1e138e60b9737607c42a870fd0df3f8d"
+  },
+  {
+   "question_id": "2811",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-08-20 00:00:00",
+   "tests_sha256": "ffed2ff6f6015e2887920dcd8d7a7eaf56c26da3bf2a85c6e9c1434836453338"
+  },
+  {
+   "question_id": "2817",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-05-28 00:00:00",
+   "tests_sha256": "64bd52c250bb4813af981ec77ff0f8afe252e6f3fe80ae1b826d28a596b6fae6"
+  },
+  {
+   "question_id": "2828",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-06-11 00:00:00",
+   "tests_sha256": "b22abf25f718ed6419450e8d6341632af59be5e8caa38e04a541ed01ecbe7f42"
+  },
+  {
+   "question_id": "2832",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-08-20 00:00:00",
+   "tests_sha256": "64ba0407090dda9ea02cef7452029e4152b39b6e06df79d55f966240de1b0e64"
+  },
+  {
+   "question_id": "2833",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-06-24 00:00:00",
+   "tests_sha256": "78fe62fe15a79729f56e551f54d19600fcba302a1475aca3b0098c3c8d22678e"
+  },
+  {
+   "question_id": "2834",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-07-08 00:00:00",
+   "tests_sha256": "ef875f7e9148561cf43c9d2ae74b1ea931975516805f6f7a03b47dbabd162036"
+  },
+  {
+   "question_id": "2837",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-06-25 00:00:00",
+   "tests_sha256": "5c98ee5db9c079997d9604aacf638f84d9d246752bcc7921cea5eedbd5061e80"
+  },
+  {
+   "question_id": "2845",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-06-18 00:00:00",
+   "tests_sha256": "6feb1f3b12471da72453d63a7473d78b323f8a46699ef86184e0cacfc830804d"
+  },
+  {
+   "question_id": "2848",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-06-18 00:00:00",
+   "tests_sha256": "5017e24dfbfdc1042718cab910ea90a393d8798053fcfa35c6eff01a7aa90e73"
+  },
+  {
+   "question_id": "2850",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-06-24 00:00:00",
+   "tests_sha256": "df8a70436854b8c9deeed79a945add4f77ae0c95d0b23e32ef648cedfbe2e734"
+  },
+  {
+   "question_id": "2854",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-06-24 00:00:00",
+   "tests_sha256": "cf565f03df596bac0ca5c84d913692eef24584a049d5d5cb49e236a89b7b47b9"
+  },
+  {
+   "question_id": "2855",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-07-09 00:00:00",
+   "tests_sha256": "1cf369828ebbaecd0656e84866ef4371ef8862b152a435f38b07c7a670f26f46"
+  },
+  {
+   "question_id": "2856",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-07-30 00:00:00",
+   "tests_sha256": "ce836360f90eb58701e642ea3353cc02fdfd1c1be5a444afece5c3fc0aa0dfc4"
+  },
+  {
+   "question_id": "2867",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-06-25 00:00:00",
+   "tests_sha256": "a39cb9326edf2b932db9f1bd5437c26b0f1dbfbf93f02eb96bee1e31a5c1aeb4"
+  },
+  {
+   "question_id": "2868",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-07-02 00:00:00",
+   "tests_sha256": "eb49475cb388865e228329b0bbf44c030fcf564bc6791ccb072790264b948ac0"
+  },
+  {
+   "question_id": "2869",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-07-09 00:00:00",
+   "tests_sha256": "594bae24ee80a9eb13a5865884c1a06cc506f56c2d47e36fd0808a6d28d5f91c"
+  },
+  {
+   "question_id": "2872",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-07-23 00:00:00",
+   "tests_sha256": "94ee07a04e3a6bf00947ce328089a247f0d98b0c80d592b911d73ccd6949a011"
+  },
+  {
+   "question_id": "2873",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-07-02 00:00:00",
+   "tests_sha256": "f1ef31f2b0c1a07faceb49cf81e440af3fb9f70fc32eb13e969354a9c7f1a47c"
+  },
+  {
+   "question_id": "2877",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-07-30 00:00:00",
+   "tests_sha256": "ce46ca51aa184b915a2532f7ac1198e047e03d60012a74489e97f0c696506bcf"
+  },
+  {
+   "question_id": "2878",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-07-09 00:00:00",
+   "tests_sha256": "99e0354bacabe1ee142638197f013080df14ec43a6676401dd5e582c912c32ac"
+  },
+  {
+   "question_id": "2882",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-07-22 00:00:00",
+   "tests_sha256": "3414fdee8c91820aae3a4f3398692b54449f92e1929ca90fa9fa7b2ca4c9335f"
+  },
+  {
+   "question_id": "2883",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-07-08 00:00:00",
+   "tests_sha256": "df55d6cb817455fc5b75f795e2c0a746a39f25a170148acc2fceec4ca86eb644"
+  },
+  {
+   "question_id": "2887",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-07-22 00:00:00",
+   "tests_sha256": "1b344c0c99b31b95f995fe4ccc6ac57fe89120c9fc2a77267a482e1bf465f91d"
+  },
+  {
+   "question_id": "2888",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-07-16 00:00:00",
+   "tests_sha256": "962beacb45726314788b62eba7a43dd962dc3028670c89062f5a123d27d92b21"
+  },
+  {
+   "question_id": "2891",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-07-16 00:00:00",
+   "tests_sha256": "e861bdac3b275421dfef3e5e769c3373650cf3b97710d105cfe68c9d956b5747"
+  },
+  {
+   "question_id": "2893",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-07-22 00:00:00",
+   "tests_sha256": "199f9d8c5ad47601830ccace6ea426a32a8e333d5d96172f94af8116fe1878d5"
+  },
+  {
+   "question_id": "2915",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-09-03 00:00:00",
+   "tests_sha256": "6531b6c5d5c430cd874bd6bf613c9564edc3a22526ade138732319d8c0ae5fd9"
+  },
+  {
+   "question_id": "2916",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-08-06 00:00:00",
+   "tests_sha256": "18c21b6c69c5580b12ebab815d1d847a8657ea46c79484652765ecb27cb1d4dc"
+  },
+  {
+   "question_id": "2920",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-08-05 00:00:00",
+   "tests_sha256": "30507e01dcde15cb891b59a18df25747e2ce17a6aa8e2e00ff5f7ab491338c7b"
+  },
+  {
+   "question_id": "2953",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-09-16 00:00:00",
+   "tests_sha256": "64abbd313076da433b56342c558d0639e543972f343b1ff1cb88a429de9543ec"
+  },
+  {
+   "question_id": "2954",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-09-02 00:00:00",
+   "tests_sha256": "5e7bfb2e35098b1c4557e1de37ea64a5fd2dddcd38712c9a94283e4969eb5ea2"
+  },
+  {
+   "question_id": "2979",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-08-20 00:00:00",
+   "tests_sha256": "0c460ecb36f6da987f6d546d565af1e5c6a143d9444cc7c4e50b5405a8a0e86f"
+  },
+  {
+   "question_id": "3000",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-08-13 00:00:00",
+   "tests_sha256": "73a18bc18d4ef7d8180ff8ab4a0d75eb62a06423c66ad5ed8dd997df3d4c06ae"
+  },
+  {
+   "question_id": "3018",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-08-19 00:00:00",
+   "tests_sha256": "17aeece3131aa25dbb4538200a3b6842cbd582b5fe2411338fa3b5b3016f3bb3"
+  },
+  {
+   "question_id": "3026",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-08-26 19:30:00",
+   "tests_sha256": "2cc6bee3a1c679552ef8474e88eea8ec8ce47141e2062f33961a68221df28994"
+  },
+  {
+   "question_id": "3031",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-10-15 00:00:00",
+   "tests_sha256": "5721040124eb7a1ce93d41ab048752503eae39d9fed971964765cc5f4ecbf371"
+  },
+  {
+   "question_id": "3033",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-10-08 00:00:00",
+   "tests_sha256": "1e2544be056f1c72838f3a5a8c273bd85239fd5ab0a69b2accc2f40f25565641"
+  },
+  {
+   "question_id": "3046",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-09-03 00:00:00",
+   "tests_sha256": "8847b1a9788e7152df6c3ff47289c7813123d459660febc220f5cf15a9e57f48"
+  },
+  {
+   "question_id": "3080",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-09-30 00:00:00",
+   "tests_sha256": "1973a461b1ae2ae54ec81bf5498516395739ad6e248b0e80757d3bf4fc834af5"
+  },
+  {
+   "question_id": "3081",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-09-16 00:00:00",
+   "tests_sha256": "22b293eab0e56536e0a6f2125e7c5029d6bb0eee1a22c2586d4c624d7f035b25"
+  },
+  {
+   "question_id": "3094",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-09-30 00:00:00",
+   "tests_sha256": "22f61f4a37a5ea6bd5ce9b8ea61c44ed57d84b09d7f104029c543f86f41dc68c"
+  },
+  {
+   "question_id": "3104",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-09-17 00:00:00",
+   "tests_sha256": "7551318a7ced90bd7fd400647224e566c7f8c111be85eb6f68b79b7fe3b5dea0"
+  },
+  {
+   "question_id": "3106",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-10-28 00:00:00",
+   "tests_sha256": "596b06d6b3d2d7c1d0b1c83e051169199c6dfe9ed8ce6f233159f39e548fa5d8"
+  },
+  {
+   "question_id": "3114",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-09-24 00:00:00",
+   "tests_sha256": "cdcabba94f0e70f17e01fd8d56d289ebf92ee279233382c296964ade84073ac4"
+  },
+  {
+   "question_id": "3141",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-10-01 00:00:00",
+   "tests_sha256": "4d1b3d69d028825c6bec7b87585296ea6c43d2fcf08bd9adcf68673e58a2ce45"
+  },
+  {
+   "question_id": "3150",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-10-15 00:00:00",
+   "tests_sha256": "85ebd3e7f7303769cbf13cd1a3cd6a968a1daa6e912b8fb36d13737fa812439f"
+  },
+  {
+   "question_id": "3151",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-10-08 00:00:00",
+   "tests_sha256": "f9266e90f5a13b9512b626b57533fe1804a1ba6e4c9c5cfe95a486e7afecd503"
+  },
+  {
+   "question_id": "3166",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-10-22 00:00:00",
+   "tests_sha256": "c09422ff0b63b8869afa35cf2b95350a59a42af947b131c7ef78d84c54aa5a4a"
+  },
+  {
+   "question_id": "3171",
+   "difficulty": "medium",
+   "testtype": "functional",
+   "contest_date": "2023-10-29 00:00:00",
+   "tests_sha256": "50639e55b1b29e225258f37301bcd074572fa624404b253c0c62a6d809cb9918"
+  },
+  {
+   "question_id": "1899_B",
+   "difficulty": "hard",
+   "testtype": "stdin",
+   "contest_date": "2023-10-17 00:00:00",
+   "tests_sha256": "ea32c709fc0781a5a8bb33d66782397f044b4c9f3541c64420a77875309d182e"
+  },
+  {
+   "question_id": "1899_C",
+   "difficulty": "hard",
+   "testtype": "stdin",
+   "contest_date": "2023-10-17 00:00:00",
+   "tests_sha256": "bde98a784a683ddfa6ec37bb36854794efc9b62d3a094091a872c1611527078c"
+  },
+  {
+   "question_id": "1899_D",
+   "difficulty": "hard",
+   "testtype": "stdin",
+   "contest_date": "2023-10-17 00:00:00",
+   "tests_sha256": "8530b362e93fca1456ef77f1952a63abda54759cc5b3c302f2f734f83c8b14b5"
+  },
+  {
+   "question_id": "2757",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2023-06-04 00:00:00",
+   "tests_sha256": "12b2c3d89f0e62e307b96fcbb064ccdc340d717b1a0ec384d92e7851299d8e90"
+  },
+  {
+   "question_id": "2784",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2023-05-13 00:00:00",
+   "tests_sha256": "3458cf9276a7616fd783105bac532d5ca9de6f4205572d8f36ff0b9fa0ec1fc8"
+  },
+  {
+   "question_id": "2808",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2023-06-18 00:00:00",
+   "tests_sha256": "68d30f00d2f025c5973518896357fb18a3310e5ccc3a245ca7e9a538d0f7949d"
+  },
+  {
+   "question_id": "2827",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2023-05-27 00:00:00",
+   "tests_sha256": "d34866bbf721d2cb25645f5f01000deebc3259a046b693d26b93ed2d5ce37d9d"
+  },
+  {
+   "question_id": "2839",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2023-06-11 00:00:00",
+   "tests_sha256": "2d983663121b2478473b2d2d716516d7b0a04e154949e96952724c865914bd63"
+  },
+  {
+   "question_id": "2849",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2023-07-02 00:00:00",
+   "tests_sha256": "578aef4c4f8a396679669863877d58063e35a3128e4cf643776fd2630831da00"
+  },
+  {
+   "question_id": "2879",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2023-10-22 00:00:00",
+   "tests_sha256": "680166a8ae653779038b799ecad0956e37e2929990fdbcf21e9bb81430c1d37d"
+  },
+  {
+   "question_id": "2884",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2023-07-16 00:00:00",
+   "tests_sha256": "cc7a17b05d5ae9b14ef87503fa8a563a975ecf2c642b0e3ecf30af514caa70ab"
+  },
+  {
+   "question_id": "2919",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2023-07-23 00:00:00",
+   "tests_sha256": "3dabd2c967f449764d7ce01989760ffb9d9bff434c67752057b45d977dc337b1"
+  },
+  {
+   "question_id": "2921",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2023-07-30 00:00:00",
+   "tests_sha256": "365dc445dd42b442bfec458d190a7820afbfb1bd5f1592f09cdb12e5d0a78ba1"
+  },
+  {
+   "question_id": "2952",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2023-08-05 00:00:00",
+   "tests_sha256": "156c48d55434ef121d06e5e02c11297f14961ee7117779cf2e350c9823cb9890"
+  },
+  {
+   "question_id": "3017",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2023-08-19 00:00:00",
+   "tests_sha256": "04fd4d6e1802c778198015cd09e524411cd7ffc11fabfd010661fb3fb9634ae2"
+  },
+  {
+   "question_id": "3024",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2023-09-10 00:00:00",
+   "tests_sha256": "622eeddf087f68768e863b851e49c30f56fcda986404390072a13f31b12a8a6b"
+  },
+  {
+   "question_id": "3025",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2023-08-27 00:00:00",
+   "tests_sha256": "f166e2e3f5c211d75a0cac26ed11552e2c302c59a2526b083c079cfccd5addd4"
+  },
+  {
+   "question_id": "3032",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2023-08-27 00:00:00",
+   "tests_sha256": "e93426f38c83a997a5777b9d23775d651aa770e1fb14fa2d3a0be5fe0e559b71"
+  },
+  {
+   "question_id": "3047",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2023-09-17 00:00:00",
+   "tests_sha256": "cbbb0915ced21f6f76eca5adfdd12724f59b6c2b4f6dfa98bf7b78a6d6290ed6"
+  },
+  {
+   "question_id": "3091",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2023-10-14 00:00:00",
+   "tests_sha256": "93fc051350f4e355f8dc85f04728929ab84bc0fa027e8da1e12aa02a6faa7656"
+  },
+  {
+   "question_id": "3153",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2023-10-08 00:00:00",
+   "tests_sha256": "54e977907dd543b31bc510e5800d8a3d668a6888f1c9201165989efb8ad9d9f1"
+  },
+  {
+   "question_id": "3184",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2023-11-05 00:00:00",
+   "tests_sha256": "35ac1928e95426a7d3fe092738b6832dfa957d18a96b5e05d26f7deb0809eb45"
+  },
+  {
+   "question_id": "3196",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2023-12-16 00:00:00",
+   "tests_sha256": "52785e6395259a74b55ecae4520227e1707df9cf7bf1e4be152a8895ace4e6c2"
+  },
+  {
+   "question_id": "3203",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2023-12-30 00:00:00",
+   "tests_sha256": "e90bc5a261d63fdc74218beffda675f91950d12010957ebe480d5e2266f48d4f"
+  },
+  {
+   "question_id": "3211",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2023-11-25 00:00:00",
+   "tests_sha256": "471fad20a8945930d7b1b0aa927a64f5a747d2293005cf577ecad8b28dba5224"
+  },
+  {
+   "question_id": "3212",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2023-12-09 00:00:00",
+   "tests_sha256": "50436f19cf56869a207f9eec6e8bcb509423213bc07c2aad4cbb98f66814b9c3"
+  },
+  {
+   "question_id": "3223",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2023-12-02 00:00:00",
+   "tests_sha256": "30d1058b810f19cb35f980f15a111a68675e3b0c4183f0f46d818a21acff32c4"
+  },
+  {
+   "question_id": "3224",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2023-12-02 00:00:00",
+   "tests_sha256": "081b229fcfce336bde4179dd325452d8be94a542dfdf344edbf3533041ca38b4"
+  },
+  {
+   "question_id": "3233",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-01-06 00:00:00",
+   "tests_sha256": "6ae4a8096785c4906d62729d989b367ebcf670b1f9d170c721efd6f1eb53ef39"
+  },
+  {
+   "question_id": "3243",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-01-06 00:00:00",
+   "tests_sha256": "914f20c529a39f3e1c58a3f496e350dd4382f51a085816366c7c8f847f0a4ac9"
+  },
+  {
+   "question_id": "3261",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-01-27 00:00:00",
+   "tests_sha256": "ab06de0dfd36f3eec72c5be102aaf79853ac59e1fe327b2372294f745607e87e"
+  },
+  {
+   "question_id": "3298",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-02-17 00:00:00",
+   "tests_sha256": "fa99885f27606238997f8a75233e9018b205be0b0542adacfcf73bf9944d9b16"
+  },
+  {
+   "question_id": "3313",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-03-09 00:00:00",
+   "tests_sha256": "fc39bc137cd51d0a4773d7f326e76eda7938abced3755c43a399df9b7025eab3"
+  },
+  {
+   "question_id": "3316",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-03-30 00:00:00",
+   "tests_sha256": "9a7266decce3fb1d1dda5d05005f3692376fd5fff52bbeb88d6789ff93f11e42"
+  },
+  {
+   "question_id": "3327",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-03-16 00:00:00",
+   "tests_sha256": "74331f371f50f4559b037a792bc4fd3f44a9e8975082e18d5ea6394bb7aed55c"
+  },
+  {
+   "question_id": "3344",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-03-30 00:00:00",
+   "tests_sha256": "0188c75523f9f91f37cf1e5f1810b02eac2391fa27e5b2b3feed25d56bb53365"
+  },
+  {
+   "question_id": "3345",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-03-16 00:00:00",
+   "tests_sha256": "756078aa0b21a275cb6e5fc14a13edb412ac3850341ea307e441442bdc56d47f"
+  },
+  {
+   "question_id": "3362",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-04-27 00:00:00",
+   "tests_sha256": "494fe73c9f10b3e9760fa1d5d4280f9c939c9660ed3a73144b93624712a4c1e3"
+  },
+  {
+   "question_id": "3364",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-04-13 00:00:00",
+   "tests_sha256": "36df3640d8b7b557fbb77998350c89f9d0eaf8e3e955478f22d39f15a1772b5b"
+  },
+  {
+   "question_id": "3375",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-04-13 00:00:00",
+   "tests_sha256": "1b57887fe70abcfb8fc6476cc80cc936a18c6d4d8be34dda68d097d02fa51e7e"
+  },
+  {
+   "question_id": "3376",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-03-23 00:00:00",
+   "tests_sha256": "ab02e886de2cce85b3eb748096f450494f7888cedcccfd94ca0e4e09d56526ca"
+  },
+  {
+   "question_id": "3382",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-04-13 00:00:00",
+   "tests_sha256": "a6cedb8c2b346466dad4f65997a16a12ba35de6747633f5f0d1189a97e0474a3"
+  },
+  {
+   "question_id": "3402",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-05-04 00:00:00",
+   "tests_sha256": "f8b4b3258c51b5c6ae8a7f368dd507324067759921dc6578435f09aa7d9d34d4"
+  },
+  {
+   "question_id": "3411",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-05-11 00:00:00",
+   "tests_sha256": "0671156fb1001769319ab1d07f336a5704851cfc4703626691795a1538a2e534"
+  },
+  {
+   "question_id": "3414",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-05-18 00:00:00",
+   "tests_sha256": "1547be7dc986eff6aa9c71c6572a0cf3ea988cd249354d726668dd0e6f5e6c4d"
+  },
+  {
+   "question_id": "3423",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-05-25 00:00:00",
+   "tests_sha256": "979e05db7e0915e868315db26e701d105a53b8a62f65b5f1cc79d5103111e14a"
+  },
+  {
+   "question_id": "3436",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-06-01 00:00:00",
+   "tests_sha256": "e47d3f32904dd4b88b10fccc86671471cc0a7b6052810063e7f46316973dda3d"
+  },
+  {
+   "question_id": "3438",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-06-15 00:00:00",
+   "tests_sha256": "bb75493fbfdbadc6366619954b91a6077bfb9fdbff47ed0f47ecf68617eec885"
+  },
+  {
+   "question_id": "3439",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-06-29 00:00:00",
+   "tests_sha256": "dbacd418a1a552bc282f738d078be2f8c5e705173f51218c8c5e873aef69ac12"
+  },
+  {
+   "question_id": "3454",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-07-20 00:00:00",
+   "tests_sha256": "51852253c37e14036b32483cd700d55b09b7eeb994dd63e533ecbc802c3fa7d4"
+  },
+  {
+   "question_id": "3460",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-06-22 00:00:00",
+   "tests_sha256": "071e42f1b9ce7d91c4538718857ba0dd94bc7e66725abc362c670f5eeb078cc0"
+  },
+  {
+   "question_id": "3466",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-07-06 00:00:00",
+   "tests_sha256": "9e8e98fc941de3f3e9b211ac086013dd23478bb5683b7a4d1d5254c4e1999aaa"
+  },
+  {
+   "question_id": "3478",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-07-27 00:00:00",
+   "tests_sha256": "e5c27301bda69799b9cf8838f7cd0ff3702980ad61f2c973b9adcaa302559ba4"
+  },
+  {
+   "question_id": "3482",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-07-06 00:00:00",
+   "tests_sha256": "cb05f3d3dd951f04c3713eb09f22a323bcb2abe73875c4e86d317f77efe7ae20"
+  },
+  {
+   "question_id": "3527",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-08-03 00:00:00",
+   "tests_sha256": "7cd27ce70e1dd4de3bedf614d709c7f87af37f8f1aca150237756324af3ea9cb"
+  },
+  {
+   "question_id": "3531",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-08-31 07:30:00",
+   "tests_sha256": "edb694483876725746906e4342936d869eef1da8f7ec46999c0efcad59e5b773"
+  },
+  {
+   "question_id": "3532",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-08-03 00:00:00",
+   "tests_sha256": "81c2a1d909020a6fdbfc5c269978fbb5d68e08a7ac16674b613198230bb65b93"
+  },
+  {
+   "question_id": "3535",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-08-10 00:00:00",
+   "tests_sha256": "8100c9e228d00c5e9e3aaa2fc302b6b876988e216bbea7218e274a488ea07876"
+  },
+  {
+   "question_id": "3548",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-08-31 07:30:00",
+   "tests_sha256": "0c6d19cf0f934b11918d07c4cf3fda2c529fdef827285d27e0945ce47f9779fe"
+  },
+  {
+   "question_id": "3550",
+   "difficulty": "hard",
+   "testtype": "functional",
+   "contest_date": "2024-08-17 07:30:00",
+   "tests_sha256": "414d00cb6d1b5fc77e5b3cb06cf7c2ed94f1273fb18b7806cf67dfeb05537977"
+  }
+ ]
+}

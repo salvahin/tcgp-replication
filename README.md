@@ -31,6 +31,7 @@ python audit_tcgp_scenarios_v3.py     # correctness of generated test scenarios 
 python make_harness_budget.py         # harness budget table/figure inputs -> results/harness_budget.json
 python make_paper_figures_v3.py --outdir figures_paper
 python build_manifest_v3.py           # per-file manifest: parameters, caps, dates, hashes
+python contract_mechanism_v2.py       # input-parsing count behind the contract-artifact mechanism (Section V-B)
 ```
 
 Three rows of the harness budget re-execute generated programs and take
@@ -68,7 +69,7 @@ which are the providers' usage fields stored in each record.
 | `results/livecodebench_v2_strat/`, `results/livecodebench_v2_strat_rescored/` | The original submission's outputs and their re-grading with the official evaluator (the artifact analysis) |
 | `results/humaneval_v2/` | HumanEval: 10 models x 3 conditions x 3 seeds, plus three paraphrases of the direct prompt on 9 models (seed 42), with `manifest.json` (deployments, endpoints, parameters, dates) |
 | `results/paper_analyses_v3.json`, `paper_analyses_v4.json`, `harness_*_v3.json`, `harness_budget.json`, `humaneval_tests.json`, `repair_rounds.json`, `scenario_audit_v3.json`, `manifest_v3.json` | Analysis outputs and the manifest |
-| `data/humaneval/humaneval.jsonl` | HumanEval problems; the LiveCodeBench sample is cached on first run from `bzantium/livecodebench` |
+| `data/humaneval/humaneval.jsonl`, `data/livecodebench_sample_manifest.json` | HumanEval problems; the 180 LiveCodeBench problem ids with difficulty, date and a SHA-256 of each problem's tests (the sample itself is cached on first run from `bzantium/livecodebench`; `make_sample_manifest.py` regenerates and verifies the manifest) |
 | `archive/incorrect-harness-v1_*.zip`, `ABLATION_DESIGNS_V1.md` | Provenance of an even earlier harness (body extraction), not used in the paper |
 | `EXPERIMENT_DESIGN_V2.md`, `RESULTS_V2_SUMMARY.md` | Design notes and the (superseded) first-submission numbers, kept for the record |
 
@@ -85,7 +86,9 @@ Runs resume per problem. Provider-side model updates mean exact pass rates
 are not guaranteed to reproduce over time; deployments and query dates are in
 the manifest. Version 1 of this package (the original submission) is archived
 at https://doi.org/10.5281/zenodo.21421552; the version matching the revised
-article is v2.3, archived at https://doi.org/10.5281/zenodo.22837940.
+article will be released and archived under the concept DOI
+https://doi.org/10.5281/zenodo.21421551 once the article is accepted (intermediate
+Zenodo versions were withdrawn).
 
 ## License
 

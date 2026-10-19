@@ -43,7 +43,7 @@ def fig_harness(out, v4):
     if fl: rows.append(("Grading non-determinism, isolated\n(% of verdicts, not pp)", 100 * fl["share_of_all_records"], "% of verdicts unstable"))
     rows.sort(key=lambda r: -r[1])
     recipe = abs(B["largest_recipe_effect"]["diff_pp"]) if B.get("largest_recipe_effect") else None
-    fig, ax = plt.subplots(figsize=(7.0, 4.6)); y = np.arange(len(rows))[::-1]; vals = [r[1] for r in rows]
+    fig, ax = plt.subplots(figsize=(7.2, 4.4)); y = np.arange(len(rows))[::-1]; vals = [r[1] for r in rows]
     ax.barh(y, vals, color=["#d1495b" if v >= 10 else "#3b6ea5" if v >= 1 else "#9aa0a6" for v in vals], height=0.62)
     for yi, (lab, v, note) in zip(y, rows): ax.text(max(v, 0.06) * 1.15, yi, (f"{v:.1f} pp  ({note})" if v >= 1 else f"{v:.2f} pp  ({note})") if "%" not in note else (f"{v:.1f}%  ({note.split('  ')[0]})" if v >= 1 else f"{v:.2f}%  ({note})"), va="center", fontsize=8)
     if recipe:
@@ -61,8 +61,8 @@ def fig_forest(out, v4):
         v = v4["vs_direct"][c]; lo, hi = v["boot90_ci"]; col = "#d1495b" if not v["equivalent_within_delta"] else "#3b6ea5"
         ax.plot([lo, hi], [yi, yi], color=col, lw=2); ax.plot(v["diff_pp"], yi, "o", color=col, ms=6)
     ax.axvline(0, color="black", lw=0.8); ax.set_yticks(y); ax.set_yticklabels([LAB[c] for c in conds])
-    ax.set_xlabel("Pass@1 difference vs. direct prompting (pp), 90% cluster-bootstrap CI"); ax.legend(frameon=False, fontsize=8, loc="upper left"); ax.grid(axis="y")
-    fig.tight_layout(); fig.savefig(out / "fig_recipe_forest.pdf"); plt.close(fig)
+    ax.set_xlabel("Pass@1 difference vs. direct prompting (pp), 90% cluster-bootstrap CI"); ax.legend(frameon=False, fontsize=8, loc="upper center", bbox_to_anchor=(0.5, -0.16), ncol=2); ax.grid(axis="y")
+    fig.tight_layout(); fig.savefig(out / "fig_recipe_forest.pdf", bbox_inches="tight"); plt.close(fig)
 
 def fig_wording(out, v4):
     models = sorted(v4["models"], key=lambda m: v4["vs_direct"]["cot"]["per_model"][m]["direct"])

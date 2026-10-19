@@ -16,8 +16,8 @@ authors:
     given-names: Diego
   - family-names: Hinojosa
     given-names: Salvador
-version: "2.3"
-date-released: "2026-09-18"
-doi: 10.5281/zenodo.22837940
+version: "3.0-rc"
+date-released: "2026-10-18"
+doi: 10.5281/zenodo.21421551   # concept DOI; the version DOI is added at the release matching the accepted article
 repository-code: "https://github.com/salvahin/tcgp-replication"
 license: MIT

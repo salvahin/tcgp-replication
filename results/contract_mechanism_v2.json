@@ -1,0 +1,65 @@
+{
+ "rule": "count of ['input(', 'sys.stdin', 'readline', '.strip(', '.split(', 'json.loads', 'literal_eval', 'eval(', 'int(', 'map('] in the extracted program; 'more' means strictly greater in the TCGP program",
+ "models": [
+  "gpt-4.1",
+  "gpt-4o",
+  "gpt-5.3-codex",
+  "gpt-5.4",
+  "gpt-5.4-mini-2",
+  "gpt-5.4-nano",
+  "gpt-5.5",
+  "grok-4-20-non-reasoning",
+  "grok-4-20-reasoning"
+ ],
+ "pairs": 284,
+ "tcgp_more_parsing": 239,
+ "equal": 19,
+ "share_more": 0.8415492957746479,
+ "per_model": {
+  "gpt-4.1": {
+   "tcgp_pass_cot_fail": 44,
+   "tcgp_more_parsing": 36,
+   "equal": 6
+  },
+  "gpt-4o": {
+   "tcgp_pass_cot_fail": 6,
+   "tcgp_more_parsing": 5,
+   "equal": 1
+  },
+  "gpt-5.3-codex": {
+   "tcgp_pass_cot_fail": 41,
+   "tcgp_more_parsing": 39,
+   "equal": 1
+  },
+  "gpt-5.4": {
+   "tcgp_pass_cot_fail": 30,
+   "tcgp_more_parsing": 26,
+   "equal": 0
+  },
+  "gpt-5.4-mini-2": {
+   "tcgp_pass_cot_fail": 73,
+   "tcgp_more_parsing": 70,
+   "equal": 1
+  },
+  "gpt-5.4-nano": {
+   "tcgp_pass_cot_fail": 11,
+   "tcgp_more_parsing": 7,
+   "equal": 3
+  },
+  "gpt-5.5": {
+   "tcgp_pass_cot_fail": 7,
+   "tcgp_more_parsing": 4,
+   "equal": 2
+  },
+  "grok-4-20-non-reasoning": {
+   "tcgp_pass_cot_fail": 41,
+   "tcgp_more_parsing": 34,
+   "equal": 1
+  },
+  "grok-4-20-reasoning": {
+   "tcgp_pass_cot_fail": 31,
+   "tcgp_more_parsing": 18,
+   "equal": 4
+  }
+ }
+}

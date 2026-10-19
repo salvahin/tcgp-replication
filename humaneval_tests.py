@@ -48,7 +48,7 @@ for m in models:
         else:
             rng = random.Random(0)
             for _ in range(200000): v = sum(d if rng.random() < 0.5 else -d for d in contrib); tot += 1; ge += abs(v) >= abs(obs) - 1e-9
-        C.append({"model": m, "contrast": f"{a}_vs_{b}", "net_successes": obs, "contributing_tasks": n, "exact": n <= 20, "p": ge / tot})
+        C.append({"model": m, "contrast": f"{a}_vs_{b}", "net_successes": obs, "contributing_tasks": n, "exact": n <= 20, "p": ge / tot if n <= 20 else (ge + 1) / (tot + 1)})   # add-one for the Monte Carlo branch
 for fam in (A, B, C):
     for t, h in zip(fam, holm([t["p"] for t in fam])): t["holm_p"] = h
 out = {"cell_min": min(cells.values()), "cell_max": max(cells.values()), "cells": cells, "family_C_task_clustered": C, "family_A_seeds_pooled": A, "family_B_per_seed": B,

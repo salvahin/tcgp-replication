@@ -1,7 +1,7 @@
 {
  "evaluator": "official LiveCodeBench testing_util @ 28fef95 (vendored in lcb_eval/)",
  "dataset": "bzantium/livecodebench (test split, 1055 problems); HumanEval (164 problems)",
- "harness_commit_at_manifest_build": "e7b397c",
+ "harness_commit_at_manifest_build": "c264263",
  "n_files": 240,
  "runs": [
   {

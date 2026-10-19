@@ -60,16 +60,6 @@
    "pass_all_correct": 26,
    "pass_any_wrong": 15
   },
-  "gemini-2.5-flash": {
-   "scen": 751,
-   "parsed": 582,
-   "correct": 543,
-   "recs": 170,
-   "recs_with_all_correct": 120,
-   "recs_with_any_wrong": 29,
-   "pass_all_correct": 106,
-   "pass_any_wrong": 27
-  },
   "gpt-5.4": {
    "scen": 466,
    "parsed": 454,
@@ -102,14 +92,14 @@
   }
  },
  "total": {
-  "scen": 5879,
-  "parsed": 5193,
-  "correct": 4531,
-  "recs": 1700,
-  "recs_with_all_correct": 762,
-  "recs_with_any_wrong": 468,
-  "pass_all_correct": 659,
-  "pass_any_wrong": 326
+  "scen": 5128,
+  "parsed": 4611,
+  "correct": 3988,
+  "recs": 1530,
+  "recs_with_all_correct": 642,
+  "recs_with_any_wrong": 439,
+  "pass_all_correct": 553,
+  "pass_any_wrong": 299
  },
  "n_oracle_problems": 170
 }
