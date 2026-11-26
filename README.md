@@ -1,8 +1,8 @@
 # Replication package: From Prompting Recipes to Harnesses
 
 Replication package for the article *"From Prompting Recipes to Harnesses: What
-Still Matters in LLM Code Generation, and Where It Breaks"* (Avalos et al., submitted to IEEE
-Access; revision of manuscript Access-2026-35607).
+Still Matters in LLM Code Generation, and Where It Breaks"* (Avalos et al., accepted for publication in IEEE Access, manuscript
+Access-2026-35607).
 
 The study compares twelve prompting conditions (direct prompting, three
 paraphrases of it, persona, few-shot, chain-of-thought, Plan-and-Solve,
@@ -21,7 +21,7 @@ network access:
 ```bash
 python3.11 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-python make_paper_analyses_v3.py      # four core conditions, 10 models (Table: per-model)
+python make_paper_analyses_v3.py      # four core conditions, nine models (Table: per-model)
 python make_paper_analyses_v4.py      # recipe study, noise floor, equivalence tests and margin sensitivity (Table: recipes)
 python harness_sensitivity_v3.py --public   # public-vs-hidden inflation from stored verdicts
 python harness_sensitivity_humaneval.py     # extraction rule, seeds, wording on HumanEval
@@ -70,8 +70,8 @@ which are the providers' usage fields stored in each record.
 | `results/humaneval_v2/` | HumanEval: 10 models x 3 conditions x 3 seeds, plus three paraphrases of the direct prompt on 9 models (seed 42), with `manifest.json` (deployments, endpoints, parameters, dates) |
 | `results/paper_analyses_v3.json`, `paper_analyses_v4.json`, `harness_*_v3.json`, `harness_budget.json`, `humaneval_tests.json`, `repair_rounds.json`, `scenario_audit_v3.json`, `manifest_v3.json` | Analysis outputs and the manifest |
 | `data/humaneval/humaneval.jsonl`, `data/livecodebench_sample_manifest.json` | HumanEval problems; the 180 LiveCodeBench problem ids with difficulty, date and a SHA-256 of each problem's tests (the sample itself is cached on first run from `bzantium/livecodebench`; `make_sample_manifest.py` regenerates and verifies the manifest) |
-| `archive/incorrect-harness-v1_*.zip`, `ABLATION_DESIGNS_V1.md` | Provenance of an even earlier harness (body extraction), not used in the paper |
-| `EXPERIMENT_DESIGN_V2.md`, `RESULTS_V2_SUMMARY.md` | Design notes and the (superseded) first-submission numbers, kept for the record |
+| `archive/incorrect-harness-v1_*.zip` | Archived runs of a body-extraction harness (answers stripped to a function body and re-indented); read by `make_harness_budget.py` for the body-extraction row of the harness budget |
+| `EXPERIMENT_DESIGN_V2.md` | Design notes for the standard-input harness used in the contract comparison |
 
 ## Re-run the experiments (API keys and budget)
 
