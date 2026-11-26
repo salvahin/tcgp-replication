@@ -103,6 +103,11 @@ def main():
     # multiplicity across the eleven pooled contrasts (exploratory family; the per-model Holm families are separate)
     cs = [c for c in COND if c != "direct"]
     for c, h in zip(cs, holm([out["vs_direct"][c]["perm_p"] for c in cs])): out["vs_direct"][c]["holm_p_over_11_pooled"] = h
+    # sensitivity of the equivalence verdicts to the (not preregistered) margin; same bootstrap intervals
+    MARGINS = (2.0, 2.5, 3.0, 4.0, 5.0)
+    out["margin_sensitivity"] = {f"{d:g}": {"equivalent": [c for c in cs if -d < out["vs_direct"][c]["boot90_ci"][0] and out["vs_direct"][c]["boot90_ci"][1] < d],
+                                            "inconclusive_or_different": [c for c in cs if not (-d < out["vs_direct"][c]["boot90_ci"][0] and out["vs_direct"][c]["boot90_ci"][1] < d)]}
+                                 for d in MARGINS}
     # attempts that returned no program: API errors (e.g. content filter) and empty outputs count as failures
     out["quality"] = {c: {"api_error": sum(1 for m in models for q in qids if recs[(m, c)][q].get("api_error")),
                           "no_output": sum(1 for m in models for q in qids if recs[(m, c)][q].get("no_output"))} for c in COND}
@@ -130,6 +135,7 @@ def main():
         out["tokens"][c] = t/n
     json.dump(out, open(HERE / "results" / "paper_analyses_v4.json", "w"), indent=1)
     print("Holm over the 11 pooled contrasts:", {c: round(out["vs_direct"][c]["holm_p_over_11_pooled"], 4) for c in cs})
+    for d, v in out["margin_sensitivity"].items(): print(f"margin +/-{d}: equivalent {len(v['equivalent'])}/11; not shown equivalent: {v['inconclusive_or_different']}")
     print("API errors / no output per condition:", {c: (v["api_error"], v["no_output"]) for c, v in out["quality"].items() if v["api_error"] or v["no_output"]})
     # report
     print(f"models={len(models)} problems={len(qids)}  (equivalence margin +/-{DELTA} pp)")

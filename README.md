@@ -22,7 +22,7 @@ network access:
 python3.11 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 python make_paper_analyses_v3.py      # four core conditions, 10 models (Table: per-model)
-python make_paper_analyses_v4.py      # recipe study, noise floor, equivalence tests (Table: recipes)
+python make_paper_analyses_v4.py      # recipe study, noise floor, equivalence tests and margin sensitivity (Table: recipes)
 python harness_sensitivity_v3.py --public   # public-vs-hidden inflation from stored verdicts
 python harness_sensitivity_humaneval.py     # extraction rule, seeds, wording on HumanEval
 python humaneval_tests.py             # HumanEval range and task-clustered sign-flip tests (Holm) quoted in the text

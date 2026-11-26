@@ -1174,6 +1174,92 @@
   "stacked": 2334.7043209876542,
   "repair": 1683.9734567901235
  },
+ "margin_sensitivity": {
+  "2": {
+   "equivalent": [
+    "para2",
+    "para3",
+    "fewshot"
+   ],
+   "inconclusive_or_different": [
+    "para1",
+    "persona",
+    "cot",
+    "plansolve",
+    "tcgp",
+    "restate",
+    "stacked",
+    "repair"
+   ]
+  },
+  "2.5": {
+   "equivalent": [
+    "para2",
+    "para3",
+    "persona",
+    "fewshot",
+    "plansolve"
+   ],
+   "inconclusive_or_different": [
+    "para1",
+    "cot",
+    "tcgp",
+    "restate",
+    "stacked",
+    "repair"
+   ]
+  },
+  "3": {
+   "equivalent": [
+    "para2",
+    "para3",
+    "persona",
+    "fewshot",
+    "plansolve",
+    "tcgp",
+    "restate",
+    "stacked",
+    "repair"
+   ],
+   "inconclusive_or_different": [
+    "para1",
+    "cot"
+   ]
+  },
+  "4": {
+   "equivalent": [
+    "para1",
+    "para2",
+    "para3",
+    "persona",
+    "fewshot",
+    "plansolve",
+    "tcgp",
+    "restate",
+    "stacked",
+    "repair"
+   ],
+   "inconclusive_or_different": [
+    "cot"
+   ]
+  },
+  "5": {
+   "equivalent": [
+    "para1",
+    "para2",
+    "para3",
+    "persona",
+    "fewshot",
+    "cot",
+    "plansolve",
+    "tcgp",
+    "restate",
+    "stacked",
+    "repair"
+   ],
+   "inconclusive_or_different": []
+  }
+ },
  "quality": {
   "direct": {
    "api_error": 0,
