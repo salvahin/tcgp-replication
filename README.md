@@ -85,10 +85,10 @@ python run_repair_v3.py --models gpt-4o:azure --tag strat
 Runs resume per problem. Provider-side model updates mean exact pass rates
 are not guaranteed to reproduce over time; deployments and query dates are in
 the manifest. Version 1 of this package (the original submission) is archived
-at https://doi.org/10.5281/zenodo.21421552; the version matching the revised
-article will be released and archived under the concept DOI
-https://doi.org/10.5281/zenodo.21421551 once the article is accepted (intermediate
-Zenodo versions were withdrawn).
+at https://doi.org/10.5281/zenodo.21421552; the version matching the published
+article is v3.0. The concept DOI https://doi.org/10.5281/zenodo.21421551
+resolves to the latest archived version (intermediate Zenodo versions were
+withdrawn).
 
 ## License
 
