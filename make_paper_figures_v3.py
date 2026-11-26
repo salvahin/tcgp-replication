@@ -44,11 +44,18 @@ def fig_harness(out, v4):
     rows.sort(key=lambda r: -r[1])
     recipe = abs(B["largest_recipe_effect"]["diff_pp"]) if B.get("largest_recipe_effect") else None
     fig, ax = plt.subplots(figsize=(7.2, 4.4)); y = np.arange(len(rows))[::-1]; vals = [r[1] for r in rows]
-    ax.barh(y, vals, color=["#d1495b" if v >= 10 else "#3b6ea5" if v >= 1 else "#9aa0a6" for v in vals], height=0.62)
-    for yi, (lab, v, note) in zip(y, rows): ax.text(max(v, 0.06) * 1.15, yi, (f"{v:.1f} pp  ({note})" if v >= 1 else f"{v:.2f} pp  ({note})") if "%" not in note else (f"{v:.1f}%  ({note.split('  ')[0]})" if v >= 1 else f"{v:.2f}%  ({note})"), va="center", fontsize=8)
+    ax.barh(y, vals, color=["#d1495b" if v >= 10 else "#3b6ea5" if v >= 1 else "#9aa0a6" for v in vals], height=0.62, zorder=2)
+    def label(v, note):
+        pct = "%" in note; unit = "%" if pct else " pp"; num = f"{v:.1f}" if v >= 1 else f"{v:.2f}"
+        return f"{num}{unit}  ({note.split('  ')[0] if pct and v >= 1 else note})"
+    for yi, (lab, v, note) in zip(y, rows):
+        if v >= 10:   # long bars: label inside the bar, so the axis need not extend past the data
+            ax.text(v / 1.15, yi, label(v, note), va="center", ha="right", fontsize=8, color="white")
+        else:         # short bars: label right of the bar, on a white box so the reference line does not strike through it
+            ax.text(max(v, 0.06) * 1.15, yi, label(v, note), va="center", fontsize=8, bbox=dict(facecolor="white", edgecolor="none", pad=0.6), zorder=3)
     if recipe:
-        ax.axvline(recipe, color="black", ls="--", lw=1); ax.text(recipe * 1.05, y[0] + 0.55, f"largest pooled recipe effect\n({recipe:.1f} pp, chain-of-thought)", fontsize=8, va="bottom")
-    ax.set_xscale("log"); ax.set_xlim(0.03, 20000); ax.set_yticks(y); ax.set_yticklabels([r[0] for r in rows], fontsize=8)
+        ax.axvline(recipe, color="black", ls="--", lw=1, zorder=0); ax.text(recipe, y[0] + 0.6, f"largest pooled recipe effect ({recipe:.1f} pp, chain-of-thought)", fontsize=8, va="bottom", ha="center", bbox=dict(facecolor="white", edgecolor="none", pad=0.6), zorder=3)
+    ax.set_xscale("log"); ax.set_xlim(0.03, 150); ax.set_ylim(y[-1] - 0.6, y[0] + 1.3); ax.set_yticks(y); ax.set_yticklabels([r[0] for r in rows], fontsize=8)
     ax.set_xlabel("Effect on measured Pass@1 (percentage points, log scale)"); ax.grid(axis="y")
     fig.tight_layout(); fig.savefig(out / "fig_harness_budget.pdf"); plt.close(fig)
 
@@ -87,8 +94,8 @@ def fig_artifact(out):
         ax.bar(x + (i - 1) * w, vals, w, color=col, label=lab)
         for xi, v in zip(x + (i - 1) * w, vals): ax.text(xi, v + 1, f"{v:.0f}", ha="center", fontsize=8)
     ax.set_xticks(x); ax.set_xticklabels(["Direct", "CoT", "TCGP"]); ax.set_ylabel("Pass@1 (%)"); ax.set_ylim(0, 100)
-    ax.legend(frameon=False, fontsize=8, loc="upper left"); ax.grid(axis="x")
-    fig.tight_layout(); fig.savefig(out / "fig_artifact.pdf"); plt.close(fig)
+    ax.legend(frameon=False, fontsize=8, loc="upper center", bbox_to_anchor=(0.5, -0.12), ncol=3); ax.grid(axis="x")
+    fig.tight_layout(); fig.savefig(out / "fig_artifact.pdf", bbox_inches="tight"); plt.close(fig)
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--outdir", default=str(HERE / "figures_paper")); a = ap.parse_args()
